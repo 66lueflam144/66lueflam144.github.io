@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>All Posts - ReaL One</title>
+    <link>https://66lueflam144.github.io/posts/</link>
+    <description>All Posts | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 27 Mar 2024 12:58:37 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Hello</title>
+  <link>https://66lueflam144.github.io/posts/post_1/</link>
+  <pubDate>Wed, 27 Mar 2024 12:58:37 &#43;0800</pubDate>
+  <author>RocK X BeaR x 64bit</author>
+  <guid>https://66lueflam144.github.io/posts/post_1/</guid>
+  <description><![CDATA[<div class="featured-image"><img loading="eager" src="./cat.png" alt="Hello" title="Hello" referrerpolicy="no-referrer"/></div> Like Chemistry]]></description>
+</item>
+</channel>
+</rss>

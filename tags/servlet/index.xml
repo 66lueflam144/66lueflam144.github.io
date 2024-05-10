@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Servlet - Tag - ReaL One</title>
+    <link>https://66lueflam144.github.io/tags/servlet/</link>
+    <description>Servlet - Tag | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 May 2024 11:33:55 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/servlet/" rel="self" type="application/rss+xml" /><item>
+  <title>Servlet &amp; Listener &amp; Filter from JAVA</title>
+  <link>https://66lueflam144.github.io/posts/3a26b5b/</link>
+  <pubDate>Fri, 10 May 2024 11:33:55 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/3a26b5b/</guid>
+  <description><![CDATA[<p>对java的重要三组件再次看了一遍。</p>]]></description>
+</item>
+</channel>
+</rss>

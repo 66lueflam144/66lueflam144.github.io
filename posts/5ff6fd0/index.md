@@ -11,7 +11,7 @@
 看着怪像wordpress的。&lt;br&gt;
 
 打开pom.xml，到处都是警告
-![警告](./vulnerable.png)
+![警告](../post_2/vulnerable.png)
 
 
 我一定是和DOCKER有仇，所以只能打开linux虚拟机通过linux的docker进行搭建环境。

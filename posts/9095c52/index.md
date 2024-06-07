@@ -249,8 +249,8 @@ window.mainloop()
 
   
 
-{% asset_img tk1.png %}
 
+![](../post_pre/pics/p/tk1.png)
   
 
 &lt;hr&gt;
@@ -285,8 +285,8 @@ window.mainloop()
 
 效果如下：
 
-{% asset_img tk2.png %}
 
+![](../post_pre/pics/p/tk2.png)
   
 
 &lt;hr&gt;
@@ -342,8 +342,8 @@ window.mainloop()
 
 效果如下：
 
-{% asset_img tk3.png %}
 
+![](../post_pre/pics/p/tk3.png)
   
   
 
@@ -432,8 +432,8 @@ window.mainloop()
 
 效果如下：
 
-{% asset_img tk4.png %}
 
+![](../post_pre/pics/p/tk4.png)
   
   
 

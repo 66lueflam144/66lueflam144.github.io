@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>HUGO - Category - ReaL One</title>
+    <link>https://66lueflam144.github.io/categories/hugo/</link>
+    <description>HUGO - Category | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 18 Jan 2024 10:12:31 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/categories/hugo/" rel="self" type="application/rss+xml" /><item>
+  <title>Hugo Log</title>
+  <link>https://66lueflam144.github.io/posts/6fb9740/</link>
+  <pubDate>Thu, 18 Jan 2024 10:12:31 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/6fb9740/</guid>
+  <description><![CDATA[<p>在备战小升初一个月之后发现hexo怎么也更新不了文章遂气急败坏。</p>]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>代码审计 - Category - ReaL One</title>
+    <link>https://66lueflam144.github.io/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</link>
+    <description>代码审计 - Category | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 30 Jan 2024 10:10:12 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" rel="self" type="application/rss+xml" /><item>
+  <title>对DedeCMS漏洞的复现</title>
+  <link>https://66lueflam144.github.io/posts/ca9003d/</link>
+  <pubDate>Tue, 30 Jan 2024 10:10:12 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/ca9003d/</guid>
+  <description><![CDATA[任意文件写入 直接写进去之因地制宜序列化绕过fwrite()函数本身并没有什么危险，但如果参数可控就会带来 恶意写入 的问题。
+搜索fwrite()得到sys_safe_php中有
+有两个参数，
+$fp 打开文件$safeconfigfile 也就是/safe/inc_safe_config.php&quot;;
+$configstr，往上翻可以看到是由 $faqs经过一系列消杀得到的，而faqs又是一个数组，由question和answer两个参数构成。
+接下来是弄清楚这是个什么文件。直接访问（登录了的情况下），会显示
+如果还不够显而易见我们就对问题和答案随便输入什么，burp抓包会看见清楚的question和answer参数。
+so the next is
+研究代码：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 $safeconfigfile = DEDEDATA.&#34;/safe/inc_safe_config.php&#34;; //保存问答数组 $faqs = array(); for ($i = 1; $i &lt;= count($question)-1; $i++) { $val = trim($question[$i]); if($val) { $faqs[$i][&#39;question&#39;] = str_replace(&#34;&#39;&#34;,&#34;\&#34;&#34;,stripslashes($val)); $faqs[$i][&#39;answer&#39;] = stripslashes(trim($answer[$i])); } } //print_r($question);exit(); $configstr .]]></description>
+</item>
+</channel>
+</rss>

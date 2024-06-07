@@ -10,7 +10,7 @@
 <meta name="description" content="在尝试将这些四散的知识整理起来" /><meta name="keywords" content='阅读与分析, SSRF' /><meta itemprop="name" content="SSRF整理">
 <meta itemprop="description" content="在尝试将这些四散的知识整理起来"><meta itemprop="datePublished" content="2024-05-19T17:21:55+08:00" />
 <meta itemprop="dateModified" content="2024-05-19T17:21:55+08:00" />
-<meta itemprop="wordCount" content="1314">
+<meta itemprop="wordCount" content="1461">
 <meta itemprop="keywords" content="阅读与分析,SSRF," /><meta property="og:title" content="SSRF整理" />
 <meta property="og:description" content="在尝试将这些四散的知识整理起来" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/66lueflam144.github.io\/posts\/a64076f\/"
-    },"genre": "posts","keywords": "阅读与分析, SSRF","wordcount":  1314 ,
+    },"genre": "posts","keywords": "阅读与分析, SSRF","wordcount":  1461 ,
     "url": "https:\/\/66lueflam144.github.io\/posts\/a64076f\/","datePublished": "2024-05-19T17:21:55+08:00","dateModified": "2024-05-19T17:21:55+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"description": "在尝试将这些四散的知识整理起来"
@@ -110,7 +110,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>SSRF整理</span>
       </h1><p class="single-subtitle animate__animated animate__fadeIn">AKASSRF再学习</p></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dig/" class="post-category" title="Category - DIG"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> DIG</a></span></div><div class="post-meta-line"><span title="published on 2024-05-19 17:21:55"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-05-19">2024-05-19</time></span>&nbsp;<span title="1314 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>7 minutes</span>&nbsp;</div>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/dig/" class="post-category" title="Category - DIG"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> DIG</a></span></div><div class="post-meta-line"><span title="published on 2024-05-19 17:21:55"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-05-19">2024-05-19</time></span>&nbsp;<span title="1461 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1500 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>7 minutes</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -1433,7 +1433,101 @@
 <p><img loading="lazy" src="../post_5/pics/dict.png" alt="dict" srcset="../post_5/pics/dict.png?size=small, ../post_5/pics/dict.png?size=medium 1.5x, ../post_5/pics/dict.png?size=large 2x" data-title="dict" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
 <br>
 <hr>
-.</div><div class="post-footer" id="post-footer">
+<p>JAVA版本的</p>
+<div class="highlight" id="id-23"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;url&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">htmlContent</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">URL</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">url</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">URLConnection</span><span class="w"> </span><span class="n">urlConnection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="na">openConnection</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">HttpURLConnection</span><span class="w"> </span><span class="n">httpUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">HttpURLConnection</span><span class="p">)</span><span class="w"> </span><span class="n">urlConnection</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="n">newInputStreamReader</span><span class="p">(</span><span class="n">httpUrl</span><span class="p">.</span><span class="na">getInputStream</span><span class="p">(),</span><span class="w"> </span><span class="s">&#34;UTF-8&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">StringBuffer</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuffer</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">htmlContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base</span><span class="p">.</span><span class="na">readLine</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">html</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">htmlContent</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">base</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">print</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;&lt;b&gt;端口探测&lt;/b&gt;&lt;/br&gt;&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">print</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;&lt;b&gt;url:&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;&lt;/b&gt;&lt;/br&gt;&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">print</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">html</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">print</span><span class="p">.</span><span class="na">flush</span><span class="p">();</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述代码模拟了http请求，将请求结果返回到浏览器中。</p>
+<ul>
+<li><code>url</code>作为参数</li>
+<li>URLConnection类基于HTTP协议，<strong>但可以处理多种协议</strong>，通过在URL上调用openConnection()创建连接对象</li>
+<li>HttpURLConnection类，继承自URLConnection类（也是基于HTTP协议的，<strong>专门用来处理http的</strong>，从名字就可以看出来），用于向指定网址发送GET、POST请求。getInputStream()方法用于获取响应数据。
+<ul>
+<li>当删除这一行之后，稍加修改之后，就取消了HTTP协议的限制，进而可以使用file协议</li>
+</ul>
+</li>
+<li>将读取到的数据存入htmlcontent，进而写入html中，最后用toString()方法将其打印出来</li>
+</ul>
+<p>所以和上面的PHP调用<code>curl</code>一样，只是模拟了HTTP请求，但并没有进行任何过滤，当<code>url=127.0.0.1</code>的时候，依旧可以得到服务器内部文件。</p>
+<hr>
+<p><strong>下载任意文件</strong></p>
+<div class="highlight" id="id-24"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="w"> </span><span class="n">length</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">downLoadImgFileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;SsrfFileDownTest.txt&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">InputStream</span><span class="w"> </span><span class="n">inputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">OutputStream</span><span class="w"> </span><span class="n">outputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">req</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;url&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">resp</span><span class="p">.</span><span class="na">setHeader</span><span class="p">(</span><span class="s">&#34;content-disposition&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;attachment;fileName=&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">downLoadImgFileName</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">URL</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">url</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="n">1024</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">inputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">file</span><span class="p">.</span><span class="na">openStream</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">outputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">resp</span><span class="p">.</span><span class="na">getOutputStream</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inputStream</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">bytes</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">outputStream</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>源头依旧是，没有限制输入</p>
+<p>简单解释一下代码：</p>
+<ul>
+<li>用<code>setHeader()</code>将<code>downLoadImgFileName</code>指定为响应附件</li>
+<li><code>openStream()</code>从URL打开输入流</li>
+<li><code>getOutputStream()</code>获取响应的输出流</li>
+<li>在循环中，将输入流数据写入<code>bytes</code>，再写入输出流，也就写入了附件中</li>
+</ul></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">

@@ -990,7 +990,71 @@ curl -v &#34;http://evil${google}&#34;
 
 &lt;br&gt;
 &lt;hr&gt;
-.
+
+
+JAVA版本的
+
+```java
+
+String url = request.getParameter(&#34;url&#34;);
+String htmlContent;
+try {
+	URL u = new URL(url);
+	URLConnection urlConnection = u.openConnection();
+	HttpURLConnection httpUrl = (HttpURLConnection) urlConnection;
+	BufferedReader base = new BufferedReader(newInputStreamReader(httpUrl.getInputStream(), &#34;UTF-8&#34;));
+	StringBuffer html = new StringBuffer();
+	while ((htmlContent = base.readLine()) != null) {
+		html.append(htmlContent);
+	}
+	base.close();
+	print.println(&#34;&lt;b&gt;端口探测&lt;/b&gt;&lt;/br&gt;&#34;);
+	print.println(&#34;&lt;b&gt;url:&#34; &#43; url &#43; &#34;&lt;/b&gt;&lt;/br&gt;&#34;);
+	print.println(html.toString());
+	print.flush();
+```
+
+上述代码模拟了http请求，将请求结果返回到浏览器中。
+
+- `url`作为参数
+- URLConnection类基于HTTP协议，**但可以处理多种协议**，通过在URL上调用openConnection()创建连接对象
+- HttpURLConnection类，继承自URLConnection类（也是基于HTTP协议的，**专门用来处理http的**，从名字就可以看出来），用于向指定网址发送GET、POST请求。getInputStream()方法用于获取响应数据。
+	- 当删除这一行之后，稍加修改之后，就取消了HTTP协议的限制，进而可以使用file协议
+- 将读取到的数据存入htmlcontent，进而写入html中，最后用toString()方法将其打印出来
+
+所以和上面的PHP调用`curl`一样，只是模拟了HTTP请求，但并没有进行任何过滤，当`url=127.0.0.1`的时候，依旧可以得到服务器内部文件。
+
+&lt;hr&gt;
+
+
+**下载任意文件**
+
+
+```java
+int length;
+String downLoadImgFileName = &#34;SsrfFileDownTest.txt&#34;;
+InputStream inputStream = null;
+OutputStream outputStream = null;
+String url = req.getParameter(&#34;url&#34;);
+try {
+	resp.setHeader(&#34;content-disposition&#34;, &#34;attachment;fileName=&#34; &#43; downLoadImgFileName);
+	URL file = new URL(url);
+	byte[] bytes = new byte[1024];
+	inputStream = file.openStream();
+	outputStream = resp.getOutputStream();
+	while ((length = inputStream.read(bytes)) &gt; 0) {
+		outputStream.write(bytes, 0, length);
+	}
+```
+
+源头依旧是，没有限制输入
+
+简单解释一下代码：
+- 用`setHeader()`将`downLoadImgFileName`指定为响应附件
+- `openStream()`从URL打开输入流
+- `getOutputStream()`获取响应的输出流
+- 在循环中，将输入流数据写入`bytes`，再写入输出流，也就写入了附件中
+
 
 ---
 

@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>JSP for ME - ReaL One</title><meta name="author" content="RockBear">
+<meta name="author-link" content="">
+<meta name="description" content="参考
+JSP Introdu Java Server Pages
+一种动态网页开发技术
+一种Java Servlet，主要用于实现Java Web Application的用户界面部分
+使用JSP标签&lt;% %&gt;在HTML网页中插入Java代码
+JSP通过网页表单获取用户输入数据、访问数据库以及其他数据源，然后动态的创建网页
+Why JSP与类似的CGI程序相比，
+性能优越更人性化：直接在HTML插入元素无需单独引用，服务器直接调用编译好的JSP文件，无需事先载入解释器和目标脚本
+背景喜人：JSP基于Java Servlets API，坐拥各大企业级Java API
+合作共赢：JSP页面可以和处理业务逻辑的servlets一起使用
+JSP Structure JSP容器（引擎）：处理JSP页面，JSP容器与Web服务器协同合作，为JSP的正常运行提供必要的运行环境和其他服务，并且能够正确识别专属于JSP网页的特殊元素。 JSP容器和JSP文件在Web Application中所处的位置：
+Handle JSP 以下步骤表明了Web服务器是如何使用JSP来创建网页的：
+您的浏览器发送一个HTTP请求给服务器。
+Web服务器识别出这是一个对JSP网页的请求，并且将该请求传递给JSP引擎。通过使用URL或者.jsp文件来完成。
+JSP引擎从磁盘中载入JSP文件，然后将它们转化为servlet。这种转化只是简单地将所有模板文本改用println()语句，并且将所有的JSP元素转化成Java代码。
+JSP引擎将servlet编译成可执行类，并且将原始请求传递给servlet引擎。
+Web服务器的某组件将会调用servlet引擎，然后载入并执行servlet类。在执行过程中，servlet产生HTML格式的输出并将其内嵌于HTTP response中上交给Web服务器。
+Web服务器以静态HTML网页的形式将HTTP response返回到您的浏览器中。
+最终，Web浏览器处理HTTP response中动态产生的HTML网页，就好像在处理静态网页一样。
+JSP Scope 编译阶段 解析JSP文件、servlet容器编译servlet源文件，生成servlet类
+初始化阶段 加载JSP对应的servlet类，创建其实例，并调用其初始化方法
+执行阶段 调用与JSP对应的servlet实例的服务方法
+销毁阶段 调用与JSP对应的servlet实例的销毁方法，然后销毁servlet实例
+JSP rules 脚本程序 1 2 3 4 5 6 &lt;% out.println(&#34;Your IP address is &#34; &#43; request.getRemoteAddr()); %&gt; JSP声明 1 2 &lt;%!" /><meta name="keywords" content='JSP' /><meta itemprop="name" content="JSP for ME">
+<meta itemprop="description" content="参考
+JSP Introdu Java Server Pages
+一种动态网页开发技术
+一种Java Servlet，主要用于实现Java Web Application的用户界面部分
+使用JSP标签&lt;% %&gt;在HTML网页中插入Java代码
+JSP通过网页表单获取用户输入数据、访问数据库以及其他数据源，然后动态的创建网页
+Why JSP与类似的CGI程序相比，
+性能优越更人性化：直接在HTML插入元素无需单独引用，服务器直接调用编译好的JSP文件，无需事先载入解释器和目标脚本
+背景喜人：JSP基于Java Servlets API，坐拥各大企业级Java API
+合作共赢：JSP页面可以和处理业务逻辑的servlets一起使用
+JSP Structure JSP容器（引擎）：处理JSP页面，JSP容器与Web服务器协同合作，为JSP的正常运行提供必要的运行环境和其他服务，并且能够正确识别专属于JSP网页的特殊元素。 JSP容器和JSP文件在Web Application中所处的位置：
+Handle JSP 以下步骤表明了Web服务器是如何使用JSP来创建网页的：
+您的浏览器发送一个HTTP请求给服务器。
+Web服务器识别出这是一个对JSP网页的请求，并且将该请求传递给JSP引擎。通过使用URL或者.jsp文件来完成。
+JSP引擎从磁盘中载入JSP文件，然后将它们转化为servlet。这种转化只是简单地将所有模板文本改用println()语句，并且将所有的JSP元素转化成Java代码。
+JSP引擎将servlet编译成可执行类，并且将原始请求传递给servlet引擎。
+Web服务器的某组件将会调用servlet引擎，然后载入并执行servlet类。在执行过程中，servlet产生HTML格式的输出并将其内嵌于HTTP response中上交给Web服务器。
+Web服务器以静态HTML网页的形式将HTTP response返回到您的浏览器中。
+最终，Web浏览器处理HTTP response中动态产生的HTML网页，就好像在处理静态网页一样。
+JSP Scope 编译阶段 解析JSP文件、servlet容器编译servlet源文件，生成servlet类
+初始化阶段 加载JSP对应的servlet类，创建其实例，并调用其初始化方法
+执行阶段 调用与JSP对应的servlet实例的服务方法
+销毁阶段 调用与JSP对应的servlet实例的销毁方法，然后销毁servlet实例
+JSP rules 脚本程序 1 2 3 4 5 6 &lt;% out.println(&#34;Your IP address is &#34; &#43; request.getRemoteAddr()); %&gt; JSP声明 1 2 &lt;%!"><meta itemprop="datePublished" content="2024-02-01T10:14:35+08:00" />
+<meta itemprop="dateModified" content="2024-02-01T10:14:35+08:00" />
+<meta itemprop="wordCount" content="1050">
+<meta itemprop="keywords" content="JSP," /><meta property="og:title" content="JSP for ME" />
+<meta property="og:description" content="参考
+JSP Introdu Java Server Pages
+一种动态网页开发技术
+一种Java Servlet，主要用于实现Java Web Application的用户界面部分
+使用JSP标签&lt;% %&gt;在HTML网页中插入Java代码
+JSP通过网页表单获取用户输入数据、访问数据库以及其他数据源，然后动态的创建网页
+Why JSP与类似的CGI程序相比，
+性能优越更人性化：直接在HTML插入元素无需单独引用，服务器直接调用编译好的JSP文件，无需事先载入解释器和目标脚本
+背景喜人：JSP基于Java Servlets API，坐拥各大企业级Java API
+合作共赢：JSP页面可以和处理业务逻辑的servlets一起使用
+JSP Structure JSP容器（引擎）：处理JSP页面，JSP容器与Web服务器协同合作，为JSP的正常运行提供必要的运行环境和其他服务，并且能够正确识别专属于JSP网页的特殊元素。 JSP容器和JSP文件在Web Application中所处的位置：
+Handle JSP 以下步骤表明了Web服务器是如何使用JSP来创建网页的：
+您的浏览器发送一个HTTP请求给服务器。
+Web服务器识别出这是一个对JSP网页的请求，并且将该请求传递给JSP引擎。通过使用URL或者.jsp文件来完成。
+JSP引擎从磁盘中载入JSP文件，然后将它们转化为servlet。这种转化只是简单地将所有模板文本改用println()语句，并且将所有的JSP元素转化成Java代码。
+JSP引擎将servlet编译成可执行类，并且将原始请求传递给servlet引擎。
+Web服务器的某组件将会调用servlet引擎，然后载入并执行servlet类。在执行过程中，servlet产生HTML格式的输出并将其内嵌于HTTP response中上交给Web服务器。
+Web服务器以静态HTML网页的形式将HTTP response返回到您的浏览器中。
+最终，Web浏览器处理HTTP response中动态产生的HTML网页，就好像在处理静态网页一样。
+JSP Scope 编译阶段 解析JSP文件、servlet容器编译servlet源文件，生成servlet类
+初始化阶段 加载JSP对应的servlet类，创建其实例，并调用其初始化方法
+执行阶段 调用与JSP对应的servlet实例的服务方法
+销毁阶段 调用与JSP对应的servlet实例的销毁方法，然后销毁servlet实例
+JSP rules 脚本程序 1 2 3 4 5 6 &lt;% out.println(&#34;Your IP address is &#34; &#43; request.getRemoteAddr()); %&gt; JSP声明 1 2 &lt;%!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://66lueflam144.github.io/posts/f3affec/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-01T10:14:35+08:00" />
+<meta property="article:modified_time" content="2024-02-01T10:14:35+08:00" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="JSP for ME"/>
+<meta name="twitter:description" content="参考
+JSP Introdu Java Server Pages
+一种动态网页开发技术
+一种Java Servlet，主要用于实现Java Web Application的用户界面部分
+使用JSP标签&lt;% %&gt;在HTML网页中插入Java代码
+JSP通过网页表单获取用户输入数据、访问数据库以及其他数据源，然后动态的创建网页
+Why JSP与类似的CGI程序相比，
+性能优越更人性化：直接在HTML插入元素无需单独引用，服务器直接调用编译好的JSP文件，无需事先载入解释器和目标脚本
+背景喜人：JSP基于Java Servlets API，坐拥各大企业级Java API
+合作共赢：JSP页面可以和处理业务逻辑的servlets一起使用
+JSP Structure JSP容器（引擎）：处理JSP页面，JSP容器与Web服务器协同合作，为JSP的正常运行提供必要的运行环境和其他服务，并且能够正确识别专属于JSP网页的特殊元素。 JSP容器和JSP文件在Web Application中所处的位置：
+Handle JSP 以下步骤表明了Web服务器是如何使用JSP来创建网页的：
+您的浏览器发送一个HTTP请求给服务器。
+Web服务器识别出这是一个对JSP网页的请求，并且将该请求传递给JSP引擎。通过使用URL或者.jsp文件来完成。
+JSP引擎从磁盘中载入JSP文件，然后将它们转化为servlet。这种转化只是简单地将所有模板文本改用println()语句，并且将所有的JSP元素转化成Java代码。
+JSP引擎将servlet编译成可执行类，并且将原始请求传递给servlet引擎。
+Web服务器的某组件将会调用servlet引擎，然后载入并执行servlet类。在执行过程中，servlet产生HTML格式的输出并将其内嵌于HTTP response中上交给Web服务器。
+Web服务器以静态HTML网页的形式将HTTP response返回到您的浏览器中。
+最终，Web浏览器处理HTTP response中动态产生的HTML网页，就好像在处理静态网页一样。
+JSP Scope 编译阶段 解析JSP文件、servlet容器编译servlet源文件，生成servlet类
+初始化阶段 加载JSP对应的servlet类，创建其实例，并调用其初始化方法
+执行阶段 调用与JSP对应的servlet实例的服务方法
+销毁阶段 调用与JSP对应的servlet实例的销毁方法，然后销毁servlet实例
+JSP rules 脚本程序 1 2 3 4 5 6 &lt;% out.println(&#34;Your IP address is &#34; &#43; request.getRemoteAddr()); %&gt; JSP声明 1 2 &lt;%!"/>
+<meta name="application-name" content="R1">
+<meta name="apple-mobile-web-app-title" content="R1"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://66lueflam144.github.io/posts/f3affec/" /><link rel="prev" href="https://66lueflam144.github.io/posts/ca9003d/" /><link rel="next" href="https://66lueflam144.github.io/posts/post_1/" /><link rel="stylesheet" href="/css/style.min.b2891ee1b6ff200dd9ad67722bcb1f78551624c44cb60d45d5412d56f6f2a15fc8e68c34e781b6dbfa2e6f2a8a2aedee47d747583374da085e667e9d0ef85620.css" integrity="sha512-soke4bb/IA3ZrWdyK8sfeFUWJMRMtg1F1UEtVvbyoV/I5ow054G22/oubyqKKu3uR9dHWDN02gheZn6dDvhWIA=="><link rel="preload" href="/lib/fontawesome-free/all.min.cf780ba5def29277f562835b0b3a9129ce2aca8afc81a294d6a9a7f824a1c5bb81bac00d23d42946884606b7821642b12e17a2e92f424171446db2aea8b8340c.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.cf780ba5def29277f562835b0b3a9129ce2aca8afc81a294d6a9a7f824a1c5bb81bac00d23d42946884606b7821642b12e17a2e92f424171446db2aea8b8340c.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="></noscript><link rel="preload" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "JSP for ME",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/66lueflam144.github.io\/posts\/f3affec\/"
+    },"genre": "posts","keywords": "JSP","wordcount":  1050 ,
+    "url": "https:\/\/66lueflam144.github.io\/posts\/f3affec\/","datePublished": "2024-02-01T10:14:35+08:00","dateModified": "2024-02-01T10:14:35+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="ReaL One"><img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" alt="ReaL One" data-title="ReaL One" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">ReaL x 8 x One </span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="ReaL One"><img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" alt="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" data-title="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">ReaL x 8 x One </span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>JSP for ME</span>
+      </h1><p class="single-subtitle animate__animated animate__fadeIn">只是一些需要记住的</p></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/learn/" class="post-category" title="Category - LEARN"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> LEARN</a>&ensp;<a href="/categories/java/" class="post-category" title="Category - JAVA"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> JAVA</a></span></div><div class="post-meta-line"><span title="published on 2024-02-01 10:14:35"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-02-01">2024-02-01</time></span>&nbsp;<span title="1050 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>5 minutes</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-jsp">Why JSP</a></li>
+    <li><a href="#jsp-structure">JSP Structure</a>
+      <ul>
+        <li><a href="#handle-jsp">Handle JSP</a></li>
+      </ul>
+    </li>
+    <li><a href="#jsp-scope">JSP Scope</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#脚本程序">脚本程序</a></li>
+    <li><a href="#jsp声明">JSP声明</a></li>
+    <li><a href="#jsp表达式">JSP表达式</a></li>
+    <li><a href="#jsp注释">JSP注释</a></li>
+    <li><a href="#jsp指令">JSP指令</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#请求信息">请求信息</a></li>
+    <li><a href="#fun-clock">fun clock</a></li>
+    <li><a href="#cookie">cookie</a></li>
+    <li><a href="#session">session</a></li>
+    <li><a href="#页面重定向">页面重定向</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><a href="https://www.w3cschool.cn/jsp/"target="_blank" rel="external nofollow noopener noreferrer">参考</a></p>
+<h1 id="jsp-introdu" class="heading-element">
+  <a href="#jsp-introdu" class="heading-mark"></a>JSP Introdu</h1><blockquote>
+<p>Java Server Pages</p>
+</blockquote>
+<ul>
+<li>
+<p>一种动态网页开发技术</p>
+</li>
+<li>
+<p>一种Java Servlet，主要用于实现Java Web Application的用户界面部分</p>
+</li>
+<li>
+<p>使用JSP标签<code>&lt;% %&gt;</code>在HTML网页中插入Java代码</p>
+</li>
+<li>
+<p>JSP通过网页表单获取用户输入数据、访问数据库以及其他数据源，然后动态的创建网页</p>
+</li>
+</ul>
+<h2 id="why-jsp" class="heading-element">
+  <a href="#why-jsp" class="heading-mark"></a>Why JSP</h2><p>与类似的CGI程序相比，</p>
+<ul>
+<li>
+<p>性能优越更人性化：直接在HTML插入元素无需单独引用，服务器直接调用编译好的JSP文件，无需事先载入解释器和目标脚本</p>
+</li>
+<li>
+<p>背景喜人：JSP基于Java Servlets API，坐拥各大企业级Java API</p>
+</li>
+<li>
+<p>合作共赢：JSP页面可以和处理业务逻辑的servlets一起使用</p>
+</li>
+</ul>
+<h2 id="jsp-structure" class="heading-element">
+  <a href="#jsp-structure" class="heading-mark"></a>JSP Structure</h2><ul>
+<li><strong>JSP容器（引擎）</strong>：处理JSP页面，JSP容器与Web服务器协同合作，为JSP的正常运行提供必要的运行环境和其他服务，并且能够正确识别专属于JSP网页的特殊元素。</li>
+</ul>
+<p><strong>JSP容器和JSP文件在Web Application中所处的位置：</strong></p>
+<img src="https://7n.w3cschool.cn/statics/images/course/jsp-arch.jpg" alt="Typical Web Server supporting JSP" width="600" height="300" >
+<h3 id="handle-jsp" class="heading-element">
+  <a href="#handle-jsp" class="heading-mark"></a>Handle JSP</h3><img src="https://atts.w3cschool.cn/attachments/day_160825/201608251727372798.jpg" alt="Handle JSP" width="600" height="300" >
+<p>以下步骤表明了Web服务器是如何使用JSP来创建网页的：</p>
+<ul>
+<li>
+<p>您的浏览器<strong>发送一个HTTP请求</strong>给服务器。</p>
+</li>
+<li>
+<p>Web服务器<strong>识别</strong>出这是一个对JSP网页的请求，并且将该请求传递给JSP引擎。通过使用URL或者.jsp文件来完成。</p>
+</li>
+<li>
+<p>JSP引擎从磁盘中<strong>载入JSP文件</strong>，然后将它们<strong>转化为servlet</strong>。这种转化只是简单地将所有模板文本改用println()语句，并且将所有的JSP元素转化成Java代码。</p>
+</li>
+<li>
+<p>JSP引擎将servlet<strong>编译成可执行类</strong>，并且将原始请求传递给servlet引擎。</p>
+</li>
+<li>
+<p>Web服务器的某组件将会调用servlet引擎，然后载入并执行servlet类。在执行过程中，servlet<strong>产生HTML格式的输出</strong>并将其内嵌于HTTP response中上交给Web服务器。</p>
+</li>
+<li>
+<p>Web服务器<strong>以静态HTML网页的形式</strong>将HTTP response返回到您的浏览器中。</p>
+</li>
+<li>
+<p>最终，Web浏览器处理HTTP response中动态产生的HTML网页，就好像在处理静态网页一样。</p>
+</li>
+</ul>
+<h2 id="jsp-scope" class="heading-element">
+  <a href="#jsp-scope" class="heading-mark"></a>JSP Scope</h2><ul>
+<li><strong>编译</strong>阶段</li>
+</ul>
+<p>    <br>解析JSP文件、servlet容器编译servlet源文件，生成servlet类</p>
+<ul>
+<li><strong>初始化</strong>阶段</li>
+</ul>
+<p>    <br>加载JSP对应的servlet类，创建其实例，并调用其初始化方法</p>
+<ul>
+<li><strong>执行</strong>阶段</li>
+</ul>
+<p>    <br>调用与JSP对应的servlet实例的服务方法</p>
+<ul>
+<li><strong>销毁</strong>阶段</li>
+</ul>
+<p>    <br>调用与JSP对应的servlet实例的销毁方法，然后销毁servlet实例</p>
+<h1 id="jsp-rules" class="heading-element">
+  <a href="#jsp-rules" class="heading-mark"></a>JSP rules</h1><h2 id="脚本程序" class="heading-element">
+  <a href="#%e8%84%9a%e6%9c%ac%e7%a8%8b%e5%ba%8f" class="heading-mark"></a>脚本程序</h2><div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">out.println(&#34;Your IP address is &#34; + request.getRemoteAddr());
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="jsp声明" class="heading-element">
+  <a href="#jsp%e5%a3%b0%e6%98%8e" class="heading-mark"></a>JSP声明</h2><div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%! int i = 0; %&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="jsp表达式" class="heading-element">
+  <a href="#jsp%e8%a1%a8%e8%be%be%e5%bc%8f" class="heading-mark"></a>JSP表达式</h2><div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;p&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  Today&#39;s Hit : &lt;%= (new java.util.Date()).toLocaleString() %&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/p&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="jsp注释" class="heading-element">
+  <a href="#jsp%e6%b3%a8%e9%87%8a" class="heading-mark"></a>JSP注释</h2><div class="highlight" id="id-4"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%-- --%&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="jsp指令" class="heading-element">
+  <a href="#jsp%e6%8c%87%e4%bb%a4" class="heading-mark"></a>JSP指令</h2><div class="highlight" id="id-5"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%@page .... %&gt;s</span></span></code></pre></td></tr></table>
+</div>
+</div><p>有三种指令：</p>
+<p>|指令|描述|</p>
+<p>|&mdash;|&mdash;|</p>
+<p>|<code>&lt;%@page ... %&gt;</code>|  定义页面的依赖属性，比如脚本语言、error页面、缓存需求等等|</p>
+<p>|<code>&lt;%@include ... %&gt;</code>|包含其他文件|</p>
+<p>|<code>&lt;%@taglib ... %&gt;</code>|引入标签库的定义，可以是自定义标签|</p>
+<hr>
+<p>if you want more just click that link&hellip;</p>
+<h1 id="jsp-in-execution" class="heading-element">
+  <a href="#jsp-in-execution" class="heading-mark"></a>JSP in Execution</h1><h2 id="请求信息" class="heading-element">
+  <a href="#%e8%af%b7%e6%b1%82%e4%bf%a1%e6%81%af" class="heading-mark"></a>请求信息</h2><div class="highlight" id="id-6"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%@ page import=&#34;java.util.Enumeration&#34; %&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%@ page import=&#34;javax.servlet.http.Cookie&#34; %&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%@ page import=&#34;javax.servlet.http.HttpSession&#34; %&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%@ page contentType=&#34;text/html;charset=UTF-8&#34; language=&#34;java&#34; %&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!DOCTYPE html&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;meta charset=&#34;utf-8&#34;&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;title&gt;So Many Things&lt;/title&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;h2&gt;Do you want some HTTP?&lt;/h2&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!-- HTTP Headers --&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;table border=&#34;1&#34;&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;th&gt;Header Name&lt;/th&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;th&gt;Header Value(s)&lt;/th&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;/tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        Enumeration headerNames = request.getHeaderNames();
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        while (headerNames.hasMoreElements()) {
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            String paramName = (String) headerNames.nextElement();
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            out.print(&#34;&lt;tr&gt;&lt;td&gt;&#34; + paramName + &#34;&lt;/td&gt;\n&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            String paramValue = request.getHeader(paramName);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            out.println(&#34;&lt;td&gt;&#34; + paramValue + &#34;&lt;/td&gt;&lt;/tr&gt;\n&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    %&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/table&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!-- Cookies --&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;h3&gt;Cookies:&lt;/h3&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Cookie[] cookies = request.getCookies();
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    if (cookies != null) {
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        out.println(&#34;&lt;ul&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        for (Cookie cookie : cookies) {
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            out.println(&#34;&lt;li&gt;&#34; + cookie.getName() + &#34;: &#34; + cookie.getValue() + &#34;&lt;/li&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        out.println(&#34;&lt;/ul&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    } else {
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        out.println(&#34;&lt;p&gt;No cookies found.&lt;/p&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!-- Session Information --&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;h3&gt;Session Information:&lt;/h3&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    HttpSession sessione = request.getSession(false); // Pass false to prevent creating a new session if one doesn&#39;t exist
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    if (sessione != null) {
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        out.println(&#34;&lt;p&gt;Session ID: &#34; + sessione.getId() + &#34;&lt;/p&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    } else {
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        out.println(&#34;&lt;p&gt;No active session.&lt;/p&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!-- User&#39;s IP Address --&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;h3&gt;User&#39;s IP Address:&lt;/h3&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    String userIP = request.getRemoteAddr();
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    out.println(&#34;&lt;p&gt;&#34; + userIP + &#34;&lt;/p&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  </span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="fun-clock" class="heading-element">
+  <a href="#fun-clock" class="heading-mark"></a>fun clock</h2><div class="highlight" id="id-7"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%@page import=&#34;java.io.*, java.util.*&#34; %&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;meta charset=&#34;utf-8&#34;&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;title&gt;So Many Things&lt;/title&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;h2&gt;Auto Refresh Header&lt;/h2&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    response.setIntHeader(&#34;Refresh&#34;, 5);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Calendar calendar = new GregorianCalendar();
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    String am_pm;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    int hour = calendar.get(Calendar.HOUR);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    int minute = calendar.get(Calendar.MINUTE);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    int second = calendar.get(Calendar.SECOND);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    if (calendar.get(Calendar.AM_PM) == 0){
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        am_pm = &#34;AM&#34;;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    else{
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        am_pm = &#34;PM&#34;;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    String CT = hour + &#34;:&#34; + minute + &#34;:&#34; + second + &#34; &#34; + am_pm;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    out.println(&#34;Current Time is: &#34; + CT + &#34;\n&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/html&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="cookie" class="heading-element">
+  <a href="#cookie" class="heading-mark"></a>cookie</h2><p>学得好想ew&hellip;</p>
+<p>这个是自定义cookie：</p>
+<p>不过会把浏览器上的cookie都召唤出来。</p>
+<div class="highlight" id="id-8"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Cookie fn = new Cookie(&#34;fn&#34;, request.getParameter(&#34;fn&#34;));
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Cookie ln = new Cookie(&#34;ln&#34;, request.getParameter(&#34;ln&#34;));
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    fn.setMaxAge(60*60*24);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    ln.setMaxAge(60*60*24);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    response.addCookie(fn);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    response.addCookie(ln);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;title&gt;This&lt;/title&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;center&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;h1&gt;Cookie&lt;/h1&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/center&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;ul&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;li&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;p&gt;&lt;b&gt;FN:&lt;/b&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;%= request.getParameter(&#34;fn&#34;)%&gt;&lt;/p&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;/li&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;li&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;p&gt;&lt;b&gt;LN:&lt;/b&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;%= request.getParameter(&#34;ln&#34;)%&gt;&lt;/p&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;/li&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/ul&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Cookie cookie = null;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Cookie[] cookies = null;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    cookies = request.getCookies();
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    if (cookies != null){
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        out.println(&#34;&lt;h2&gt; Found Cookie Name and Value, Do you want to taste it?&lt;/h2&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        for (int i = 0; i &lt; cookies.length; i++){
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            cookie = cookies[i];
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            out.print(&#34;Name:&#34; + cookie.getName() + &#34;, &#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            out.print(&#34;Value:&#34; + cookie.getValue() + &#34;&lt;br /&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    else {
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        out.println(&#34;&lt;h2&gt;There is no COOKIE!&lt;/h2&gt;&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/html&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="session" class="heading-element">
+  <a href="#session" class="heading-mark"></a>session</h2><p>自定义一个session查询。</p>
+<div class="highlight" id="id-9"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%@page import=&#34;java.io.*, java.util.*&#34; %&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Date createTime = new Date(session.getCreationTime());
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Date lastAccessTime = new Date(session.getLastAccessedTime());
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    String titile = &#34;Welcome Back!&#34;;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Integer visitCount = new Integer(0);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    String visitCountKey = new String(&#34;visitCount&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    String userIDKey = new String(&#34;userID&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    String userID = new String(&#34;ABCD&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    if (session.isNew()){
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        titile = &#34;welcome!&#34;;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        session.setAttribute(userIDKey, userID);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        session.setAttribute(visitCountKey,visitCount);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    visitCount = (Integer) session.getAttribute(visitCountKey);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    visitCount = visitCount + 1;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    userID = (String) session.getAttribute(userIDKey);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    session.setAttribute(visitCountKey, visitCount);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;title&gt;Hey&lt;/title&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;table border=&#34;1&#34; align=&#34;center&#34;&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;tr bgcolor=&#34;#faebd7&#34;&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;th&gt;Session Info&lt;/th&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;th&gt;Value&lt;/th&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;/tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;td&gt;Create Time&lt;/td&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;td&gt;&lt;% out.print(createTime); %&gt;&lt;/td&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;/tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;td&gt;Time of Last Access&lt;/td&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;td&gt;&lt;% out.print(lastAccessTime); %&gt;&lt;/td&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;/tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;td&gt;User ID&lt;/td&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;td&gt;&lt;% out.print(userID); %&gt;&lt;/td&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;/tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;td&gt;Number of Visits&lt;/td&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        &lt;td&gt;&lt;% out.print(visitCount); %&gt;&lt;/td&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;/tr&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/table&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/html&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="页面重定向" class="heading-element">
+  <a href="#%e9%a1%b5%e9%9d%a2%e9%87%8d%e5%ae%9a%e5%90%91" class="heading-mark"></a>页面重定向</h2><div class="highlight" id="id-10"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%@page import=&#34;java.io.*, java.util.*&#34; %&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;title&gt;Redirection&lt;/title&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;center&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;h1&gt;Redirection&lt;/h1&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/center&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    String site = new String(&#34;https://66lueflam144.github.io/&#34;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    response.setStatus(response.SC_MOVED_TEMPORARILY);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    response.setHeader(&#34;Location&#34;, site);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/html&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="jsp-木马" class="heading-element">
+  <a href="#jsp-%e6%9c%a8%e9%a9%ac" class="heading-mark"></a>JSP 木马</h1><p><a href="https://www.cnblogs.com/Eleven-Liu/p/17301613.html"target="_blank" rel="external nofollow noopener noreferrer">参考1</a></p>
+<br>
+<p><a href="https://github.com/theralfbrown/webshell-2/tree/master/jsp"target="_blank" rel="external nofollow noopener noreferrer">参考2</a></p>
+<br>
+<p><a href="https://virusday.github.io/2020/12/08/jsp%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/jsp%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/"target="_blank" rel="external nofollow noopener noreferrer">参考3</a></p>
+<p>暂时也没什么可说的。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2024-02-01 10:14:35">Updated on 2024-02-01&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/f3affec/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://66lueflam144.github.io/posts/f3affec/" data-title="JSP for ME" data-hashtags="JSP"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://66lueflam144.github.io/posts/f3affec/" data-hashtag="JSP"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://66lueflam144.github.io/posts/f3affec/" data-title="JSP for ME"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/jsp/" class="post-tag" title="Tags - JSP">JSP</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/ca9003d/" class="post-nav-item" rel="prev" title="对DedeCMS漏洞的复现"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>对DedeCMS漏洞的复现</a>
+      <a href="/posts/post_1/" class="post-nav-item" rel="next" title="Hello">Hello<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">RockBear</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.2d0f7b71a99aaff94e9624ff32a8dc42ce645a0cba433fdc091cf34735027efd1fa2db024c2f591d768f426255f17bbf3d500b7c967b0437b3979956dffa81c6.css" integrity="sha512-LQ97camar/lOliT/MqjcQs5kWgy6Qz/cCRzzRzUCfv0fotsCTC9ZHXaPQmJV8Xu/PVALfJZ7BDezl5lW3/qBxg=="><script src="/lib/sharer/sharer.min.94c73c706d26a452277a104d6857c0cb04e816ad61c4163b4e0a135426a7767211e0a27c952ea85e3df25aec941374e21053db0f9e7822af8a2f9c4a8a93c4e3.js" integrity="sha512-lMc8cG0mpFInehBNaFfAywToFq1hxBY7TgoTVCandnIR4KJ8lS6oXj3yWuyUE3TiEFPbD554Iq+KL5xKipPE4w==" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.c975ea3858dd8c7347d46343fb510ed236efbde6c0069cc6283eba7639d47e22a560c1391c6314247a0269e1380f93d31b662c4897fa770ab2514bd0bd2d2f68.js" integrity="sha512-yXXqOFjdjHNH1GND+1EO0jbvvebABpzGKD66djnUfiKlYME5HGMUJHoCaeE4D5PTG2YsSJf6dwqyUUvQvS0vaA==" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"}};</script><script src="/js/theme.min.480ceccd06035274f7db6f0a884b175d0c7ce24d886ebb948e6a79cb98222318cf2b5442bc64ebe49857d4925b27f0dda60e08619e37530ede8b0aa82c86ec5b.js" integrity="sha512-SAzszQYDUnT3228KiEsXXQx84k2IbruUjmp5y5giIxjPK1RCvGTr5JhX1JJbJ/Ddpg4IYZ43Uw7eiwqoLIbsWw==" defer></script></body>
+</html>

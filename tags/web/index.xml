@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>WEB - Tag - ReaL One</title>
+    <link>https://66lueflam144.github.io/tags/web/</link>
+    <description>WEB - Tag | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 18 Jan 2024 10:21:17 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/web/" rel="self" type="application/rss+xml" /><item>
+  <title>A Simple Web Server</title>
+  <link>https://66lueflam144.github.io/posts/76a9876/</link>
+  <pubDate>Thu, 18 Jan 2024 10:21:17 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/76a9876/</guid>
+  <description><![CDATA[<p>翻译了一下翻到的一篇关于用python写一个简单web server的<a href="https://aosabook.org/en/500L/a-simple-web-server.html"target="_blank" rel="external nofollow noopener noreferrer">文章</a>，看起来真的是闲出屁了。</p>]]></description>
+</item>
+</channel>
+</rss>

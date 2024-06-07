@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>CTF - Category - ReaL One</title>
+    <link>https://66lueflam144.github.io/categories/ctf/</link>
+    <description>CTF - Category | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 22 Jan 2024 10:19:02 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/categories/ctf/" rel="self" type="application/rss+xml" /><item>
+  <title>SSRF Me</title>
+  <link>https://66lueflam144.github.io/posts/77d67ac/</link>
+  <pubDate>Mon, 22 Jan 2024 10:19:02 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/77d67ac/</guid>
+  <description><![CDATA[<p>之前失败过的。</p>]]></description>
+</item>
+<item>
+  <title>Cyber Punk</title>
+  <link>https://66lueflam144.github.io/posts/2ce1ec6/</link>
+  <pubDate>Mon, 22 Jan 2024 10:07:53 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/2ce1ec6/</guid>
+  <description><![CDATA[<p>名字太有吸引力了。</p>]]></description>
+</item>
+<item>
+  <title>Cookie Is So Stable</title>
+  <link>https://66lueflam144.github.io/posts/8ba7d5d/</link>
+  <pubDate>Sun, 21 Jan 2024 10:03:58 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/8ba7d5d/</guid>
+  <description><![CDATA[just a practice.
+if you want to learn more about SSTI
+至于为什么是SSTI，在尝试SQL Injection和XSS没什么效果之后（其实专门找的for SSTI）
+和写的笔记SSTI中的内容一样，我们要分几个主要步骤进行：
+steps 判断是否可SSTI
+判断注入点
+判断template engine类型
+Syntax
+Payload
+判断可SSTI才来做的，所以next。
+template engine把图片搬出来
+{7*7} {{7*7}}和{{7*'7'}}一样 依照之前经验，猜是Twig
+注入点然后我们看request
+在submit阶段：
+login状态：
+看到cookie的改变，也就明白为什么叫做cookie is so stable了。
+通过response也可以轻松看到显现点在哪里。
+所以注入点找到，在cookie后的user变量。
+Syntax打开这个库SSTI payloads，找到关于Twig的部分。
+我们需要利用的是Code Execution部分的{{_self.env.registerUndefinedFilterCallback(&quot;exec&quot;)}}{{_self.env.getFilter(&quot;id&quot;)}}不过要做一些修改。
+我们想要得到的是flag，所以修改为:
+1 2 {{_self.env.registerUndefinedFilterCallback(&#34;exec&#34;)}}{{_self.env.getFilter(&#34;cat /flag&#34;)}} 解释一下 registerUnderfinedFilterCallback(&ldquo;exec&rdquo;)这一部分注册了一个名为 &ldquo;exec&rdquo; 的未定义过滤器回调函数。在模板引擎的上下文中，&ldquo;exec&rdquo; 通常会与执行某些命令或代码相关联。
+getFilter(&ldquo;cat /flag&rdquo;)接着调用了 &ldquo;getFilter&rdquo; 方法，并传递了一个字符串参数 &ldquo;cat /flag&rdquo;。这意味着尝试使用注册的 &ldquo;exec&rdquo; 过滤器执行特定的命令，这里是 &ldquo;cat /flag&rdquo;，即查看一个文件的内容。
+最后将payload加载到注入点上
+在response的显现点得到flag]]></description>
+</item>
+</channel>
+</rss>

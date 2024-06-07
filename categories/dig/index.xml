@@ -35,5 +35,13 @@
   <guid>https://66lueflam144.github.io/posts/5ff6fd0/</guid>
   <description><![CDATA[]]></description>
 </item>
+<item>
+  <title>PHP_SQL_INJECTION</title>
+  <link>https://66lueflam144.github.io/posts/80849ea/</link>
+  <pubDate>Mon, 20 Nov 2023 11:04:18 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/80849ea/</guid>
+  <description><![CDATA[<p>有点好久不见，之前在入门之处学的第一个就是这个漏洞，不过那个时候学的是漏洞，没有涉及到专门分语言的。</p>]]></description>
+</item>
 </channel>
 </rss>

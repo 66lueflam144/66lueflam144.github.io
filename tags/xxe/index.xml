@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>XXE - Tag - ReaL One</title>
+    <link>https://66lueflam144.github.io/tags/xxe/</link>
+    <description>XXE - Tag | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 30 Nov 2023 11:32:31 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/xxe/" rel="self" type="application/rss+xml" /><item>
+  <title>xxe的学习</title>
+  <link>https://66lueflam144.github.io/posts/257b247/</link>
+  <pubDate>Thu, 30 Nov 2023 11:32:31 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/257b247/</guid>
+  <description><![CDATA[<p>不知道从何说起就这放一张图吧。纪念一下第一次看懂port swigger的鸟语。</p>
+<p><img loading="lazy" src="../post_pre/pics/xxe/xxelab1.png" alt="../post_pre/pics/xxe/xxelab1.png" srcset="../post_pre/pics/xxe/xxelab1.png?size=small, ../post_pre/pics/xxe/xxelab1.png?size=medium 1.5x, ../post_pre/pics/xxe/xxelab1.png?size=large 2x" data-title="../post_pre/pics/xxe/xxelab1.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>]]></description>
+</item>
+</channel>
+</rss>

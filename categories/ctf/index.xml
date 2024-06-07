@@ -51,5 +51,13 @@ getFilter(&ldquo;cat /flag&rdquo;)接着调用了 &ldquo;getFilter&rdquo; 方法
 最后将payload加载到注入点上
 在response的显现点得到flag]]></description>
 </item>
+<item>
+  <title> easy_serialize_php</title>
+  <link>https://66lueflam144.github.io/posts/8f09e57/</link>
+  <pubDate>Mon, 04 Dec 2023 10:58:34 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/8f09e57/</guid>
+  <description><![CDATA[<p>it&rsquo;s been a long time to do ctf</p>]]></description>
+</item>
 </channel>
 </rss>

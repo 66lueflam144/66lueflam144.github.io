@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>反序列化 - Tag - ReaL One</title>
+    <link>https://66lueflam144.github.io/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+    <description>反序列化 - Tag | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 04 Dec 2023 10:58:34 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="self" type="application/rss+xml" /><item>
+  <title> easy_serialize_php</title>
+  <link>https://66lueflam144.github.io/posts/8f09e57/</link>
+  <pubDate>Mon, 04 Dec 2023 10:58:34 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/8f09e57/</guid>
+  <description><![CDATA[<p>it&rsquo;s been a long time to do ctf</p>]]></description>
+</item>
+</channel>
+</rss>

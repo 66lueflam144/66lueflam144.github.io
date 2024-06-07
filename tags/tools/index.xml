@@ -3,7 +3,17 @@
     <title>tools - Tag - ReaL One</title>
     <link>https://66lueflam144.github.io/tags/tools/</link>
     <description>tools - Tag | ReaL One</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 27 Oct 2023 13:00:25 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/tools/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 28 Oct 2023 18:14:37 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/tools/" rel="self" type="application/rss+xml" /><item>
+  <title>Mark_Loves_Cat</title>
+  <link>https://66lueflam144.github.io/posts/38e9ef8/</link>
+  <pubDate>Sat, 28 Oct 2023 18:14:37 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/38e9ef8/</guid>
+  <description><![CDATA[<p>打开靶场是一个非常正式的网页？到处扒拉一下，也在<code>contact</code>处进行了intruder测试，没有什么结果。</p>
+<p>再查看页面代码和网络，也没有什么。所以又启动TOOLs。</p>
+<p>那句话怎么说来着？<code>dirmap</code>一扫描起来，就发了狠……反正扫出很多东西。</p>]]></description>
+</item>
+<item>
   <title>BJDCTF Easy MD5</title>
   <link>https://66lueflam144.github.io/posts/09030b0/</link>
   <pubDate>Fri, 27 Oct 2023 13:00:25 &#43;0800</pubDate>
@@ -29,6 +39,16 @@
 <p>简单XSS语句</p>
 </li>
 </ul>]]></description>
+</item>
+<item>
+  <title>R！C！E！</title>
+  <link>https://66lueflam144.github.io/posts/1573821/</link>
+  <pubDate>Mon, 23 Oct 2023 18:20:10 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/1573821/</guid>
+  <description><![CDATA[Scan看到这种白茫茫一片的就直接上工具。
+dirsearch、dirmap一起用
+dirmap以迅雷不及掩耳之速扫出： 1 2 3 4 5 6 7 8 9 10 11 12 [200][text/plain; charset=utf-8][21.00b] http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/HEAD [200][text/plain; charset=utf-8][265.00b] http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/COMMIT_EDITMSG [200][application/octet-stream][289.00b] http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/index [200][text/plain; charset=utf-8][459.00b] http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/logs/HEAD [200][text/plain; charset=utf-8][112.00b] http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/packed-refs [200][text/plain; charset=utf-8][177.00b] http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/logs/refs/remotes/origin/HEAD dirsearch慢慢来到起跑线： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 200 265B http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/COMMIT_EDITMSG 200 73B http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/description 502 0B http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.gdrive/token_v2.json 403 316B http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/hooks/ 200 295B http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/config 200 21B http://30e2220f-465d-4920-82f8-01d52c8f6522.node4.buuoj.cn:81/.git/HEAD ...//还有很多就省略了 githack &amp; hack再用githack]]></description>
 </item>
 </channel>
 </rss>

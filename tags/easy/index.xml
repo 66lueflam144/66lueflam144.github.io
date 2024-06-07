@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>EASY - Tag - ReaL One</title>
+    <link>https://66lueflam144.github.io/tags/easy/</link>
+    <description>EASY - Tag | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 23 Oct 2023 12:52:06 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/easy/" rel="self" type="application/rss+xml" /><item>
+  <title>ACTF 2020 Back File</title>
+  <link>https://66lueflam144.github.io/posts/4c47f54/</link>
+  <pubDate>Mon, 23 Oct 2023 12:52:06 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/4c47f54/</guid>
+  <description><![CDATA[<blockquote>
+<p>其实看这个名字的时候就在想是不是和目录遍历有关了。</p>
+</blockquote>]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>newstar CTF 2023 听说你是个游戏高手 - ReaL One</title><meta name="author" content="RockBear">
+<meta name="author-link" content="">
+<meta name="description" content="
+知道查看js文件，知道可以修改值但是修改错方向导致痛失……
+" /><meta name="keywords" content='tricks' /><meta itemprop="name" content="newstar CTF 2023 听说你是个游戏高手">
+<meta itemprop="description" content="
+知道查看js文件，知道可以修改值但是修改错方向导致痛失……
+"><meta itemprop="datePublished" content="2023-10-23T13:17:04+08:00" />
+<meta itemprop="dateModified" content="2023-10-23T13:17:04+08:00" />
+<meta itemprop="wordCount" content="256">
+<meta itemprop="keywords" content="tricks," /><meta property="og:title" content="newstar CTF 2023 听说你是个游戏高手" />
+<meta property="og:description" content="
+知道查看js文件，知道可以修改值但是修改错方向导致痛失……
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://66lueflam144.github.io/posts/dd90fd2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-23T13:17:04+08:00" />
+<meta property="article:modified_time" content="2023-10-23T13:17:04+08:00" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="newstar CTF 2023 听说你是个游戏高手"/>
+<meta name="twitter:description" content="
+知道查看js文件，知道可以修改值但是修改错方向导致痛失……
+"/>
+<meta name="application-name" content="R1">
+<meta name="apple-mobile-web-app-title" content="R1"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://66lueflam144.github.io/posts/dd90fd2/" /><link rel="prev" href="https://66lueflam144.github.io/posts/4c47f54/" /><link rel="next" href="https://66lueflam144.github.io/posts/09030b0/" /><link rel="stylesheet" href="/css/style.min.b2891ee1b6ff200dd9ad67722bcb1f78551624c44cb60d45d5412d56f6f2a15fc8e68c34e781b6dbfa2e6f2a8a2aedee47d747583374da085e667e9d0ef85620.css" integrity="sha512-soke4bb/IA3ZrWdyK8sfeFUWJMRMtg1F1UEtVvbyoV/I5ow054G22/oubyqKKu3uR9dHWDN02gheZn6dDvhWIA=="><link rel="preload" href="/lib/fontawesome-free/all.min.cf780ba5def29277f562835b0b3a9129ce2aca8afc81a294d6a9a7f824a1c5bb81bac00d23d42946884606b7821642b12e17a2e92f424171446db2aea8b8340c.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.cf780ba5def29277f562835b0b3a9129ce2aca8afc81a294d6a9a7f824a1c5bb81bac00d23d42946884606b7821642b12e17a2e92f424171446db2aea8b8340c.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="></noscript><link rel="preload" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "newstar CTF 2023 听说你是个游戏高手",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/66lueflam144.github.io\/posts\/dd90fd2\/"
+    },"genre": "posts","keywords": "tricks","wordcount":  256 ,
+    "url": "https:\/\/66lueflam144.github.io\/posts\/dd90fd2\/","datePublished": "2023-10-23T13:17:04+08:00","dateModified": "2023-10-23T13:17:04+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="ReaL One"><img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" alt="ReaL One" data-title="ReaL One" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">ReaL x 8 x One </span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="ReaL One"><img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" alt="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" data-title="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">ReaL x 8 x One </span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>newstar CTF 2023 听说你是个游戏高手</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/ctf/" class="post-category" title="Category - CTF"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> CTF</a></span></div><div class="post-meta-line"><span title="published on 2023-10-23 13:17:04"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-10-23">2023-10-23</time></span>&nbsp;<span title="256 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#研究页面">研究页面</a></li>
+    <li><a href="#burp">burp</a></li>
+    <li><a href="#修改页面代码">修改页面代码</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><blockquote>
+<p>知道查看js文件，知道可以修改值但是修改错方向导致痛失……</p>
+</blockquote>
+<p>官方给的有两种方法</p>
+<ul>
+<li>
+<p>1.burp suite change the request method</p>
+</li>
+<li>
+<p>2.修改gameScore值</p>
+</li>
+</ul>
+<h2 id="研究页面" class="heading-element">
+  <a href="#%e7%a0%94%e7%a9%b6%e9%a1%b5%e9%9d%a2" class="heading-mark"></a>研究页面</h2><p>只截取了最重要的地方：</p>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**********游戏当前状态************/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">curPhase</span> <span class="o">=</span> <span class="nx">PHASE_DOWNLOAD</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">gameScore</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//游戏结束
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">gameover</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">gameScore</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&#34;POST&#34;</span><span class="p">,</span> <span class="s2">&#34;/api.php&#34;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">&#34;Content-Type&#34;</span><span class="p">,</span> <span class="s2">&#34;application/json&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nx">alert</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nx">score</span><span class="o">:</span> <span class="nx">gameScore</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;成绩：&#34;</span><span class="o">+</span><span class="nx">gameScore</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">gameScore</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">curPhase</span> <span class="o">=</span><span class="nx">PHASE_READY</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p><code>xhr</code>调用<code>XMLHttpRequest()</code>来构造请求——<code>xh.open()</code>中又可以看到是以<code>POST</code>的方式，对<code>api.php</code>进行请求。</p>
+</li>
+<li>
+<p>请求过程中会发送一个JSON文件，发送的<code>data</code>内容是<code>score:gameScore</code>。</p>
+</li>
+<li>
+<p>而成绩是<code>gameScore</code>的值。</p>
+</li>
+</ul>
+<hr>
+<h2 id="burp" class="heading-element">
+  <a href="#burp" class="heading-mark"></a>burp</h2><p>这个比较新（for me），刷新网站抓包得到<code>GET</code>请求头</p>
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nf">GET</span> <span class="nn">/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="g">Host: 9ab09171-214d-4d99-aad4-4f4057a063da.node4.buuoj.cn:81
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Accept-Language: zh,zh-TW;q=0.8,zh-HK;q=0.6,en-US;q=0.4,en;q=0.2
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Accept-Encoding: gzip, deflate
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Connection: close
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Upgrade-Insecure-Requests: 1
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">If-Modified-Since: Sun, 26 Mar 2023 07:18:44 GMT
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">If-None-Match: &#34;2cb-5f7c86fc11d00-gzip&#34;</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后就用burp的改变请求方式把它变成<code>POST</code>：</p>
+<div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nf">POST</span> <span class="nn">/api.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="g">Host: 0d390052-3ebd-49f4-a519-064f1abd00bb.node4.buuoj.cn:81
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Accept-Language: zh,zh-TW;q=0.8,zh-HK;q=0.6,en-US;q=0.4,en;q=0.2
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Accept-Encoding: gzip, deflate
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Connection: close
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Upgrade-Insecure-Requests: 1
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Content-Type: application/x-www-form-urlencoded
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">Content-Length: 17
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">  
+</span></span></span><span class="line"><span class="cl"><span class="g">
+</span></span></span><span class="line"><span class="cl"><span class="g">{&#34;score&#34;:1000000}</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>发送之后就会得到flag。</p>
+<hr>
+<h2 id="修改页面代码" class="heading-element">
+  <a href="#%e4%bf%ae%e6%94%b9%e9%a1%b5%e9%9d%a2%e4%bb%a3%e7%a0%81" class="heading-mark"></a>修改页面代码</h2><blockquote>
+<p>控制台上执行代码，可以修改掉某个变量或者某个函数达到目）</p>
+</blockquote>
+<ul>
+<li>在控制台输入<code>gameScore=100000</code>然后想办法让飞机最快速度坠毁就可以最快速度得到flag。<br>尝试直接修改js代码最开始的gameScore=100000但是没有效果。</li>
+</ul>
+<p>  - 具体可以体现为，第一种后可以看到游戏界面的Score变成了100000，而第二种依旧是0；</p>
+<p>  - 至于为什么无效，理解为js缓存的问题——游戏使用的仍然是之前的js缓存，如果刷新，得到的是从服务器发来的js缓存，人为修改的js没有上场机会。</p>
+<ul>
+<li>参考：</li>
+</ul>
+<p><a href=https://learn.microsoft.com/zh-cn/microsoft-edge/devtools-guide-chromium/console/console-javascript>控制台运行JavaScript</a><br><a href=https://www.zhihu.com/question/30701118#>虽然是讨论chrome浏览器但完全可以套用在every</a></p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2023-10-23 13:17:04">Updated on 2023-10-23&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/dd90fd2/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://66lueflam144.github.io/posts/dd90fd2/" data-title="newstar CTF 2023 听说你是个游戏高手" data-hashtags="tricks"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://66lueflam144.github.io/posts/dd90fd2/" data-hashtag="tricks"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://66lueflam144.github.io/posts/dd90fd2/" data-title="newstar CTF 2023 听说你是个游戏高手"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/tricks/" class="post-tag" title="Tags - tricks">tricks</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/4c47f54/" class="post-nav-item" rel="prev" title="ACTF 2020 Back File"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>ACTF 2020 Back File</a>
+      <a href="/posts/09030b0/" class="post-nav-item" rel="next" title="BJDCTF Easy MD5">BJDCTF Easy MD5<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">RockBear</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.2d0f7b71a99aaff94e9624ff32a8dc42ce645a0cba433fdc091cf34735027efd1fa2db024c2f591d768f426255f17bbf3d500b7c967b0437b3979956dffa81c6.css" integrity="sha512-LQ97camar/lOliT/MqjcQs5kWgy6Qz/cCRzzRzUCfv0fotsCTC9ZHXaPQmJV8Xu/PVALfJZ7BDezl5lW3/qBxg=="><script src="/lib/sharer/sharer.min.94c73c706d26a452277a104d6857c0cb04e816ad61c4163b4e0a135426a7767211e0a27c952ea85e3df25aec941374e21053db0f9e7822af8a2f9c4a8a93c4e3.js" integrity="sha512-lMc8cG0mpFInehBNaFfAywToFq1hxBY7TgoTVCandnIR4KJ8lS6oXj3yWuyUE3TiEFPbD554Iq+KL5xKipPE4w==" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.c975ea3858dd8c7347d46343fb510ed236efbde6c0069cc6283eba7639d47e22a560c1391c6314247a0269e1380f93d31b662c4897fa770ab2514bd0bd2d2f68.js" integrity="sha512-yXXqOFjdjHNH1GND+1EO0jbvvebABpzGKD66djnUfiKlYME5HGMUJHoCaeE4D5PTG2YsSJf6dwqyUUvQvS0vaA==" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"}};</script><script src="/js/theme.min.480ceccd06035274f7db6f0a884b175d0c7ce24d886ebb948e6a79cb98222318cf2b5442bc64ebe49857d4925b27f0dda60e08619e37530ede8b0aa82c86ec5b.js" integrity="sha512-SAzszQYDUnT3228KiEsXXQx84k2IbruUjmp5y5giIxjPK1RCvGTr5JhX1JJbJ/Ddpg4IYZ43Uw7eiwqoLIbsWw==" defer></script></body>
+</html>

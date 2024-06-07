@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>tricks - Tag - ReaL One</title>
+    <link>https://66lueflam144.github.io/tags/tricks/</link>
+    <description>tricks - Tag | ReaL One</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 23 Oct 2023 13:17:04 &#43;0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/tricks/" rel="self" type="application/rss+xml" /><item>
+  <title>newstar CTF 2023 听说你是个游戏高手</title>
+  <link>https://66lueflam144.github.io/posts/dd90fd2/</link>
+  <pubDate>Mon, 23 Oct 2023 13:17:04 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/dd90fd2/</guid>
+  <description><![CDATA[<blockquote>
+<p>知道查看js文件，知道可以修改值但是修改错方向导致痛失……</p>
+</blockquote>]]></description>
+</item>
+</channel>
+</rss>

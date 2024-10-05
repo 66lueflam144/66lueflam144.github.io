@@ -93,7 +93,7 @@ java -jar ysoserial-all.jar URLDNS http://e7m4ck6e288csewnfwxjwlgbt2ztnlba.oasti
 这条命令会生成一个序列化过的恶意代码，经过反序列化后执行，向指定的URL进行DNS查询
 我用的是burpsuite的，所以可以看到如下的结果
 
-![[YT$}W]7XN3~L3I22KGVAEVQ.png]]
+![[yy (9).png]]
 后面的基本也就是这个usage。
 浏览器里面基本都在关注调用链，只有我在疑惑这个要怎么用。心寒。
 

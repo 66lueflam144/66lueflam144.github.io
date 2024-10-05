@@ -113,7 +113,7 @@ if __name__ == &#34;__main__&#34;:
 
 ![ssti4](../post_7/pics/sti4.png)
 
-Jinja2渲染时候，会将标记着`{% block body %}`的部分进行插值
+Jinja2渲染时候，会将标记着 `{`和百分号 的部分进行插值
 假如传入的user列表如下：
 
 ```python

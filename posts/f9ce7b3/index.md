@@ -60,6 +60,7 @@ if __name__ == &#34;__main__&#34;:
 
 
 一个不会出现SSTI的示例：
+
 ```python
 from flask import Flask, request
 from jinja2 import Template

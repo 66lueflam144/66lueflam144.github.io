@@ -104,25 +104,10 @@ if __name__ == &#34;__main__&#34;:
 
 **Jinja2语法简介**：
 
-```python
-# 当前模板继承自 layout.html
-{% extends &#34;layout.html&#34; %}
 
-# 定义了一个 body 块（block）
-{% block body %}
-  &lt;ul&gt;
-  # 用于遍历传递给模板的 `users` 列表。
-  # 对于列表中的每一个 `user` 对象，循环将生成一个列表项（`&lt;li&gt;` 标签）
-  {% for user in users %}
-    # {{}}是Jinja2的变量的插值语法
-    #将变量的值插入生成的HTML中
-    &lt;li&gt;&lt;a href=&#34;{{ user.url }}&#34;&gt;{{ user.username }}&lt;/a&gt;&lt;/li&gt;
-  {% endfor %}
-  &lt;/ul&gt;
-# 块结束符
-{% endblock %}
+![ssti3](../post_7/pics/ssti3.png)
 
-```
+
 
 假设layout.html
 ```html

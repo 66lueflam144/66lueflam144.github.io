@@ -3,9 +3,17 @@
     <title>ReaL One</title>
     <link>https://66lueflam144.github.io/</link>
     <description>maybe you have listened something included I AM THE REAL ONE</description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 05 Oct 2024 21:16:46 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 05 Oct 2024 21:27:39 &#43;0800</lastBuildDate>
       <atom:link href="https://66lueflam144.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Ysoserial_URLDNS</title>
+  <link>https://66lueflam144.github.io/posts/184ceac/</link>
+  <pubDate>Sat, 05 Oct 2024 21:27:39 &#43;0800</pubDate>
+  <author>RockBear</author>
+  <guid>https://66lueflam144.github.io/posts/184ceac/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Java_layers</title>
   <link>https://66lueflam144.github.io/posts/afe3c20/</link>
   <pubDate>Sat, 05 Oct 2024 21:16:46 &#43;0800</pubDate>
@@ -109,37 +117,6 @@ unsigned int C=0x98badcfe,
 unsigned int D=0x10325476;
 进行N轮循环处理，最后输出结果 每一轮处理也要循环64次，这64次循环被分为4各组（每16次循环为一组），每组循环使用不同的逻辑处理函数，处理完成后，将输出作为输入进入下一轮循环。
 实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 &lt;?php $str = &#39;apple&#39;; if (md5($str) === &#39;1f3870be274f6c49b3e31a0c6728957f&#39;) { echo &#34;Would you like a green or red apple?]]></description>
-</item>
-<item>
-  <title>JSP for ME</title>
-  <link>https://66lueflam144.github.io/posts/f3affec/</link>
-  <pubDate>Thu, 01 Feb 2024 10:14:35 &#43;0800</pubDate>
-  <author>RockBear</author>
-  <guid>https://66lueflam144.github.io/posts/f3affec/</guid>
-  <description><![CDATA[参考
-JSP Introdu Java Server Pages
-一种动态网页开发技术
-一种Java Servlet，主要用于实现Java Web Application的用户界面部分
-使用JSP标签&lt;% %&gt;在HTML网页中插入Java代码
-JSP通过网页表单获取用户输入数据、访问数据库以及其他数据源，然后动态的创建网页
-Why JSP与类似的CGI程序相比，
-性能优越更人性化：直接在HTML插入元素无需单独引用，服务器直接调用编译好的JSP文件，无需事先载入解释器和目标脚本
-背景喜人：JSP基于Java Servlets API，坐拥各大企业级Java API
-合作共赢：JSP页面可以和处理业务逻辑的servlets一起使用
-JSP Structure JSP容器（引擎）：处理JSP页面，JSP容器与Web服务器协同合作，为JSP的正常运行提供必要的运行环境和其他服务，并且能够正确识别专属于JSP网页的特殊元素。 JSP容器和JSP文件在Web Application中所处的位置：
-Handle JSP 以下步骤表明了Web服务器是如何使用JSP来创建网页的：
-您的浏览器发送一个HTTP请求给服务器。
-Web服务器识别出这是一个对JSP网页的请求，并且将该请求传递给JSP引擎。通过使用URL或者.jsp文件来完成。
-JSP引擎从磁盘中载入JSP文件，然后将它们转化为servlet。这种转化只是简单地将所有模板文本改用println()语句，并且将所有的JSP元素转化成Java代码。
-JSP引擎将servlet编译成可执行类，并且将原始请求传递给servlet引擎。
-Web服务器的某组件将会调用servlet引擎，然后载入并执行servlet类。在执行过程中，servlet产生HTML格式的输出并将其内嵌于HTTP response中上交给Web服务器。
-Web服务器以静态HTML网页的形式将HTTP response返回到您的浏览器中。
-最终，Web浏览器处理HTTP response中动态产生的HTML网页，就好像在处理静态网页一样。
-JSP Scope 编译阶段 解析JSP文件、servlet容器编译servlet源文件，生成servlet类
-初始化阶段 加载JSP对应的servlet类，创建其实例，并调用其初始化方法
-执行阶段 调用与JSP对应的servlet实例的服务方法
-销毁阶段 调用与JSP对应的servlet实例的销毁方法，然后销毁servlet实例
-JSP rules 脚本程序 1 2 3 4 5 6 &lt;% out.println(&#34;Your IP address is &#34; + request.getRemoteAddr()); %&gt; JSP声明 1 2 &lt;%!]]></description>
 </item>
 </channel>
 </rss>

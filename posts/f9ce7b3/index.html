@@ -10,7 +10,7 @@
 <meta name="description" content="maybe you have listened something included I AM THE REAL ONE" /><meta name="keywords" content='LEARN' /><meta itemprop="name" content="SSTI">
 <meta itemprop="description" content=""><meta itemprop="datePublished" content="2024-06-03T21:07:02+08:00" />
 <meta itemprop="dateModified" content="2024-06-03T21:07:02+08:00" />
-<meta itemprop="wordCount" content="248">
+<meta itemprop="wordCount" content="209">
 <meta itemprop="keywords" content="LEARN," /><meta property="og:title" content="SSTI" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/66lueflam144.github.io\/posts\/f9ce7b3\/"
-    },"genre": "posts","keywords": "LEARN","wordcount":  248 ,
+    },"genre": "posts","keywords": "LEARN","wordcount":  209 ,
     "url": "https:\/\/66lueflam144.github.io\/posts\/f9ce7b3\/","datePublished": "2024-06-03T21:07:02+08:00","dateModified": "2024-06-03T21:07:02+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"description": ""
@@ -110,7 +110,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>SSTI</span>
       </h1><p class="single-subtitle animate__animated animate__fadeIn">服务端模板注入漏洞</p></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/draft/" class="post-category" title="Category - draft"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> draft</a></span></div><div class="post-meta-line"><span title="published on 2024-06-03 21:07:02"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-06-03">2024-06-03</time></span>&nbsp;<span title="248 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;</div>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/draft/" class="post-category" title="Category - draft"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> draft</a></span></div><div class="post-meta-line"><span title="published on 2024-06-03 21:07:02"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-06-03">2024-06-03</time></span>&nbsp;<span title="209 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 300 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -262,46 +262,10 @@
 <p><strong>Jinja2语法简介</strong>：</p>
 <p><img loading="lazy" src="../post_7/pics/ssti3.png" alt="ssti3" srcset="../post_7/pics/ssti3.png?size=small, ../post_7/pics/ssti3.png?size=medium 1.5x, ../post_7/pics/ssti3.png?size=large 2x" data-title="ssti3" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
 <p>假设layout.html</p>
-<div class="highlight" id="id-4"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">只留下了需要注意的部分
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/&#34;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/about&#34;</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/contact&#34;</span><span class="p">&gt;</span>Contact<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        {% block body %}
-</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- 子模板会在这里插入具体内容 --&gt;</span>
-</span></span><span class="line"><span class="cl">        {% endblock %}
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    </span></span></code></pre></td></tr></table>
-</div>
-</div><p>Jinja2渲染时候，会将标记着<code>{% block body %}</code>的部分进行插值
+<p><img loading="lazy" src="../post_7/pics/sti4.png" alt="ssti4" srcset="../post_7/pics/sti4.png?size=small, ../post_7/pics/sti4.png?size=medium 1.5x, ../post_7/pics/sti4.png?size=large 2x" data-title="ssti4" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>Jinja2渲染时候，会将标记着<code>{% block body %}</code>的部分进行插值
 假如传入的user列表如下：</p>
-<div class="highlight" id="id-5"><div class="chroma">
+<div class="highlight" id="id-4"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -317,7 +281,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">]</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>最终就会呈现下面的效果</p>
-<div class="highlight" id="id-6"><div class="chroma">
+<div class="highlight" id="id-5"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2

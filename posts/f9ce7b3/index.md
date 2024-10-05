@@ -110,24 +110,9 @@ if __name__ == &#34;__main__&#34;:
 
 
 假设layout.html
-```html
-只留下了需要注意的部分
-    &lt;nav&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;a href=&#34;/&#34;&gt;Home&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&#34;/about&#34;&gt;About&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&#34;/contact&#34;&gt;Contact&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-    
-    &lt;main&gt;
-        {% block body %}
-        &lt;!-- 子模板会在这里插入具体内容 --&gt;
-        {% endblock %}
-    &lt;/main&gt;
-    
-    
-```
+
+![ssti4](../post_7/pics/sti4.png)
+
 Jinja2渲染时候，会将标记着`{% block body %}`的部分进行插值
 假如传入的user列表如下：
 

@@ -1,4 +1,5 @@
-# 
+# Ysoserial_CommonColllections 01
+
 
 
 Last Edited: September 25, 2024 7:56 PM
@@ -312,6 +313,6 @@ public class CommonsCollections2 implements ObjectPayload&lt;Queue&lt;Object&gt;
 
 ---
 
-> Author: RockBear  
+> Author:   
 > URL: https://66lueflam144.github.io/posts/ysoserial-killer/  
 

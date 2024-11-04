@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>资产测绘 on Real One x86</title>
+        <link>https://demo.stack.jimmycai.com/tags/%E8%B5%84%E4%BA%A7%E6%B5%8B%E7%BB%98/</link>
+        <description>Recent content in 资产测绘 on Real One x86</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 07 Nov 2023 18:28:59 +0800</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/tags/%E8%B5%84%E4%BA%A7%E6%B5%8B%E7%BB%98/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Net</title>
+        <link>https://demo.stack.jimmycai.com/p/3977d43/</link>
+        <pubDate>Tue, 07 Nov 2023 18:28:59 +0800</pubDate>
+        
+        <guid>https://demo.stack.jimmycai.com/p/3977d43/</guid>
+        <description>&lt;h1 id=&#34;what-is-it&#34;&gt;What is it
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;网络资产测绘&lt;/strong&gt;，用一些技术方法，探测全球互联网空间上的节点分布情况和网络关系索引，构建全球互联网图谱的一种方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;资产&#34;&gt;资产
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;网络资产&lt;/strong&gt;，指赛博空间中某机构所拥有的一切可能被潜在攻击者利用的设备、信息、应用等数字资产。具体包括但不限于硬件设备、云主机、操作系统、IP地址、端口、证书、域名、Web应用、业务应用、中间件、框架、机构公众号、小程序、App、API、源代码等。概括来说，只要是可操作的对象，不管是实体还是属性。都可以称之为“网络空间资产”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;网络资产在协议实现、网络应用等方面存在差异，如开放的端口/服务信息、banner信息、Web网页数据等，对这些差异进行特征提取可得到该资产的特征指纹，网络资产指纹库积累了大量网络资产指纹。资产指纹比对是将目标主机的特征指纹和指纹库进行匹配，从而实现资产属性识别。&lt;/p&gt;
+&lt;h3 id=&#34;指纹特征&#34;&gt;指纹特征
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;机构中某个资产具有的一系列特征信息的集合构成了这个资产的指纹特征——外网IP地址、内网IP地址、端口号、证书、域名、操作系统、Web应用、中间件/框架&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;资产扫描和发现不等同于网络空间测绘，我们可以从字面上去做个简单拆解，可以把资产扫描和发现理解为“测”的一部分，那么我们还需要去“绘”,也就是说要去分析数据、解读数据,进而去找到网络空间与现实物理空间存在着多种映射关联，并描述出来。&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;测绘概念&#34;&gt;测绘概念
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;行为测绘&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;动态测绘&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;交叉测绘&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;行为测绘&#34;&gt;行为测绘
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;对不同的banner特征进行识别&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;动态测绘&#34;&gt;动态测绘
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;周期性对某个资产进行扫描，动态掌握周期内新增资产的情况&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;网络空间资产是随时间变化而不断变化的，在这个角度上来看资产扫描与发现很多时候只是某些单一时间点的任务，而资产测绘的探测扫描则是持续的，通过网络资产的动态变化，反映现实空间的变化。&lt;/p&gt;
+&lt;h2 id=&#34;交叉测绘&#34;&gt;交叉测绘
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;IPv4与IPv6的交叉&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;网络资产识别&#34;&gt;网络资产识别
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;设备组件识别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;应用组件识别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;业务类型推断&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;|name|description|more|&lt;/p&gt;
+&lt;p&gt;|&amp;mdash;|&amp;mdash;|&amp;mdash;|&lt;/p&gt;
+&lt;p&gt;|设备组件识别|获取资产的网站响应头部数据、网站文件类型、网站异常响应、服务端口、banner等数据，提取设备指纹，通过与网络设备组件指纹库进行指纹比对，识别目标主机的设备类型、设备厂商、设备品牌、设备型号等设备属性。||&lt;/p&gt;
+&lt;p&gt;|应用组件识别|通过持续收集、解析目标网络的应用组件信息，如论坛程序、博客程序等，获取网站响应头部数据、HTML页面、特殊URL、开放的端口、banner等，生成应用指纹，通过比对网络应用组件指纹库来自动化识别目标主机的Web服务器软件、Web脚本语言、服务类型及相应版本型号等应用属性。||&lt;/p&gt;
+&lt;p&gt;|业务类型推断|基于资产探测数据，深入融合DNS信息、漏洞库、IP地理信息库等资源，建立资产多层级关联模型，推断网络资产的业务类型，实现网络资产多维度画像。业务类型推断旨在识别重要行业的重要资产，是网络空间深入态势感知的核心环节。||&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;平台&#34;&gt;平台
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=https://fofa.info/&gt;FOFA&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=https://www.zoomeye.org/&gt;ZoomEye&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;参考&#34;&gt;参考
+&lt;/h1&gt;&lt;p&gt;&lt;a herf=http://www.gjbmj.gov.cn/n1/2022/0422/c411145-32406257.html&gt;gov description&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=https://paper.seebug.org/1810/#_2&gt;seebug 网络空间测绘溯源技术剖析&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=https://zhuanlan.zhihu.com/p/515210481&gt;CAM&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=https://sec.bsia.org.cn/4937/202303/58219.html&gt;对话&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=https://blog.nsfocus.net/cyberspace/&gt;cyberspace&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;a href=https://www.anquanke.com/table/topic.html?id=1&amp;gt;一些talk&lt;/a&gt;&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="OMG&hellip;居然是败给了一个POST&amp;GET\n1 感觉和之前做过的一个题目很像，可能出自同一个出题人之手。\n按照要求进行GET传参后，需要进行POST传参。\n于是我就在这里出现了问题。\n我直接使用burp suite的repeater里面的change request method，请求头也从\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 GET /?ctf=1 HTTP/1.1 Host: node4.buuoj.cn:27986 Cache-Control: max-age=0 Upgrade-Insecure-Requests: 1 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.78 Safari/537.36 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7 Accept-Encoding: gzip, deflate Accept-Language: ja,zh-CN;q=0.9,zh;q=0.8 Cookie: power=hacker Connection: close 变成\n">
+<title>2023 Newstar CTF Begin of HTTP</title>
+
+<link rel='canonical' href='https://demo.stack.jimmycai.com/p/6168dd2/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="2023 Newstar CTF Begin of HTTP">
+<meta property='og:description' content="OMG&hellip;居然是败给了一个POST&amp;GET\n1 感觉和之前做过的一个题目很像，可能出自同一个出题人之手。\n按照要求进行GET传参后，需要进行POST传参。\n于是我就在这里出现了问题。\n我直接使用burp suite的repeater里面的change request method，请求头也从\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 GET /?ctf=1 HTTP/1.1 Host: node4.buuoj.cn:27986 Cache-Control: max-age=0 Upgrade-Insecure-Requests: 1 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.78 Safari/537.36 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7 Accept-Encoding: gzip, deflate Accept-Language: ja,zh-CN;q=0.9,zh;q=0.8 Cookie: power=hacker Connection: close 变成\n">
+<meta property='og:url' content='https://demo.stack.jimmycai.com/p/6168dd2/'>
+<meta property='og:site_name' content='Real One x86'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='HTTP' /><meta property='article:published_time' content='2023-10-17T12:55:32&#43;08:00'/><meta property='article:modified_time' content='2023-10-17T12:55:32&#43;08:00'/>
+<meta name="twitter:title" content="2023 Newstar CTF Begin of HTTP">
+<meta name="twitter:description" content="OMG&hellip;居然是败给了一个POST&amp;GET\n1 感觉和之前做过的一个题目很像，可能出自同一个出题人之手。\n按照要求进行GET传参后，需要进行POST传参。\n于是我就在这里出现了问题。\n我直接使用burp suite的repeater里面的change request method，请求头也从\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 GET /?ctf=1 HTTP/1.1 Host: node4.buuoj.cn:27986 Cache-Control: max-age=0 Upgrade-Insecure-Requests: 1 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.78 Safari/537.36 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7 Accept-Encoding: gzip, deflate Accept-Language: ja,zh-CN;q=0.9,zh;q=0.8 Cookie: power=hacker Connection: close 变成\n">
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu3198646885779591638.png" width="300"
+                            height="199" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Real One x86</a></h1>
+            <h2 class="site-description">La Vida Loca</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#cookie">cookie</a></li>
+    <li><a href="#指定浏览器">指定浏览器</a></li>
+    <li><a href="#referer">Referer</a></li>
+    <li><a href="#本地用户">本地用户</a></li>
+    <li><a href="#结果">结果</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ctf/" >
+                CTF
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/6168dd2/">2023 Newstar CTF Begin of HTTP</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 17, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>OMG&hellip;居然是败给了一个POST&amp;GET</p>
+<h1 id="1">1
+</h1><p>感觉和之前做过的一个题目很像，可能出自同一个出题人之手。</p>
+<br>
+<p>按照要求进行GET传参后，需要进行POST传参。</p>
+<p>于是我就在这里出现了问题。</p>
+<p>我直接使用burp suite的repeater里面的change request method，请求头也从</p>
+<!-- more -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">GET /?ctf=1 HTTP/1.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host: node4.buuoj.cn:27986
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Cache-Control: max-age=0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Upgrade-Insecure-Requests: 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.78 Safari/537.36
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Accept-Encoding: gzip, deflate
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Accept-Language: ja,zh-CN;q=0.9,zh;q=0.8
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Cookie: power=hacker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Connection: close
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>变成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">POST / HTTP/1.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host: node4.buuoj.cn:27986
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Cache-Control: max-age=0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Upgrade-Insecure-Requests: 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.78 Safari/537.36
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Accept-Encoding: gzip, deflate
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Accept-Language: ja,zh-CN;q=0.9,zh;q=0.8
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Cookie: power=hacker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Connection: close
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Content-Type: application/x-www-form-urlencoded
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Content-Length: 5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ctf=1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后我把最后的<code>ctf=1</code>换成在Response界面找到的<code>secret=n3wst4rCTF2023g00000d</code>（解码后）<br>be like</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">POST / HTTP/1.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">secret=n3wst4rCTF2023g00000d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果就是毫无反应。。。</p>
+<p>修改为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">POST /?ctf=1 HTTP/1.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">secret=n3wst4rCTF2023g00000d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>跳转成功。。。</p>
+<blockquote>
+<p>POST请求是HTTP协议中的一种方法，用于将数据发送到服务器以创建或修改资源。</p>
+</blockquote>
+<p>这两个请求的主要区别在于URL路径部分。</p>
+<ul>
+<li>
+<ol>
+<li>POST /?ctf=1 HTTP/1.1：这个请求将数据通过POST方法发送到服务器，并且附带了查询参数<code>ctf=1</code>。查询参数是通过URL的<code>?</code>符号后跟随的键值对形式的参数，用于向服务器传递额外的信息。</li>
+</ol>
+</li>
+</ul>
+<p>例如：<code>http://example.com/?ctf=1</code></p>
+<ul>
+<li>
+<ol start="2">
+<li>POST / HTTP/1.1：这个请求将数据通过POST方法发送到服务器，但没有附带任何查询参数。请求的URL路径只是根路径<code>/</code>，没有其他路径或参数信息。</li>
+</ol>
+</li>
+</ul>
+<p>   例如：<code>http://example.com/</code></p>
+<p><font size=1>然后我一直在那里<code>POST /</code>&hellip;.好心寒 </font></p>
+<h1 id="2">2
+</h1><h2 id="cookie">cookie
+</h2><p>之后就是修改cookie。</p>
+<p>如果你和我一样穷凶极恶（bushi）的扒拉请求头看的话就会非常清楚的记得一个name=power，value=hacker的cookie。</p>
+<p><br>尝试用cookie editor但是修改失败（不知道什么原因）所以继续用burp suite，将<code>power=hacker</code>修改为<code>power=ctfer</code>即可。</p>
+<p>接着是指定浏览器。</p>
+<h2 id="指定浏览器">指定浏览器
+</h2><blockquote>
+<p>User-Agent 首部包含了一个特征字符串，用来让网络协议的对端来识别发起请求的用户代理软件的应用类型、操作系统、软件开发商以及版本号。</p>
+</blockquote>
+<p>浏览器通常使用的格式为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User-Agent: Mozilla/&lt;version&gt; (&lt;system-information&gt;) &lt;platform&gt; (&lt;platform-details&gt;) &lt;extensions&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>原请求头中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">POST /?ctf=1 HTTP/1.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.5481.78 Safari/537.36
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>1.客户端类型：这个 User-Agent 字符串包含字符串 &ldquo;Mozilla&rdquo;，因为早期的 Netscape Navigator 浏览器是使用 Mozilla 代码库开发的。大多数现代浏览器仍然包含这个字符串，用于向服务器表明其兼容性以及其实际的应用程序类型。</p>
+</li>
+<li>
+<p>2.操作系统(system-information)：这个 User-Agent 字符串指定了客户端正在运行的操作系统，它的值为 &ldquo;Windows NT 10.0&rdquo;，表示该客户端正运行在 Windows 10 操作系统上。架构(platform)：这个 User-Agent 字符串包含 &ldquo;Win64&rdquo;，说明客户端操作系统是 Windows 64 位系统。</p>
+</li>
+<li>
+<p>3.软件版本(extensions)：这个 User-Agent 字符串还包含 Chrome 浏览器和 Safari 浏览器的版本信息。&ldquo;Chrome/110.0.5481.78&rdquo; 表示请求使用的 Chrome 浏览器版本为 110.0.5481.78，而 &ldquo;Safari/537.36&rdquo; 则表示 Safari 浏览器的版本号为 537.36。</p>
+</li>
+</ul>
+<p>我们按照要求直接把<code>User-Agent</code>字段全改为<code>NewStarCTF2023</code>，界面跳转，从<code>newstarctf.com</code>查找。</p>
+<h2 id="referer">Referer
+</h2><blockquote>
+<p>该请求头包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。服务端一般使用 Referer 请求头识别访问来源，可能会以此进行统计分析、日志记录以及缓存优化等。</p>
+</blockquote>
+<p>接着按要求增加<code>Referer:newstarctf.com</code></p>
+<h2 id="本地用户">本地用户
+</h2><blockquote>
+<p>X-Real-IP:记录服务器的地址并且直接替换。X-Real-IP 通常被 HTTP 代理用来表示与它产生 TCP 连接的设备 IP，这个设备可能是其他代理，也可能是真正的请求端。需要注意的是，X-Real-IP 目前并不属于任何标准，代理和 Web 应用之间可以约定用任何自定义头来传递这个信息。</p>
+</blockquote>
+<p><a href=https://ixyzero.com/blog/archives/4088.html>参考（X-Forwarded-For &amp; X-Real—IP）</a></p>
+<p><br>本地用户-&gt;通用的IP-&gt;127.0.0.1</p>
+<p>好的，又添加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">X-Real-IP:127.0.0.1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="结果">结果
+</h2><p>最后请求be like：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">POST /?ctf=1 HTTP/1.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Host: node4.buuoj.cn:27986
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Cache-Control: max-age=0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Upgrade-Insecure-Requests: 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">User-Agent: NewStarCTF2023
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Accept-Encoding: gzip, deflate
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Accept-Language: ja,zh-CN;q=0.9,zh;q=0.8
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Cookie: power=ctfer
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Referer:newstarctf.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">X-Real-IP:127.0.0.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Connection: close
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Content-Type: application/x-www-form-urlencoded
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Content-Length: 28
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">secret=n3wst4rCTF2023g00000d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>响应就会把flag告诉你。</p>
+<h1 id="3">3
+</h1><p>觉得应该再读<em>网络是怎样连接的</em>这本书。</p>
+<p><a href=https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Referer>一个学习的网站</a></p>
+<p><br>其实后面的都不难，把我绊倒的是<code>POST /</code>和<code>POST /?ctf=1</code>。</p>
+<p><font size=1>好心寒，不小心把<code>&lt;br&gt;</code>打成<code>&lt;be&gt;</code>导致后面一片mk现原形。删删改改以为又抽风&hellip;</font></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/http/">HTTP</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/85d9197/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACTF 2020 Include</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/e69dffe/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Easy Web</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/38e9ef8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mark_Loves_Cat</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/71ccb67/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Buy Flag</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/09030b0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">BJDCTF Easy MD5</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "How about these days" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2024 Real One x86
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

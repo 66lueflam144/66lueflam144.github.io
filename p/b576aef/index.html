@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="网络">
+<title>网络是怎样连接的2.0</title>
+
+<link rel='canonical' href='https://demo.stack.jimmycai.com/p/b576aef/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="网络是怎样连接的2.0">
+<meta property='og:description' content="网络">
+<meta property='og:url' content='https://demo.stack.jimmycai.com/p/b576aef/'>
+<meta property='og:site_name' content='Real One x86'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='NETNET' /><meta property='article:published_time' content='2024-05-29T20:22:51&#43;08:00'/><meta property='article:modified_time' content='2024-05-29T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="网络是怎样连接的2.0">
+<meta name="twitter:description" content="网络">
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu3198646885779591638.png" width="300"
+                            height="199" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Real One x86</a></h1>
+            <h2 class="site-description">La Vida Loca</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/dig/" >
+                DIG
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/b576aef/">网络是怎样连接的2.0</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            网络
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 29, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="一个故事">一个故事
+</h1><p>简单来说就是如何从<strong>伊邪那美和伊邪那歧</strong>发展到<strong>奥林匹克山上一家</strong>的。</p>
+<br>
+<p><strong>伊邪那家族最开始只有两个人</strong></p>
+<p>一对一交流，即使可能要绕柱走也没什么。</p>
+<p>这个时候就是很安详的，you send i receive。</p>
+<br>
+<p><strong>子神加入</strong></p>
+<ul>
+<li>多了一个，三人三线依旧够用。</li>
+<li>再多一个，四人六线凑合。</li>
+<li>再多一个，给大家画个五角星吧……
+……
+越来越多，联系越来越复杂，最后编成了无法解开的线团……<br></li>
+</ul>
+<p>所以出现了新装备——<strong>集线器</strong></p>
+<p>大家的线都连到集线器上面，通知大家吃午饭就方便多了</p>
+<p><br>因为只要往里面发一个“吃午饭”的消息，所有连到这个集线器上的人都可以收到这个消息。
+就像一个公告栏。
+就这么安稳的生活了一阵子。
+<br></p>
+<br>
+<hr>
+<p><strong>蛐蛐别人于是升级1.0</strong></p>
+<p>某天子神A想和子神B 蛐蛐 子神C，由于大家比较蠢得可以，A直接往集线器上发了蛐蛐消息，于是大家就都看见了。</p>
+<p>A尴尬得连夜逃离家族。</p>
+<p>两位祖宗觉得虽然但是——是集线器的错误。所以动手改造。</p>
+<br>
+<p><strong>改造内容如下</strong>：</p>
+<ul>
+<li>往集线器发消息前，一定要加一个source和destination标识，简单称为<strong>MAC地址</strong>，<i>遵守不可修改的最高宪法</i></li>
+<li>收到消息的，确认destination是不是自己，不是就忽略，否则就查收。</li>
+</ul>
+<br>
+大家觉得很好。
+于是就这么愉快的过了段时间。
+<br>
+<br>
+<p><strong>偷看消息于是升级2.0</strong></p>
+<p>由于世风日下，人心不古，发现居然有人偷看消息，家族紧急召开家族会议，围绕“虽然偷看不好但是一定是集线器的错”主题开展，对集线器再次升级。</p>
+<p><strong>升级内容如下</strong>：</p>
+<ul>
+<li><strong>指定一个MAC在升级后的集线器占一个端口</strong>，按照source的MAC指定的端口发出，destination指定的MAC的端口接收，转过来也是一样的。</li>
+<li>升级后的集线器叫交换机，里面内置<strong>MAC地址表</strong>。</li>
+</ul>
+<p>考虑到家族人数逐渐指数级庞大，所以需要<strong>多个交换机</strong>。</p>
+<p><br>族长拿着生物遗传图谱来参考，以家庭为单位进行分组，一组连接一个交换机。</p>
+<p>然后多个交换机之间进行连接，以完成跨家庭的消息通信。
+<br></p>
+<p>例子：</p>
+<p>在aa家的交换机的内置MAC表部分（请注意这个部分）就会是这样的：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>MAC</th>
+          <th>端口</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>aa-aa</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>aa-bb</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>aa-cc</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>aa-dd</td>
+          <td>4</td>
+      </tr>
+      <tr>
+          <td>bb-aa</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>bb-bb</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>bb-cc</td>
+          <td>5</td>
+      </tr>
+  </tbody>
+</table></div>
+<br>
+<p>注意，bb的和aa的不是一个家庭套餐，所以bb连接的是另一个交换机，而交换机互联，在这里独占的端口是5</p>
+<p>bb家的交换机内置MAC表也同理。</p>
+<br>
+<br>
+<p><strong>延迟过高引发不满</strong></p>
+<p>因为家庭太多（从a到zzzzzzzzzzz），家庭成员也太多（从a到zzzzzzzzz），MAC表一眼望不到头，交换机在查询的时候堪比海里捞针，交换机终于发起了轰轰烈烈的罢工运动。</p>
+<p>于是，家族又时隔很久，开了家族会议。</p>
+<p>他们决定给交换机找助手。</p>
+<p>于是找来了<strong>路由器</strong>，一个专门给交换机当交换机的交换机。（不是绕口令）<br>
+同时为了表示支持路由器的工作，为其将消息格式也进行了升级，增加了一个叫<strong>IP</strong>的东西。</p>
+<p>这么一个情景来理解路由器的日常工作</p>
+<ol>
+<li>A和B在交换机1上，C和D在交换机2上</li>
+<li>A想发消息给D</li>
+<li>A发消息出去，交换机1 没在MAC表上找到匹配的D的MAC-端口</li>
+<li>交换机1 把消息发给路由器</li>
+<li>路由器面对的都是交换机，它只有交换机的地址，它怎么知道D在哪个交换机上？IP的意义就在在这里。</li>
+<li>路由器在接收到消息的时候，就查看IP，查询内置的路由表，来识别要转发到哪个交换机上。belike（192.169.0.1，看到前面的192.169.0就知道是哪台交换机作为接收者了，最后的1是指在交换机中的哪个端口）</li>
+</ol>
+<br>
+HAPPY ENDING!!!
+<hr>
+<h1 id="故事的注解">故事的注解
+</h1><blockquote>
+<p>这个故事有点偏专业术语点</p>
+</blockquote>
+<p>首先来引用一句话</p>
+<blockquote>
+<p>从计算机发送出来的网络包，会通过集线器、路由器等设备被转发，最终到达目的地。<br>转发设备会根据包头部中的控制信息，在转发设备内部一个写有转发规则的表中进行查询，以此来判断包的目的地，讲包朝目的地方向进行转发。</p>
+</blockquote>
+<p><strong>以太网</strong></p>
+<blockquote>
+<p>一种为多台计算机能够彼此自由和廉价地相互通信而设计的通信技术</p>
+</blockquote>
+<p>关键词：</p>
+<ul>
+<li>MAC头部、MAC地址</li>
+<li>以太类型：是一个在以太网帧中的占用两字节的字段，这一字段代表了在以太网帧中封装&quot;)了何种协议。（简单举例，IPV4）</li>
+</ul>
+<p>三个性质：</p>
+<ol>
+<li>将包发送到 MAC 头部的接收方 MAC 地址代表的目的地</li>
+<li>用发送方 MAC 地址识别发送方</li>
+<li>用以太类型识别包的内容。</li>
+</ol>
+<p>以太网并不关心包的<strong>实际内容</strong>，只关心发送。</p>
+<p>在上面那个家族发展通讯的故事中，升级到2.0版本时候，组成的网络布局就是以太网级别。</p>
+<br>
+<hr>
+<p><strong>MAC</strong></p>
+<ul>
+<li>地址
+网卡的 ROM 中保存着全世界唯一的 MAC 地址，这是在生产网卡时写入的，将这个值读出之后就可以对 MAC 模块进行设置，MAC 模块就知道自己对应的 MAC 地址了。</li>
+</ul>
+<p>MAC地址长度为48bit，用十六进制表示</p>
+<ul>
+<li>头部
+<img src="/post_6/pics/MAChead.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="MAC header"
+	
+	
+></li>
+</ul>
+<br>
+<hr>
+<p><strong>集线器</strong></p>
+<p>全称应该是”以太网集线器“，</p>
+<ul>
+<li>将多条以太网双绞线或光纤集合连接在同一段物理介质下的设备。</li>
+<li>集线器是运作在OSI模型中的物理层，可以让其链接的设备工作在同一网段。</li>
+<li>集线器上有多个I/O端口，信号从任意一个端口进入后，会从其他端口出现。</li>
+</ul>
+<br>
+<hr>
+<p><strong>交换机</strong></p>
+<p>可以认为交换机的每个网线接口后面都是一块网卡。</p>
+<p>但交换机的工作方式和网卡有一点不同。</p>
+<ul>
+<li>网卡本身具有 MAC 地址，并通过核对收到的包的接收方 MAC 地址判断是不是发给自己的，如果不是发给自己的则丢弃；</li>
+<li><strong>交换机的端口不核对接收方 MAC 地址</strong>，而是直接接收所有的包并存放到缓冲区中。因此，和网卡不同，<u>交换机的端口不具有 MAC 地址</u> ！！！</li>
+</ul>
+<p>交换机有MAC模块，负责讲接收到的经过处理过的信号转为数字信号，进行后续的处理，最后放入缓冲区。</p>
+<br>
+<hr>
+<p><strong>交换机内部的MAC地址表的维护</strong></p>
+<p>交换机在转发包的过程中，还需要对 MAC 地址表的内容进行维护，维护操作分为两种。</p>
+<ul>
+<li>
+<p>第一种，交换机收到网络包</p>
+<ul>
+<li>将sender的MAC地址和发进来的端口号记录在MAC地址表中</li>
+<li>这个记录以后可以作为以后向该sender发消息的地址</li>
+<li>交换机每次收到包（sender不限啊）都进行记录</li>
+</ul>
+</li>
+<li>
+<p>第二种，删除记录。</p>
+<ul>
+<li>当该以太网内某台设备移动了，该记录就要删除，不然通信将出现错误</li>
+<li>删除一般是用时间来作为判定标准，过期的就会被自动删除。</li>
+<li>不删除导致的通信错误，通俗的讲，就是，人去世了，尝试给其打电话。</li>
+</ul>
+</li>
+</ul>
+<br>
+<hr>
+<p><strong>路由器</strong></p>
+<p>路由器和交换机很相似，不过<u>路由器是基于 IP 设计的，而交换机是基于以太网设计的</u></p>
+<p>一些对比更好区分：</p>
+<ul>
+<li>计算机的网卡除了以太网和无线局域网之外很少见到支持其他通信技术的品种，</li>
+<li>路由器的端口模块则支持除局域网之外的多种通信技术，如 ADSL、FTTH，以及各种宽带专线等，只要端口模块安装了支持这些技术的硬件即可</li>
+</ul>
+<p>转发模块会根据接收到的包中的接收方 IP 地址，在路由表中进行查询，以此判断转发目标。然后，转发模块将包转移到转发目标对应的端口，端口再按照硬件的规则将包发送出去</p>
+<p>路由器的端口具有 MAC 地址 ，因此它就能够成为以太网的发送方和接收方 。端口还具有 IP 地址，从这个意义上来说，它和计算机的网卡是一样的</p>
+<p>路由器的各个端口都具有 MAC 地址和 IP 地址:</p>
+<ul>
+<li>前者使其可以成为以太网的sender和receiver</li>
+<li>后者，让其和网卡一样</li>
+</ul>
+<br>
+<hr>
+<p><strong>路由表</strong></p>
+<p><img src="/post_6/pics/table2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="pic"
+	
+	
+></p>
+<p>路由表的子网掩码列只表示在匹配网络包目标地址时需要对比的比特数量。
+这句话的理解：</p>
+<p>IP最后一个<code>.</code>后面的数字是主机号，前面的都是网络号，子网掩码与IP进行与运算，得到的就是子网。</p>
+<ul>
+<li>
+<p><strong>A电脑</strong>：192.168.0.1 &amp; 255.255.255.0 = 12.132.186.40</p>
+</li>
+<li>
+<p><strong>B电脑</strong>：192.168.0.2 &amp; 255.255.255.0 = 12.132.186.40</p>
+</li>
+<li>
+<p><strong>C电脑</strong>：192.168.1.1 &amp; 255.255.255.0 = 12.132.186.80</p>
+</li>
+<li>
+<p><strong>D电脑</strong>：192.168.1.2 &amp; 255.255.255.0 = 12.132.186.80</p>
+</li>
+</ul>
+<br>
+<hr>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/netnet/">NETNET</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on May 29, 2024 00:00 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/03215d8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Weevely_wish</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/5ff6fd0/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/vulnerable.png" loading="lazy" data-key="5ff6fd0" data-hash="/vulnerable.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Halo 0.4.3 审计ing</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/c659435/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">文件上传 Get</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/64b97cd/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">文件包含</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "How about these days" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2024 Real One x86
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

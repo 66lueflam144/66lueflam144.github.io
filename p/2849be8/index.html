@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="误入了一下代码审计。。。主要是我还做出来第一步了，所以有很大兴趣继续做下去。\n用开发者工具可以很容易看到被调成黑色与背景融为一体的you find me(大概这样)，其实也可以直接看到Archive_room.php这个文件名。\n进去以后点点secret然后没有什么收获。\n再来一次页面代码就很无聊了，所以排除再次ctrl+shift+I。\n抓包试试，\nRequest\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 GET /action.php HTTP/1.1 Host: 3b51e313-5282-4581-a4c7-2d3152b688a3.node4.buuoj.cn:81 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8 Accept-Language: zh,zh-TW;q=0.8,zh-HK;q=0.6,en-US;q=0.4,en;q=0.2 Accept-Encoding: gzip, deflate Connection: close Referer: http://3b51e313-5282-4581-a4c7-2d3152b688a3.node4.buuoj.cn:81/Archive_room.php Upgrade-Insecure-Requests: 1 Response\n">
 <title>2019 极客大挑战 SecretFile</title>
 
-<link rel='canonical' href='http://localhost:1313/p/2849be8/'>
+<link rel='canonical' href='https://demo.stack.jimmycai.com/p/2849be8/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="2019 极客大挑战 SecretFile">
 <meta property='og:description' content="误入了一下代码审计。。。主要是我还做出来第一步了，所以有很大兴趣继续做下去。\n用开发者工具可以很容易看到被调成黑色与背景融为一体的you find me(大概这样)，其实也可以直接看到Archive_room.php这个文件名。\n进去以后点点secret然后没有什么收获。\n再来一次页面代码就很无聊了，所以排除再次ctrl+shift+I。\n抓包试试，\nRequest\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 GET /action.php HTTP/1.1 Host: 3b51e313-5282-4581-a4c7-2d3152b688a3.node4.buuoj.cn:81 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/117.0 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8 Accept-Language: zh,zh-TW;q=0.8,zh-HK;q=0.6,en-US;q=0.4,en;q=0.2 Accept-Encoding: gzip, deflate Connection: close Referer: http://3b51e313-5282-4581-a4c7-2d3152b688a3.node4.buuoj.cn:81/Archive_room.php Upgrade-Insecure-Requests: 1 Response\n">
-<meta property='og:url' content='http://localhost:1313/p/2849be8/'>
+<meta property='og:url' content='https://demo.stack.jimmycai.com/p/2849be8/'>
 <meta property='og:site_name' content='Real One x86'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SSRF' /><meta property='article:published_time' content='2023-10-17T12:46:38&#43;08:00'/><meta property='article:modified_time' content='2023-10-17T12:46:38&#43;08:00'/>
 <meta name="twitter:title" content="2019 极客大挑战 SecretFile">
@@ -787,7 +787,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.549c98e3ce5d926be80f108d8cc3c95cb88bd0dc9a25f4b5265588973492e760.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

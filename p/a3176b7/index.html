@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1 （1） 打开靶场，扑面而来一个\n/?ip=\n（如果有点觉悟就会想起来之前做的文件上传从而意识到这是个URL地址符提示。不过当时没有，甚至在想这是什么代码……php？html？）\n于是熟练的打开edge查询wp。\n于是\n1 2 http://2993ad62-21c8-4f1d-b4d6-05bdd7130b70.node4.buuoj.cn:81/?ip=127.0.0.1;ls 喜提\n(补充：尝试了一下&amp;&amp; ls，什么有用的也没有得到)\n1 2 3 4 5 6 PING 127.0.0.1 (127.0.0.1): 56 data bytes flag.php index.php 这告诉我们有两个php文件，名字如上。\n（2） 再用cat命令\n1 2 /?ip=xxx;cat flag.php 喜提fuck your space。\n好嘛，用能想到的space替换符，%20之类的，毫不意外不行。\nwp提供了更多的绕过space：\n1 2 3 4 5 6 7 8 9 10 ${IFS} $IFS$1 ${IFS &lt;&gt; or &lt; 重定向符替换 %09 原博一个个试后告诉大家，$IFS$1行得通。\n">
 <title>Ping Ping Ping</title>
 
-<link rel='canonical' href='http://localhost:1313/p/a3176b7/'>
+<link rel='canonical' href='https://demo.stack.jimmycai.com/p/a3176b7/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Ping Ping Ping">
 <meta property='og:description' content="1 （1） 打开靶场，扑面而来一个\n/?ip=\n（如果有点觉悟就会想起来之前做的文件上传从而意识到这是个URL地址符提示。不过当时没有，甚至在想这是什么代码……php？html？）\n于是熟练的打开edge查询wp。\n于是\n1 2 http://2993ad62-21c8-4f1d-b4d6-05bdd7130b70.node4.buuoj.cn:81/?ip=127.0.0.1;ls 喜提\n(补充：尝试了一下&amp;&amp; ls，什么有用的也没有得到)\n1 2 3 4 5 6 PING 127.0.0.1 (127.0.0.1): 56 data bytes flag.php index.php 这告诉我们有两个php文件，名字如上。\n（2） 再用cat命令\n1 2 /?ip=xxx;cat flag.php 喜提fuck your space。\n好嘛，用能想到的space替换符，%20之类的，毫不意外不行。\nwp提供了更多的绕过space：\n1 2 3 4 5 6 7 8 9 10 ${IFS} $IFS$1 ${IFS &lt;&gt; or &lt; 重定向符替换 %09 原博一个个试后告诉大家，$IFS$1行得通。\n">
-<meta property='og:url' content='http://localhost:1313/p/a3176b7/'>
+<meta property='og:url' content='https://demo.stack.jimmycai.com/p/a3176b7/'>
 <meta property='og:site_name' content='Real One x86'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CMD' /><meta property='article:tag' content='tricks' /><meta property='article:published_time' content='2023-10-17T18:22:57&#43;08:00'/><meta property='article:modified_time' content='2023-10-17T18:22:57&#43;08:00'/>
 <meta name="twitter:title" content="Ping Ping Ping">
@@ -823,7 +823,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.549c98e3ce5d926be80f108d8cc3c95cb88bd0dc9a25f4b5265588973492e760.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

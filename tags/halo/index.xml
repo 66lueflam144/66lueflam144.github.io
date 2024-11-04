@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>HALO on Real One x86</title>
-        <link>http://localhost:1313/tags/halo/</link>
+        <link>https://demo.stack.jimmycai.com/tags/halo/</link>
         <description>Recent content in HALO on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 31 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/halo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 31 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/tags/halo/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Halo 0.4.3 审计ing</title>
-        <link>http://localhost:1313/p/5ff6fd0/</link>
+        <link>https://demo.stack.jimmycai.com/p/5ff6fd0/</link>
         <pubDate>Sun, 31 Mar 2024 20:29:51 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/5ff6fd0/</guid>
-        <description>&lt;img src="http://localhost:1313/vulnerable.png" alt="Featured image of post Halo 0.4.3 审计ing" /&gt;&lt;h1 id=&#34;halo&#34;&gt;HALO
+        <guid>https://demo.stack.jimmycai.com/p/5ff6fd0/</guid>
+        <description>&lt;img src="https://demo.stack.jimmycai.com/vulnerable.png" alt="Featured image of post Halo 0.4.3 审计ing" /&gt;&lt;h1 id=&#34;halo&#34;&gt;HALO
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;一个java博客系统，但funny problems everywhere&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;看着怪像wordpress的。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;打开pom.xml，到处都是警告
-&lt;img src=&#34;http://localhost:1313/post_2/vulnerable.png&#34;
+&lt;img src=&#34;https://demo.stack.jimmycai.com/post_2/vulnerable.png&#34;
 	
 	
 	

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Draft on Real One x86</title>
-        <link>https://demo.stack.jimmycai.com/categories/draft/</link>
+        <link>http://localhost:1313/categories/draft/</link>
         <description>Recent content in Draft on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 05 Oct 2024 21:40:34 +0800</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/categories/draft/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 05 Oct 2024 21:40:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/draft/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Ysoserial_CommonColllections 01</title>
-        <link>https://demo.stack.jimmycai.com/p/ysoserial_commoncolllections-01/</link>
+        <link>http://localhost:1313/p/ysoserial_commoncolllections-01/</link>
         <pubDate>Sat, 05 Oct 2024 21:40:34 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/ysoserial_commoncolllections-01/</guid>
+        <guid>http://localhost:1313/p/ysoserial_commoncolllections-01/</guid>
         <description>&lt;p&gt;Last Edited: September 25, 2024 7:56 PM&lt;/p&gt;
 &lt;h1 id=&#34;commonscollections1&#34;&gt;CommonsCollections1
 &lt;/h1&gt;&lt;h2 id=&#34;测试使用&#34;&gt;测试使用
@@ -61,7 +61,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;java -jar ysoserial-all.jar CommonsCollections1 gnome-calculator &amp;gt; summer.bin&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_8/imgs/killer.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_8/imgs/killer.png&#34;
 	
 	
 	
@@ -532,10 +532,10 @@
         </item>
         <item>
         <title>Ysoserial_URLDNS</title>
-        <link>https://demo.stack.jimmycai.com/p/184ceac/</link>
+        <link>http://localhost:1313/p/184ceac/</link>
         <pubDate>Sat, 05 Oct 2024 21:40:34 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/184ceac/</guid>
+        <guid>http://localhost:1313/p/184ceac/</guid>
         <description>&lt;h1 id=&#34;ysoserial---urldns&#34;&gt;Ysoserial&amp;mdash;URLDNS
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;Java在序列化时一个对象，将会调用这个对象中的 &lt;code&gt;writeObject&lt;/code&gt; 方法，参数类型是 ObjectOutputStream ，开发者可以将任何内容写入这个stream中；&lt;/p&gt;
@@ -688,7 +688,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这条命令会生成一个序列化过的恶意代码，经过反序列化后执行，向指定的URL进行DNS查询
 我用的是burpsuite的，所以可以看到如下的结果&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_8/imgs/urldns.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_8/imgs/urldns.png&#34;
 	
 	
 	
@@ -1061,10 +1061,10 @@
         </item>
         <item>
         <title>Tbc</title>
-        <link>https://demo.stack.jimmycai.com/p/75c328f/</link>
+        <link>http://localhost:1313/p/75c328f/</link>
         <pubDate>Thu, 19 Oct 2023 13:23:41 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/75c328f/</guid>
+        <guid>http://localhost:1313/p/75c328f/</guid>
         <description>&lt;p&gt;笑死我了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

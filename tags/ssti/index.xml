@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>SSTI on Real One x86</title>
-        <link>https://demo.stack.jimmycai.com/tags/ssti/</link>
+        <link>http://localhost:1313/tags/ssti/</link>
         <description>Recent content in SSTI on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 03 Jun 2024 21:07:02 +0800</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/tags/ssti/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 03 Jun 2024 21:07:02 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/ssti/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>SSTI</title>
-        <link>https://demo.stack.jimmycai.com/p/f9ce7b3/</link>
+        <link>http://localhost:1313/p/f9ce7b3/</link>
         <pubDate>Mon, 03 Jun 2024 21:07:02 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/f9ce7b3/</guid>
+        <guid>http://localhost:1313/p/f9ce7b3/</guid>
         <description>&lt;h2 id=&#34;python&#34;&gt;PYTHON
 &lt;/h2&gt;&lt;h3 id=&#34;flask&#34;&gt;Flask
 &lt;/h3&gt;&lt;p&gt;示例代码&lt;/p&gt;
@@ -70,7 +70,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;简单运行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_7/pics/ssti1.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_7/pics/ssti1.png&#34;
 	
 	
 	
@@ -81,7 +81,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;当&lt;code&gt;name={{5*6}}&lt;/code&gt;的时候，就会显示&lt;code&gt;hello,30&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_7/pics/ssti2.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_7/pics/ssti2.png&#34;
 	
 	
 	
@@ -167,7 +167,7 @@
 &lt;/blockquote&gt;
 &lt;br&gt;
 &lt;p&gt;&lt;strong&gt;Jinja2语法简介&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_7/pics/ssti3.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_7/pics/ssti3.png&#34;
 	
 	
 	
@@ -178,7 +178,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;假设layout.html&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_7/pics/sti4.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_7/pics/sti4.png&#34;
 	
 	
 	

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>MD5 on Real One x86</title>
-        <link>https://demo.stack.jimmycai.com/tags/md5/</link>
+        <link>http://localhost:1313/tags/md5/</link>
         <description>Recent content in MD5 on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 29 Oct 2023 18:25:17 +0800</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/tags/md5/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 29 Oct 2023 18:25:17 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/md5/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Easy Web</title>
-        <link>https://demo.stack.jimmycai.com/p/e69dffe/</link>
+        <link>http://localhost:1313/p/e69dffe/</link>
         <pubDate>Sun, 29 Oct 2023 18:25:17 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/e69dffe/</guid>
+        <guid>http://localhost:1313/p/e69dffe/</guid>
         <description>&lt;p&gt;&lt;font size=1&gt;一个比较有趣的题目&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;打开抓包的时候那个&lt;code&gt;cmd=&lt;/code&gt;过于耀眼，所以尝试了&lt;code&gt;cmd=dir&lt;/code&gt;，不过都没有什么，结果倒是多打了一个&lt;code&gt;;&lt;/code&gt;得到forbid的响应。旁边响应还有一个耀眼的&lt;code&gt;base64&lt;/code&gt;。后面那串应该就是Base64编码过的。&lt;/p&gt;
 &lt;h1 id=&#34;base64hex&#34;&gt;base64&amp;amp;hex
@@ -459,10 +459,10 @@
         </item>
         <item>
         <title>Buy Flag</title>
-        <link>https://demo.stack.jimmycai.com/p/71ccb67/</link>
+        <link>http://localhost:1313/p/71ccb67/</link>
         <pubDate>Fri, 27 Oct 2023 13:02:11 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/71ccb67/</guid>
+        <guid>http://localhost:1313/p/71ccb67/</guid>
         <description>&lt;p&gt;之前还是一个新手村门口人的时候打开过，那个时候的无助真的有点好笑。&lt;/p&gt;
 &lt;h1 id=&#34;cuit-student&#34;&gt;CUIT Student
 &lt;/h1&gt;&lt;p&gt;一般这种什么都不外露的就先查看页面源代码，所以找到了：&lt;/p&gt;
@@ -625,10 +625,10 @@
         </item>
         <item>
         <title>BJDCTF Easy MD5</title>
-        <link>https://demo.stack.jimmycai.com/p/09030b0/</link>
+        <link>http://localhost:1313/p/09030b0/</link>
         <pubDate>Fri, 27 Oct 2023 13:00:25 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/09030b0/</guid>
+        <guid>http://localhost:1313/p/09030b0/</guid>
         <description>&lt;p&gt;&lt;font size=1&gt;只是隐隐约约记得MD5是一种加密算法&lt;/font&gt;&lt;/p&gt;
 &lt;h1 id=&#34;sql-injection&#34;&gt;SQL Injection？
 &lt;/h1&gt;&lt;p&gt;输入：&lt;/p&gt;

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tricks on Real One x86</title>
-        <link>https://demo.stack.jimmycai.com/tags/tricks/</link>
+        <link>http://localhost:1313/tags/tricks/</link>
         <description>Recent content in Tricks on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 28 Oct 2023 18:14:37 +0800</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/tags/tricks/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Oct 2023 18:14:37 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/tricks/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Mark_Loves_Cat</title>
-        <link>https://demo.stack.jimmycai.com/p/38e9ef8/</link>
+        <link>http://localhost:1313/p/38e9ef8/</link>
         <pubDate>Sat, 28 Oct 2023 18:14:37 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/38e9ef8/</guid>
+        <guid>http://localhost:1313/p/38e9ef8/</guid>
         <description>&lt;p&gt;打开靶场是一个非常正式的网页？到处扒拉一下，也在&lt;code&gt;contact&lt;/code&gt;处进行了intruder测试，没有什么结果。&lt;/p&gt;
 &lt;p&gt;再查看页面代码和网络，也没有什么。所以又启动TOOLs。&lt;/p&gt;
 &lt;p&gt;那句话怎么说来着？&lt;code&gt;dirmap&lt;/code&gt;一扫描起来，就发了狠……反正扫出很多东西。&lt;/p&gt;
@@ -409,10 +409,10 @@
         </item>
         <item>
         <title>newstar CTF 2023 听说你是个游戏高手</title>
-        <link>https://demo.stack.jimmycai.com/p/dd90fd2/</link>
+        <link>http://localhost:1313/p/dd90fd2/</link>
         <pubDate>Mon, 23 Oct 2023 13:17:04 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/dd90fd2/</guid>
+        <guid>http://localhost:1313/p/dd90fd2/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;知道查看js文件，知道可以修改值但是修改错方向导致痛失……&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -678,10 +678,10 @@
         </item>
         <item>
         <title>Ping Ping Ping</title>
-        <link>https://demo.stack.jimmycai.com/p/a3176b7/</link>
+        <link>http://localhost:1313/p/a3176b7/</link>
         <pubDate>Tue, 17 Oct 2023 18:22:57 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/a3176b7/</guid>
+        <guid>http://localhost:1313/p/a3176b7/</guid>
         <description>&lt;h2 id=&#34;1&#34;&gt;1
 &lt;/h2&gt;&lt;h3 id=&#34;1-1&#34;&gt;（1）
 &lt;/h3&gt;&lt;p&gt;打开靶场，扑面而来一个&lt;/p&gt;

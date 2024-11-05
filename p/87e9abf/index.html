@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="关于对PDF的内置链接的一个危险性简单认识">
 <title>PDF 的危险链接</title>
 
-<link rel='canonical' href='https://66lueflam144.github.io/p/87e9abf/'>
+<link rel='canonical' href='http://localhost:1313/p/87e9abf/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="PDF 的危险链接">
 <meta property='og:description' content="关于对PDF的内置链接的一个危险性简单认识">
-<meta property='og:url' content='https://66lueflam144.github.io/p/87e9abf/'>
+<meta property='og:url' content='http://localhost:1313/p/87e9abf/'>
 <meta property='og:site_name' content='Real One x86'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PDF' /><meta property='article:published_time' content='2024-11-04T17:50:06&#43;08:00'/><meta property='article:modified_time' content='2024-11-04T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="PDF 的危险链接">
@@ -320,10 +320,16 @@
     
     
     <h1 id="关于pdf的基本结构认识">关于PDF的基本结构认识
-</h1><p>参照<a class="link" href="https://speakerdeck.com/ange/lets-write-a-pdf-file?slide=176"  target="_blank" rel="noopener"
+</h1><p><a class="link" href="https://zh.wikipedia.org/wiki/%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%96%87%E6%A1%A3%E6%A0%BC%E5%BC%8F"  target="_blank" rel="noopener"
+    >PDF的百科</a></p>
+<p>参照<a class="link" href="https://speakerdeck.com/ange/lets-write-a-pdf-file?slide=176"  target="_blank" rel="noopener"
     >Let&rsquo;s write a PDF file</a>对PDF文档的基本结构进行了解。</p>
 <h2 id="什么是pdf">什么是PDF？
-</h2><ul>
+</h2><blockquote>
+<p>Portable Document Format
+开放标准格式, 是为了在不同平台上显示统一格式的内容和布局而产生的</p>
+</blockquote>
+<ul>
 <li>基于文本的</li>
 <li>对非文本内容进行binary处理的
 文档</li>
@@ -473,10 +479,10 @@
 （如果包含图片，就会有“乱码”）</p>
 <h3 id="具体关注点">具体关注点
 </h3><ol>
-<li><code>%PDF - 1.x</code>: 版本签名</li>
-<li><code>%file body</code>: 文件内容起始标签</li>
-<li><code>xref</code>: 列表引用标签，后面会跟着列表（table）</li>
-<li><code>trailer</code>: trailer标签和其内容</li>
+<li><code>%PDF - 1.x</code>: 文件头。版本签名</li>
+<li><code>%file body</code>: 文件体。文件内容起始标签</li>
+<li><code>xref</code>: 交叉引用表。列表引用标签，后面会跟着列表（table）</li>
+<li><code>trailer</code>: 文件尾。trailer标签和其内容</li>
 <li><code>startxref</code>: 指向xref列表的指针标签</li>
 <li><code>%%EOF1</code>:结束符</li>
 </ol>
@@ -684,7 +690,18 @@ object的顺序并没有严格要求</p>
 </span></span><span class="line"><span class="cl">%%EOF
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>以上就是对PDF的简单认识。</p>
+</div><p>引用<a class="link" href="[10.19363/J.cnki.cn10-1380/tn.2023.09.02]%28http://dx.doi.org/10.19363/J.cnki.cn10-1380/tn.2023.09.02%29" >《面向恶意 PDF 文档分类的对抗样本生成方法研究》</a>中的一个物理与逻辑结构的对照图：
+<img src="/pdf_structure.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="pdf structure"
+	
+	
+></p>
+<p>以上就是对PDF的简单认识。</p>
 <h2 id="pdf-with-js">PDF with JS
 </h2><p>使用JS2PDFInjection添加javascript:</p>
 <div class="highlight"><div class="chroma">
@@ -728,7 +745,7 @@ object的顺序并没有严格要求</p>
 </div>
 </div><br>
 <p>当用浏览器打开该PDF文件的时候：</p>
-<p><img src="/PDF_trick/pics/pdf1.png"
+<p><img src="/pdf1.jpg"
 	
 	
 	
@@ -740,6 +757,16 @@ object的顺序并没有严格要求</p>
 ></p>
 <p>说明js运行成功。
 tbc。</p>
+<p><img src="/pdf1.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="HELLO"
+	
+	
+></p>
 </section>
 
 
@@ -966,7 +993,7 @@ tbc。</p>
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.549c98e3ce5d926be80f108d8cc3c95cb88bd0dc9a25f4b5265588973492e760.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

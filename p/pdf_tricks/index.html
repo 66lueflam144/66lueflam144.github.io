@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="!&ndash;more&ndash;&gt;\n什么是PDF 定义 wiki上关于PDF的百科\n参照Let&rsquo;s write a PDF file对PDF文档的基本结构进行了解。\nPortable Document Format\n开放标准格式, 是为了在不同平台上显示统一格式的内容和布局而产生的\n基于文本的\n对非文本内容进行binary处理的\n结构 引用《面向恶意 PDF 文档分类的对抗样本生成方法研究》中的一个物理与逻辑结构的对照图：\n使用python现有的一个库来生成一个简单的PDF\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import letter from pdfrw import PdfReader, PdfWriter # 创建一个简单的 PDF 文件 def create_pdf(file_path): c = canvas.Canvas(file_path, pagesize=letter) c.drawString(100, 750, &#34;Hello, this is a PDF with JavaScript!&#34;) c.save()) 用文本编辑器打开查看：\n">
+<title>Pdf_tricks</title>
+
+<link rel='canonical' href='https://66lueflam144.github.io/p/pdf_tricks/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Pdf_tricks">
+<meta property='og:description' content="!&ndash;more&ndash;&gt;\n什么是PDF 定义 wiki上关于PDF的百科\n参照Let&rsquo;s write a PDF file对PDF文档的基本结构进行了解。\nPortable Document Format\n开放标准格式, 是为了在不同平台上显示统一格式的内容和布局而产生的\n基于文本的\n对非文本内容进行binary处理的\n结构 引用《面向恶意 PDF 文档分类的对抗样本生成方法研究》中的一个物理与逻辑结构的对照图：\n使用python现有的一个库来生成一个简单的PDF\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import letter from pdfrw import PdfReader, PdfWriter # 创建一个简单的 PDF 文件 def create_pdf(file_path): c = canvas.Canvas(file_path, pagesize=letter) c.drawString(100, 750, &#34;Hello, this is a PDF with JavaScript!&#34;) c.save()) 用文本编辑器打开查看：\n">
+<meta property='og:url' content='https://66lueflam144.github.io/p/pdf_tricks/'>
+<meta property='og:site_name' content='Real One x86'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-05T13:22:24&#43;08:00'/><meta property='article:modified_time' content='2024-11-05T13:22:24&#43;08:00'/><meta property='og:image' content='https://66lueflam144.github.io/p/pdf_tricks/pdf1.jpg' />
+<meta name="twitter:title" content="Pdf_tricks">
+<meta name="twitter:description" content="!&ndash;more&ndash;&gt;\n什么是PDF 定义 wiki上关于PDF的百科\n参照Let&rsquo;s write a PDF file对PDF文档的基本结构进行了解。\nPortable Document Format\n开放标准格式, 是为了在不同平台上显示统一格式的内容和布局而产生的\n基于文本的\n对非文本内容进行binary处理的\n结构 引用《面向恶意 PDF 文档分类的对抗样本生成方法研究》中的一个物理与逻辑结构的对照图：\n使用python现有的一个库来生成一个简单的PDF\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import letter from pdfrw import PdfReader, PdfWriter # 创建一个简单的 PDF 文件 def create_pdf(file_path): c = canvas.Canvas(file_path, pagesize=letter) c.drawString(100, 750, &#34;Hello, this is a PDF with JavaScript!&#34;) c.save()) 用文本编辑器打开查看：\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://66lueflam144.github.io/p/pdf_tricks/pdf1.jpg' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12036493284228052079.png" width="300"
+                            height="398" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤠</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Real One x86</a></h1>
+            <h2 class="site-description">La Vida Loca</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://66lueflam144.github.io/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="2 4" stroke-dashoffset="6" d="M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9"><animate attributeName="stroke-dashoffset" dur="0.6s" repeatCount="indefinite" values="6;0"/></path><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 21c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.1s" dur="0.4s" values="32;0"/></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M12 8v7.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="10;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 15.5l3.5 -3.5M12 15.5l-3.5 -3.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.2s" values="6;0"/></path></g></svg>
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><path fill="currentColor" d="m6 14l7-12v8h5l-7 12v-8z" opacity=".16"/><path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="m6 14l7-12v8h5l-7 12v-8z"/></g></svg>
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="28" stroke-dashoffset="28" d="M12 10l4 7h-8Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="28;0"/></path><path d="M12 10l4 7h-8Z" opacity="0"><animate attributeName="d" begin="0.4s" dur="0.8s" keyTimes="0;0.25;1" repeatCount="indefinite" values="M12 10l4 7h-8Z;M12 4l9.25 16h-18.5Z;M12 4l9.25 16h-18.5Z"/><animate attributeName="opacity" begin="0.4s" dur="0.8s" keyTimes="0;0.1;0.75;1" repeatCount="indefinite" values="0;1;1;0"/></path></g></svg>
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-opacity="0" d="M12 3l2.35 5.76l6.21 0.46l-4.76 4.02l1.49 6.04l-5.29 -3.28l-5.29 3.28l1.49 -6.04l-4.76 -4.02l6.21 -0.46Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.15s" values="0;0.3"/></path><path fill="none" stroke="currentColor" stroke-dasharray="36" stroke-dashoffset="36" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="36;0"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg>
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#什么是pdf">什么是PDF</a>
+      <ol>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#结构">结构</a>
+          <ol>
+            <li><a href="#主要标签">主要标签</a></li>
+            <li><a href="#文件体file-body">文件体，file body</a></li>
+            <li><a href="#xref">XREF</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#pdf-with-javascript">PDF with JavaScript</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/pdf_tricks/">
+                <img src="/p/pdf_tricks/pdf1_hu17108469197933344877.jpg"
+                        srcset="/p/pdf_tricks/pdf1_hu17108469197933344877.jpg 800w, /p/pdf_tricks/pdf1_hu14665392626944873445.jpg 1600w"
+                        width="800" 
+                        height="238" 
+                        loading="lazy"
+                        alt="Featured image of post Pdf_tricks" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/pdf_tricks/">Pdf_tricks</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 05, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>!&ndash;more&ndash;&gt;</p>
+<h2 id="什么是pdf">什么是PDF
+</h2><h3 id="定义">定义
+</h3><p><a class="link" href="https://zh.wikipedia.org/wiki/%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%96%87%E6%A1%A3%E6%A0%BC%E5%BC%8F"  target="_blank" rel="noopener"
+    >wiki上关于PDF的百科</a></p>
+<p>参照<a class="link" href="https://speakerdeck.com/ange/lets-write-a-pdf-file?slide=176"  target="_blank" rel="noopener"
+    >Let&rsquo;s write a PDF file</a>对PDF文档的基本结构进行了解。</p>
+<blockquote>
+<p>Portable Document Format</p>
+</blockquote>
+<blockquote>
+<p>开放标准格式, 是为了在不同平台上显示统一格式的内容和布局而产生的</p>
+</blockquote>
+<ul>
+<li>
+<p>基于文本的</p>
+</li>
+<li>
+<p>对非文本内容进行binary处理的</p>
+</li>
+</ul>
+<h3 id="结构">结构
+</h3><p>引用<a class="link" href="[10.19363/J.cnki.cn10-1380/tn.2023.09.02]%28http://dx.doi.org/10.19363/J.cnki.cn10-1380/tn.2023.09.02%29" >《面向恶意 PDF 文档分类的对抗样本生成方法研究》</a>中的一个物理与逻辑结构的对照图：</p>
+<p><img src="/p/pdf_tricks/pdf_structure.jpg"
+	width="568"
+	height="767"
+	srcset="/p/pdf_tricks/pdf_structure_hu3941668683848100335.jpg 480w, /p/pdf_tricks/pdf_structure_hu6552683502216812466.jpg 1024w"
+	loading="lazy"
+	
+		alt="pdf structure"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="74"
+		data-flex-basis="177px"
+	
+></p>
+<p>使用python现有的一个库来生成一个简单的PDF</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">reportlab.pdfgen</span> <span class="kn">import</span> <span class="n">canvas</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">reportlab.lib.pagesizes</span> <span class="kn">import</span> <span class="n">letter</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pdfrw</span> <span class="kn">import</span> <span class="n">PdfReader</span><span class="p">,</span> <span class="n">PdfWriter</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建一个简单的 PDF 文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">create_pdf</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">pagesize</span><span class="o">=</span><span class="n">letter</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">.</span><span class="n">drawString</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">750</span><span class="p">,</span> <span class="s2">&#34;Hello, this is a PDF with JavaScript!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">.</span><span class="n">save</span><span class="p">())</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>用文本编辑器打开查看：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">%PDF-1.3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%file body
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1 0 obj
+</span></span><span class="line"><span class="cl">&lt;&lt;/Pages 2 0 R /Type /Catalog&gt;&gt;
+</span></span><span class="line"><span class="cl">endobj
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">2 0 obj
+</span></span><span class="line"><span class="cl">&lt;&lt;/Count 1 /Kids [3 0 R] /Type /Pages&gt;&gt;
+</span></span><span class="line"><span class="cl">endobj
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">3 0 obj
+</span></span><span class="line"><span class="cl">&lt;&lt;/Contents 4 0 R /MediaBox [0 0 612 792] /Parent 2 0 R /Resources
+</span></span><span class="line"><span class="cl">  &lt;&lt;/Font 5 0 R /ProcSet [/PDF /Text /ImageB /ImageC /ImageI]&gt;&gt; /Rotate
+</span></span><span class="line"><span class="cl">  0 /Trans &lt;&lt;&gt;&gt; /Type /Page&gt;&gt;
+</span></span><span class="line"><span class="cl">endobj
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">4 0 obj
+</span></span><span class="line"><span class="cl">&lt;&lt;/Filter [/ASCII85Decode /FlateDecode] /Length 135&gt;&gt;
+</span></span><span class="line"><span class="cl">stream
+</span></span><span class="line"><span class="cl">GapQh0E=F,0U\H3T\pNYT^QKk?tc&gt;IP,;W#U1^23ihPEM_?CW4KISi90MjG^2,FS#&lt;RC5+c,n)Z;(0Q-/62bF7&#34;kUW2hghHOphMt`3R&gt;&gt;jJ&#39;kM&amp;k,NKO=Z(s/W_[o&gt;QCEF)jp~&gt;
+</span></span><span class="line"><span class="cl">endstream
+</span></span><span class="line"><span class="cl">endobj
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">5 0 obj
+</span></span><span class="line"><span class="cl">&lt;&lt;/F1 6 0 R&gt;&gt;
+</span></span><span class="line"><span class="cl">endobj
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">6 0 obj
+</span></span><span class="line"><span class="cl">&lt;&lt;/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype
+</span></span><span class="line"><span class="cl">  /Type1 /Type /Font&gt;&gt;
+</span></span><span class="line"><span class="cl">endobj
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">xref
+</span></span><span class="line"><span class="cl">0 7
+</span></span><span class="line"><span class="cl">0000000000 65535 f
+</span></span><span class="line"><span class="cl">0000000015 00000 n
+</span></span><span class="line"><span class="cl">0000000062 00000 n
+</span></span><span class="line"><span class="cl">0000000117 00000 n
+</span></span><span class="line"><span class="cl">0000000301 00000 n
+</span></span><span class="line"><span class="cl">0000000523 00000 n
+</span></span><span class="line"><span class="cl">0000000552 00000 n
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">trailer
+</span></span><span class="line"><span class="cl">&lt;&lt;/Root 1 0 R /Size 7&gt;&gt;
+</span></span><span class="line"><span class="cl">startxref
+</span></span><span class="line"><span class="cl">659
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">%%EOF
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="主要标签">主要标签
+</h4><ol>
+<li>
+<p><code>%PDF - 1.x</code>: 文件头。版本签名</p>
+</li>
+<li>
+<p><code>%file</code>: 文件体开始标签。</p>
+</li>
+<li>
+<p><code>xref</code>: 交叉引用表。列表引用标签，后面会跟着列表（table）</p>
+</li>
+<li>
+<p><code>trailer</code>: 文件尾。trailer标签和其内容</p>
+</li>
+<li>
+<p><code>startxref</code>: 指向xref列表的指针标签</p>
+</li>
+<li>
+<p><code>%%EOF1</code>:结束符</p>
+</li>
+</ol>
+<h4 id="文件体file-body">文件体，file body
+</h4><blockquote>
+<p>一系列的间接对象</p>
+</blockquote>
+<blockquote>
+<p>object的顺序并没有严格要求</p>
+</blockquote>
+<p>可以简单理解为，<code>%</code>和<code>xref</code>之间的所有内容都是file body。往回翻一下例子就可以理解了。</p>
+<p>里面的内容基本是<strong>dictionary object</strong>组成</p>
+<p>举一个例子</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1 0 obj
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;&lt;/Pages 2 0 R /Type /Catalog&gt;&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">endobj
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>一、indirect obejct</strong><code>1 0 object</code></p>
+<ol>
+<li>
+<p>序号</p>
+</li>
+<li>
+<p>版本</p>
+</li>
+<li>
+<p>类型</p>
+</li>
+</ol>
+<p><strong>二、dictionary object</strong> <code>&lt;&lt;/Pages 2 0 R /Type /Catalog&gt;&gt;</code></p>
+<ul>
+<li><code>&lt;&lt; &gt;&gt;</code>是dictionary object的标识符，里面包括了key和对应的value。同时<u>key is always <strong>NAME</strong> object</u></li>
+</ul>
+<ol>
+<li>为<code>/pages</code>设置<code>2 0 R</code>的值：一个对对象的引用，指向页面树的对象
+<ol>
+<li><code>2</code> -&gt; 对象编号</li>
+<li><code>0</code> -&gt; 对象版本</li>
+<li><code>R</code> -&gt; R number</li>
+</ol>
+</li>
+<li>为<code>/Type</code>设置<code>/Catalog</code>的值，意味着这个对象的Type是Catalog，PDF文档的目录对象</li>
+</ol>
+<p><strong>三、Stream Object</strong></p>
+<blockquote>
+<p>图像、字体、加密数据、多媒体文件、自定义数据</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">4 0 obj
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;&lt;/Filter [/ASCII85Decode /FlateDecode] /Length 135&gt;&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">stream
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">GapQh0E=F,0U\H3T\pNYT^QKk?tc&gt;IP,;W#U1^23ihPEM_?CW4KISi90MjG^2,FS#&lt;RC5+c,n)Z;(0Q-/62bF7&#34;kUW2hghHOphMt`3R&gt;&gt;jJ&#39;kM&amp;k,NKO=Z(s/W_[o&gt;QCEF)jp~&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">endstream
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">endobj
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>&lt;&lt;/Filter [/ASCII85Decode /FlateDecode] /Length 135&gt;&gt;</code>：
+<ul>
+<li><code>/Filter [/ASCII85Decode /FlateDecode]</code>：使用前者编码使用后者压缩</li>
+<li><code>/Length 135</code>：流数据的长度135</li>
+</ul>
+</li>
+</ul>
+<p><strong>四、</strong></p>
+<p>还有一种对于纯文本的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">4 0 obj
+</span></span><span class="line"><span class="cl">&lt;&lt; /Length 44&gt;&gt; --- from BT to ET includes white space and new lines characters
+</span></span><span class="line"><span class="cl">stream
+</span></span><span class="line"><span class="cl">BT
+</span></span><span class="line"><span class="cl">/F1 100 Tf  --- /F1 is font name, 100 is font size, and Tf is TextFont operator
+</span></span><span class="line"><span class="cl">10 4000 Td  --- x and y coordinates and Td is Text cursor operator
+</span></span><span class="line"><span class="cl">(hello world!) Tj --- text string
+</span></span><span class="line"><span class="cl">ET
+</span></span><span class="line"><span class="cl">endstream
+</span></span><span class="line"><span class="cl">endobj
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>比起上面的会多了<code>BT</code>和<code>ET</code>两个标签，Begin of Text， End of Text。就这样。</p>
+<h4 id="xref">XREF
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">xref
+</span></span><span class="line"><span class="cl">0 7
+</span></span><span class="line"><span class="cl">0000000000 65535 f
+</span></span><span class="line"><span class="cl">0000000015 00000 n
+</span></span><span class="line"><span class="cl">0000000062 00000 n
+</span></span><span class="line"><span class="cl">0000000117 00000 n
+</span></span><span class="line"><span class="cl">0000000301 00000 n
+</span></span><span class="line"><span class="cl">0000000523 00000 n
+</span></span><span class="line"><span class="cl">0000000552 00000 n
+</span></span><span class="line"><span class="cl">trailer
+</span></span><span class="line"><span class="cl">&lt;&lt;/Root 1 0 R /Size 7&gt;&gt;
+</span></span><span class="line"><span class="cl">startxref
+</span></span><span class="line"><span class="cl">659 --- as xref&#39;s pffset
+</span></span><span class="line"><span class="cl">%%EOF
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>xref</code> 后面是<strong>起始索引</strong>和<strong>对象数量</strong>。</li>
+<li>每行一个对象，长度为 20 字节，包含换行符。</li>
+<li>每行以 <code>00000 n</code> 结尾，其语法为 <code>xxx...(10位) yyy...(5位) a(1字母)</code>。
+<ul>
+<li>10 位：对象的偏移量。</li>
+<li>5 位：代号，首行为 <code>65535</code>。</li>
+<li>1 字母：<code>f</code> 表示_空闲_，<code>n</code> 表示_正在使用_。</li>
+</ul>
+</li>
+</ul>
+<p>以上就是对PDF的简单认识。</p>
+<hr>
+<h2 id="pdf-with-javascript">PDF with JavaScript
+</h2><p>使用JS2PDFInjection添加javascript:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">real@real-virtual-machine:~/xxx/JS2PDFInjector$ java -jar JS2PDFInjector.jar /xxx/ppp/ppock/simple_pdf.pdf /xxx/ppp/ppock/pdfD/po.js
+</span></span><span class="line"><span class="cl">[*] Original PDF: /xxx/ppp/ppock/simple_pdf.pdf
+</span></span><span class="line"><span class="cl">[*] JavaScript Payload: /xxx/ppp/ppock/pdfD/po.js
+</span></span><span class="line"><span class="cl">[*] Output File Path: /xxx/ppp/ppock/js_injected_simple_pdf.pdf
+</span></span><span class="line"><span class="cl">[*] Poisoned File Created: /xxx/ppp/ppock/js_injected_simple_pdf.pdf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>生成的含有js的pdf从raw text看实际上是多了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">3 0 obj
+</span></span><span class="line"><span class="cl">&lt;&lt;
+</span></span><span class="line"><span class="cl">/Type /Action
+</span></span><span class="line"><span class="cl">/S /JavaScript
+</span></span><span class="line"><span class="cl">/JS (app.alert\(&#34;hello&#34;\))
+</span></span><span class="line"><span class="cl">&gt;&gt;
+</span></span><span class="line"><span class="cl">endobj
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到是将JavaScript写入了文档的结构树中。</p>
+<p>当用浏览器打开该PDF文件的时候：</p>
+<p><img src="/p/pdf_tricks/pdf1.jpg"
+	width="463"
+	height="138"
+	srcset="/p/pdf_tricks/pdf1_hu5332532660492742992.jpg 480w, /p/pdf_tricks/pdf1_hu1299634782032890000.jpg 1024w"
+	loading="lazy"
+	
+		alt="imga 2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="335"
+		data-flex-basis="805px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "How about these days" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2024 Real One x86
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

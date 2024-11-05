@@ -2,21 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>PDF on Real One x86</title>
-        <link>https://66lueflam144.github.io/tags/pdf/</link>
+        <link>http://localhost:1313/tags/pdf/</link>
         <description>Recent content in PDF on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/pdf/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/pdf/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PDF 的危险链接</title>
-        <link>https://66lueflam144.github.io/p/87e9abf/</link>
+        <link>http://localhost:1313/p/87e9abf/</link>
         <pubDate>Mon, 04 Nov 2024 17:50:06 +0800</pubDate>
         
-        <guid>https://66lueflam144.github.io/p/87e9abf/</guid>
+        <guid>http://localhost:1313/p/87e9abf/</guid>
         <description>&lt;h1 id=&#34;关于pdf的基本结构认识&#34;&gt;关于PDF的基本结构认识
-&lt;/h1&gt;&lt;p&gt;参照&lt;a class=&#34;link&#34; href=&#34;https://speakerdeck.com/ange/lets-write-a-pdf-file?slide=176&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%96%87%E6%A1%A3%E6%A0%BC%E5%BC%8F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF的百科&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参照&lt;a class=&#34;link&#34; href=&#34;https://speakerdeck.com/ange/lets-write-a-pdf-file?slide=176&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Let&amp;rsquo;s write a PDF file&lt;/a&gt;对PDF文档的基本结构进行了解。&lt;/p&gt;
 &lt;h2 id=&#34;什么是pdf&#34;&gt;什么是PDF？
-&lt;/h2&gt;&lt;ul&gt;
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Portable Document Format
+开放标准格式, 是为了在不同平台上显示统一格式的内容和布局而产生的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
 &lt;li&gt;基于文本的&lt;/li&gt;
 &lt;li&gt;对非文本内容进行binary处理的
 文档&lt;/li&gt;
@@ -166,10 +172,10 @@
 （如果包含图片，就会有“乱码”）&lt;/p&gt;
 &lt;h3 id=&#34;具体关注点&#34;&gt;具体关注点
 &lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;%PDF - 1.x&lt;/code&gt;: 版本签名&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;%file body&lt;/code&gt;: 文件内容起始标签&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;xref&lt;/code&gt;: 列表引用标签，后面会跟着列表（table）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;trailer&lt;/code&gt;: trailer标签和其内容&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;%PDF - 1.x&lt;/code&gt;: 文件头。版本签名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;%file body&lt;/code&gt;: 文件体。文件内容起始标签&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xref&lt;/code&gt;: 交叉引用表。列表引用标签，后面会跟着列表（table）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trailer&lt;/code&gt;: 文件尾。trailer标签和其内容&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;startxref&lt;/code&gt;: 指向xref列表的指针标签&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;%%EOF1&lt;/code&gt;:结束符&lt;/li&gt;
 &lt;/ol&gt;
@@ -377,7 +383,18 @@ object的顺序并没有严格要求&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;%%EOF
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;以上就是对PDF的简单认识。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;引用&lt;a class=&#34;link&#34; href=&#34;[10.19363/J.cnki.cn10-1380/tn.2023.09.02]%28http://dx.doi.org/10.19363/J.cnki.cn10-1380/tn.2023.09.02%29&#34; &gt;《面向恶意 PDF 文档分类的对抗样本生成方法研究》&lt;/a&gt;中的一个物理与逻辑结构的对照图：
+&lt;img src=&#34;http://localhost:1313/pdf_structure.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pdf structure&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;以上就是对PDF的简单认识。&lt;/p&gt;
 &lt;h2 id=&#34;pdf-with-js&#34;&gt;PDF with JS
 &lt;/h2&gt;&lt;p&gt;使用JS2PDFInjection添加javascript:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -421,7 +438,7 @@ object的顺序并没有严格要求&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;br&gt;
 &lt;p&gt;当用浏览器打开该PDF文件的时候：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/PDF_trick/pics/pdf1.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/pdf1.jpg&#34;
 	
 	
 	
@@ -432,7 +449,17 @@ object的顺序并没有严格要求&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;说明js运行成功。
-tbc。&lt;/p&gt;</description>
+tbc。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/pdf1.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;HELLO&#34;
+	
+	
+&gt;&lt;/p&gt;</description>
         </item>
         
     </channel>

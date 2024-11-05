@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Real One x86</title>
-        <link>https://demo.stack.jimmycai.com/</link>
+        <link>https://66lueflam144.github.io/</link>
         <description>Recent content on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://66lueflam144.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Me Myself &amp; I</title>
-        <link>https://demo.stack.jimmycai.com/p/me/</link>
+        <link>https://66lueflam144.github.io/p/me/</link>
         <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/me/</guid>
-        <description>&lt;img src="https://demo.stack.jimmycai.com/p/me/fish.jpg" alt="Featured image of post Me Myself &amp; I" /&gt;&lt;h3 id=&#34;me-myself--i&#34;&gt;Me Myself &amp;amp; I
+        <guid>https://66lueflam144.github.io/p/me/</guid>
+        <description>&lt;img src="https://66lueflam144.github.io/p/me/fish.jpg" alt="Featured image of post Me Myself &amp; I" /&gt;&lt;h3 id=&#34;me-myself--i&#34;&gt;Me Myself &amp;amp; I
 &lt;/h3&gt;&lt;p&gt;These days I have a desire to write something but I don&amp;rsquo;t know what I should write clearly.&lt;/p&gt;
 &lt;p&gt;Hope Someday I will know.&lt;/p&gt;
 &lt;hr&gt;
@@ -43,10 +43,10 @@
         </item>
         <item>
         <title>PDF 的危险链接</title>
-        <link>https://demo.stack.jimmycai.com/p/87e9abf/</link>
+        <link>https://66lueflam144.github.io/p/87e9abf/</link>
         <pubDate>Mon, 04 Nov 2024 17:50:06 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/87e9abf/</guid>
+        <guid>https://66lueflam144.github.io/p/87e9abf/</guid>
         <description>&lt;h1 id=&#34;关于pdf的基本结构认识&#34;&gt;关于PDF的基本结构认识
 &lt;/h1&gt;&lt;p&gt;参照&lt;a class=&#34;link&#34; href=&#34;https://speakerdeck.com/ange/lets-write-a-pdf-file?slide=176&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Let&amp;rsquo;s write a PDF file&lt;/a&gt;对PDF文档的基本结构进行了解。&lt;/p&gt;
@@ -456,7 +456,7 @@ object的顺序并没有严格要求&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;br&gt;
 &lt;p&gt;当用浏览器打开该PDF文件的时候：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/PDF_trick/pics/pdf1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/PDF_trick/pics/pdf1.png&#34;
 	
 	
 	
@@ -471,10 +471,10 @@ tbc。&lt;/p&gt;</description>
         </item>
         <item>
         <title>Ysoserial_CommonColllections 01</title>
-        <link>https://demo.stack.jimmycai.com/p/ysoserial_commoncolllections-01/</link>
+        <link>https://66lueflam144.github.io/p/ysoserial_commoncolllections-01/</link>
         <pubDate>Sat, 05 Oct 2024 21:40:34 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/ysoserial_commoncolllections-01/</guid>
+        <guid>https://66lueflam144.github.io/p/ysoserial_commoncolllections-01/</guid>
         <description>&lt;h1 id=&#34;commonscollections1&#34;&gt;CommonsCollections1
 &lt;/h1&gt;&lt;h2 id=&#34;测试使用&#34;&gt;测试使用
 &lt;/h2&gt;&lt;p&gt;写了最简单基础的反序列化代码&lt;/p&gt;
@@ -523,7 +523,7 @@ tbc。&lt;/p&gt;</description>
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;java -jar ysoserial-all.jar CommonsCollections1 gnome-calculator &amp;gt; summer.bin&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_8/imgs/killer.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_8/imgs/killer.png&#34;
 	
 	
 	
@@ -994,10 +994,10 @@ tbc。&lt;/p&gt;</description>
         </item>
         <item>
         <title>Ysoserial_URLDNS</title>
-        <link>https://demo.stack.jimmycai.com/p/184ceac/</link>
+        <link>https://66lueflam144.github.io/p/184ceac/</link>
         <pubDate>Sat, 05 Oct 2024 21:40:34 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/184ceac/</guid>
+        <guid>https://66lueflam144.github.io/p/184ceac/</guid>
         <description>&lt;h1 id=&#34;ysoserial---urldns&#34;&gt;Ysoserial&amp;mdash;URLDNS
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;Java在序列化时一个对象，将会调用这个对象中的 &lt;code&gt;writeObject&lt;/code&gt; 方法，参数类型是 ObjectOutputStream ，开发者可以将任何内容写入这个stream中；&lt;/p&gt;
@@ -1150,7 +1150,7 @@ tbc。&lt;/p&gt;</description>
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这条命令会生成一个序列化过的恶意代码，经过反序列化后执行，向指定的URL进行DNS查询
 我用的是burpsuite的，所以可以看到如下的结果&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_8/imgs/urldns.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_8/imgs/urldns.png&#34;
 	
 	
 	
@@ -1523,10 +1523,10 @@ tbc。&lt;/p&gt;</description>
         </item>
         <item>
         <title>SSTI</title>
-        <link>https://demo.stack.jimmycai.com/p/f9ce7b3/</link>
+        <link>https://66lueflam144.github.io/p/f9ce7b3/</link>
         <pubDate>Mon, 03 Jun 2024 21:07:02 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/f9ce7b3/</guid>
+        <guid>https://66lueflam144.github.io/p/f9ce7b3/</guid>
         <description>&lt;h2 id=&#34;python&#34;&gt;PYTHON
 &lt;/h2&gt;&lt;h3 id=&#34;flask&#34;&gt;Flask
 &lt;/h3&gt;&lt;p&gt;示例代码&lt;/p&gt;
@@ -1585,7 +1585,7 @@ tbc。&lt;/p&gt;</description>
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;简单运行结果：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_7/pics/ssti1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_7/pics/ssti1.png&#34;
 	
 	
 	
@@ -1596,7 +1596,7 @@ tbc。&lt;/p&gt;</description>
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;当&lt;code&gt;name={{5*6}}&lt;/code&gt;的时候，就会显示&lt;code&gt;hello,30&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_7/pics/ssti2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_7/pics/ssti2.png&#34;
 	
 	
 	
@@ -1682,7 +1682,7 @@ tbc。&lt;/p&gt;</description>
 &lt;/blockquote&gt;
 &lt;br&gt;
 &lt;p&gt;&lt;strong&gt;Jinja2语法简介&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_7/pics/ssti3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_7/pics/ssti3.png&#34;
 	
 	
 	
@@ -1693,7 +1693,7 @@ tbc。&lt;/p&gt;</description>
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;假设layout.html&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_7/pics/sti4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_7/pics/sti4.png&#34;
 	
 	
 	
@@ -1762,10 +1762,10 @@ tbc。&lt;/p&gt;</description>
         </item>
         <item>
         <title>网络是怎样连接的2.0</title>
-        <link>https://demo.stack.jimmycai.com/p/b576aef/</link>
+        <link>https://66lueflam144.github.io/p/b576aef/</link>
         <pubDate>Wed, 29 May 2024 20:22:51 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/b576aef/</guid>
+        <guid>https://66lueflam144.github.io/p/b576aef/</guid>
         <description>&lt;h1 id=&#34;一个故事&#34;&gt;一个故事
 &lt;/h1&gt;&lt;p&gt;简单来说就是如何从&lt;strong&gt;伊邪那美和伊邪那歧&lt;/strong&gt;发展到&lt;strong&gt;奥林匹克山上一家&lt;/strong&gt;的。&lt;/p&gt;
 &lt;br&gt;
@@ -1913,7 +1913,7 @@ HAPPY ENDING!!!
 &lt;p&gt;MAC地址长度为48bit，用十六进制表示&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;头部
-&lt;img src=&#34;https://demo.stack.jimmycai.com/post_6/pics/MAChead.png&#34;
+&lt;img src=&#34;https://66lueflam144.github.io/post_6/pics/MAChead.png&#34;
 	
 	
 	
@@ -1984,7 +1984,7 @@ HAPPY ENDING!!!
 &lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;路由表&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_6/pics/table2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_6/pics/table2.png&#34;
 	
 	
 	
@@ -2016,10 +2016,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Weevely_wish</title>
-        <link>https://demo.stack.jimmycai.com/p/03215d8/</link>
+        <link>https://66lueflam144.github.io/p/03215d8/</link>
         <pubDate>Fri, 10 May 2024 18:53:11 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/03215d8/</guid>
+        <guid>https://66lueflam144.github.io/p/03215d8/</guid>
         <description>&lt;h1 id=&#34;0&#34;&gt;0
 &lt;/h1&gt;&lt;p&gt;通过weevely生成了一个php后门文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2271,7 +2271,7 @@ HAPPY ENDING!!!
 &lt;/div&gt;&lt;p&gt;文本串行的每个字符可以通过&lt;strong&gt;与给定的密钥&lt;/strong&gt;进行 &lt;strong&gt;按位异或运算&lt;/strong&gt;来加密。
 如果要解密，只需要将加密后的结果与密钥再次 进行按位异或运算即可。&lt;/p&gt;
 &lt;p&gt;举例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/xor.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/xor.png&#34;
 	
 	
 	
@@ -2330,7 +2330,7 @@ HAPPY ENDING!!!
 &lt;li&gt;&lt;code&gt;$b&lt;/code&gt;执行&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;weevelt-code&#34;&gt;Weevelt code
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/code.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/code.png&#34;
 	
 	
 	
@@ -2350,7 +2350,7 @@ HAPPY ENDING!!!
 &lt;br&gt;
 &lt;p&gt;通读是不可能的，所以使用报错找到调用链——修改了生成的后门文件进行连接操作
 …………&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/error.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/error.png&#34;
 	
 	
 	
@@ -2365,7 +2365,7 @@ HAPPY ENDING!!!
 &lt;hr&gt;
 &lt;h2 id=&#34;加密obfpostpy&#34;&gt;加密obfpost.py
 &lt;/h2&gt;&lt;h3 id=&#34;__init__self-url-password&#34;&gt;&lt;code&gt;__init__(self, url, password)&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/obpost1.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/obpost1.png&#34;
 	
 	
 	
@@ -2435,7 +2435,7 @@ HAPPY ENDING!!!
 &lt;/div&gt;&lt;p&gt;可以发现前三个都对应上了。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;send&#34;&gt;&lt;code&gt;send()&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/ap.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/ap.png&#34;
 	
 	
 	
@@ -2443,7 +2443,7 @@ HAPPY ENDING!!!
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/send2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/send2.png&#34;
 	
 	
 	
@@ -2465,7 +2465,7 @@ HAPPY ENDING!!!
 &lt;br&gt;
 &lt;br&gt;
 于是按照第二张图的思路：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/fin.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/fin.png&#34;
 	
 	
 	
@@ -2518,7 +2518,7 @@ HAPPY ENDING!!!
 &lt;h1 id=&#34;流量分析&#34;&gt;流量分析
 &lt;/h1&gt;&lt;h2 id=&#34;攻击者发给受害者&#34;&gt;攻击者发给受害者
 &lt;/h2&gt;&lt;p&gt;一个编写好的目录遍历命令：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/s-a.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/s-a.png&#34;
 	
 	
 	
@@ -2560,7 +2560,7 @@ HAPPY ENDING!!!
 &lt;/div&gt;&lt;p&gt;ps：这个是&lt;code&gt;file_ls&lt;/code&gt;功能的代码，不是自己写的。&lt;/p&gt;
 &lt;h2 id=&#34;受害者发给攻击者&#34;&gt;受害者发给攻击者
 &lt;/h2&gt;&lt;p&gt;于是这是返回过来的信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/a-s.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/a-s.png&#34;
 	
 	
 	
@@ -2571,7 +2571,7 @@ HAPPY ENDING!!!
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;解码之后得到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/result2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/result2.png&#34;
 	
 	
 	
@@ -2601,7 +2601,7 @@ HAPPY ENDING!!!
 &lt;/ol&gt;
 &lt;h2 id=&#34;流量分析-1&#34;&gt;流量分析
 &lt;/h2&gt;&lt;p&gt;这是抓取的流量中，antisword发送的代码的部分内容&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/anti.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/anti.png&#34;
 	
 	
 	
@@ -2617,7 +2617,7 @@ HAPPY ENDING!!!
 &lt;br&gt;
 返回的流量分析：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/antire2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/antire2.png&#34;
 	
 	
 	
@@ -2633,7 +2633,7 @@ HAPPY ENDING!!!
 &lt;p&gt;比起weevely的异或、base64、 gzip，简洁很多&lt;/p&gt;
 &lt;br&gt;
 解码后：
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_4/pics/antire1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/antire1.png&#34;
 	
 	
 	
@@ -2697,10 +2697,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Servlet &amp; Listener &amp; Filter from JAVA</title>
-        <link>https://demo.stack.jimmycai.com/p/3a26b5b/</link>
+        <link>https://66lueflam144.github.io/p/3a26b5b/</link>
         <pubDate>Fri, 10 May 2024 11:33:55 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/3a26b5b/</guid>
+        <guid>https://66lueflam144.github.io/p/3a26b5b/</guid>
         <description>&lt;p&gt;对java的重要三组件再次看了一遍。&lt;/p&gt;
 &lt;p&gt;ps： &lt;code&gt;hugo new posts//post_2/S_L_F.md&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;java三剑客tomcat&#34;&gt;Java三剑客&amp;amp;Tomcat
@@ -2740,7 +2740,7 @@ HAPPY ENDING!!!
 &lt;ul&gt;
 &lt;li&gt;destroy销毁：在web工程停止的时候调用，Servlet的销毁&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_3/S_L_Fpics/Untitled.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled.png&#34;
 	
 	
 	
@@ -2776,7 +2776,7 @@ HAPPY ENDING!!!
 &lt;li&gt;数据响应&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;    - 请求处理完成后，通过**转发（Forward）&lt;strong&gt;或者&lt;/strong&gt;重定向（Redirect）**到某个页面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_3/S_L_Fpics/Untitled%201.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%201.png&#34;
 	
 	
 	
@@ -2788,7 +2788,7 @@ HAPPY ENDING!!!
 &gt;&lt;/p&gt;
  &lt;br&gt;
 ## Servlet容器（Tomcat为例）
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_3/S_L_Fpics/Untitled%202.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%202.png&#34;
 	
 	
 	
@@ -2814,7 +2814,7 @@ HAPPY ENDING!!!
 &lt;p&gt;Servlet：包含Context容器（1 or more），一个Context对应一个Web工程，同时Context直接管理Servlet在容器中的包装类Wrapper，so &lt;em&gt;&lt;strong&gt;Context直接影响Servlet的工作方式。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_3/S_L_Fpics/Untitled%203.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%203.png&#34;
 	
 	
 	
@@ -3149,7 +3149,7 @@ HAPPY ENDING!!!
 &lt;p&gt;详细点is，请求到达Servlet之前进行过滤、响应从Servlet发出后进行过滤。&lt;/p&gt;
    &lt;br&gt;
 &lt;p&gt;Filter本身并不申请请求对象和响应对象，只提供过滤功能。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_3/S_L_Fpics/Untitled%204.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%204.png&#34;
 	
 	
 	
@@ -4226,17 +4226,17 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Halo 0.4.3 审计ing</title>
-        <link>https://demo.stack.jimmycai.com/p/5ff6fd0/</link>
+        <link>https://66lueflam144.github.io/p/5ff6fd0/</link>
         <pubDate>Sun, 31 Mar 2024 20:29:51 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/5ff6fd0/</guid>
-        <description>&lt;img src="https://demo.stack.jimmycai.com/vulnerable.png" alt="Featured image of post Halo 0.4.3 审计ing" /&gt;&lt;h1 id=&#34;halo&#34;&gt;HALO
+        <guid>https://66lueflam144.github.io/p/5ff6fd0/</guid>
+        <description>&lt;img src="https://66lueflam144.github.io/vulnerable.png" alt="Featured image of post Halo 0.4.3 审计ing" /&gt;&lt;h1 id=&#34;halo&#34;&gt;HALO
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;一个java博客系统，但funny problems everywhere&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;看着怪像wordpress的。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;打开pom.xml，到处都是警告
-&lt;img src=&#34;https://demo.stack.jimmycai.com/post_2/vulnerable.png&#34;
+&lt;img src=&#34;https://66lueflam144.github.io/post_2/vulnerable.png&#34;
 	
 	
 	
@@ -4481,10 +4481,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>PHP 命令和代码执行</title>
-        <link>https://demo.stack.jimmycai.com/p/f357208/</link>
+        <link>https://66lueflam144.github.io/p/f357208/</link>
         <pubDate>Fri, 10 Nov 2023 18:17:45 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/f357208/</guid>
+        <guid>https://66lueflam144.github.io/p/f357208/</guid>
         <description>&lt;p&gt;一点笔记&lt;/p&gt;
 &lt;h1 id=&#34;命令执行rce&#34;&gt;命令执行(RCE)
 &lt;/h1&gt;&lt;h2 id=&#34;php命令执行原理&#34;&gt;php命令执行原理
@@ -4736,10 +4736,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Net</title>
-        <link>https://demo.stack.jimmycai.com/p/3977d43/</link>
+        <link>https://66lueflam144.github.io/p/3977d43/</link>
         <pubDate>Tue, 07 Nov 2023 18:28:59 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/3977d43/</guid>
+        <guid>https://66lueflam144.github.io/p/3977d43/</guid>
         <description>&lt;h1 id=&#34;what-is-it&#34;&gt;What is it
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;网络资产测绘&lt;/strong&gt;，用一些技术方法，探测全球互联网空间上的节点分布情况和网络关系索引，构建全球互联网图谱的一种方法。&lt;/p&gt;
@@ -4823,10 +4823,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>ACTF 2020 Include</title>
-        <link>https://demo.stack.jimmycai.com/p/85d9197/</link>
+        <link>https://66lueflam144.github.io/p/85d9197/</link>
         <pubDate>Mon, 06 Nov 2023 12:53:29 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/85d9197/</guid>
+        <guid>https://66lueflam144.github.io/p/85d9197/</guid>
         <description>&lt;h1 id=&#34;filexxx&#34;&gt;?file=xxx
 &lt;/h1&gt;&lt;p&gt;用burp suite读取到（其实直接看URL也能看到，本题属于hackbar都不用的）：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -4884,10 +4884,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Java Path</title>
-        <link>https://demo.stack.jimmycai.com/p/7cba448/</link>
+        <link>https://66lueflam144.github.io/p/7cba448/</link>
         <pubDate>Fri, 03 Nov 2023 13:26:58 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/7cba448/</guid>
+        <guid>https://66lueflam144.github.io/p/7cba448/</guid>
         <description>&lt;p&gt;最近在随机学学，然后感觉这个挺有趣的就学着写写。&lt;/p&gt;
 &lt;h1 id=&#34;servlet&#34;&gt;Servlet
 &lt;/h1&gt;&lt;blockquote&gt;
@@ -4918,7 +4918,7 @@ HAPPY ENDING!!!
 &lt;h2 id=&#34;idea&#34;&gt;IDEA
 &lt;/h2&gt;&lt;p&gt;用的是&lt;/p&gt;
 &lt;p&gt;用IDEA的Maven archetype来创建。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_pre_ctf/imgs/Mavenstart.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_pre_ctf/imgs/Mavenstart.png&#34;
 	
 	
 	
@@ -5088,7 +5088,7 @@ HAPPY ENDING!!!
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;就会看到&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://demo.stack.jimmycai.com/post_pre_ctf/imgs/tomcat.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_pre_ctf/imgs/tomcat.png&#34;
 	
 	
 	
@@ -5369,10 +5369,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Easy Web</title>
-        <link>https://demo.stack.jimmycai.com/p/e69dffe/</link>
+        <link>https://66lueflam144.github.io/p/e69dffe/</link>
         <pubDate>Sun, 29 Oct 2023 18:25:17 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/e69dffe/</guid>
+        <guid>https://66lueflam144.github.io/p/e69dffe/</guid>
         <description>&lt;p&gt;&lt;font size=1&gt;一个比较有趣的题目&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;打开抓包的时候那个&lt;code&gt;cmd=&lt;/code&gt;过于耀眼，所以尝试了&lt;code&gt;cmd=dir&lt;/code&gt;，不过都没有什么，结果倒是多打了一个&lt;code&gt;;&lt;/code&gt;得到forbid的响应。旁边响应还有一个耀眼的&lt;code&gt;base64&lt;/code&gt;。后面那串应该就是Base64编码过的。&lt;/p&gt;
 &lt;h1 id=&#34;base64hex&#34;&gt;base64&amp;amp;hex
@@ -5820,10 +5820,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Mark_Loves_Cat</title>
-        <link>https://demo.stack.jimmycai.com/p/38e9ef8/</link>
+        <link>https://66lueflam144.github.io/p/38e9ef8/</link>
         <pubDate>Sat, 28 Oct 2023 18:14:37 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/38e9ef8/</guid>
+        <guid>https://66lueflam144.github.io/p/38e9ef8/</guid>
         <description>&lt;p&gt;打开靶场是一个非常正式的网页？到处扒拉一下，也在&lt;code&gt;contact&lt;/code&gt;处进行了intruder测试，没有什么结果。&lt;/p&gt;
 &lt;p&gt;再查看页面代码和网络，也没有什么。所以又启动TOOLs。&lt;/p&gt;
 &lt;p&gt;那句话怎么说来着？&lt;code&gt;dirmap&lt;/code&gt;一扫描起来，就发了狠……反正扫出很多东西。&lt;/p&gt;
@@ -6221,10 +6221,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Buy Flag</title>
-        <link>https://demo.stack.jimmycai.com/p/71ccb67/</link>
+        <link>https://66lueflam144.github.io/p/71ccb67/</link>
         <pubDate>Fri, 27 Oct 2023 13:02:11 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/71ccb67/</guid>
+        <guid>https://66lueflam144.github.io/p/71ccb67/</guid>
         <description>&lt;p&gt;之前还是一个新手村门口人的时候打开过，那个时候的无助真的有点好笑。&lt;/p&gt;
 &lt;h1 id=&#34;cuit-student&#34;&gt;CUIT Student
 &lt;/h1&gt;&lt;p&gt;一般这种什么都不外露的就先查看页面源代码，所以找到了：&lt;/p&gt;
@@ -6387,10 +6387,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>BJDCTF Easy MD5</title>
-        <link>https://demo.stack.jimmycai.com/p/09030b0/</link>
+        <link>https://66lueflam144.github.io/p/09030b0/</link>
         <pubDate>Fri, 27 Oct 2023 13:00:25 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/09030b0/</guid>
+        <guid>https://66lueflam144.github.io/p/09030b0/</guid>
         <description>&lt;p&gt;&lt;font size=1&gt;只是隐隐约约记得MD5是一种加密算法&lt;/font&gt;&lt;/p&gt;
 &lt;h1 id=&#34;sql-injection&#34;&gt;SQL Injection？
 &lt;/h1&gt;&lt;p&gt;输入：&lt;/p&gt;
@@ -6693,10 +6693,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>R！C！E！</title>
-        <link>https://demo.stack.jimmycai.com/p/1573821/</link>
+        <link>https://66lueflam144.github.io/p/1573821/</link>
         <pubDate>Mon, 23 Oct 2023 18:20:10 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/1573821/</guid>
+        <guid>https://66lueflam144.github.io/p/1573821/</guid>
         <description>&lt;h2 id=&#34;scan&#34;&gt;Scan
 &lt;/h2&gt;&lt;p&gt;看到这种白茫茫一片的就直接上工具。&lt;/p&gt;
 &lt;p&gt;dirsearch、dirmap一起用&lt;/p&gt;
@@ -6842,10 +6842,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>newstar CTF 2023 听说你是个游戏高手</title>
-        <link>https://demo.stack.jimmycai.com/p/dd90fd2/</link>
+        <link>https://66lueflam144.github.io/p/dd90fd2/</link>
         <pubDate>Mon, 23 Oct 2023 13:17:04 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/dd90fd2/</guid>
+        <guid>https://66lueflam144.github.io/p/dd90fd2/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;知道查看js文件，知道可以修改值但是修改错方向导致痛失……&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7111,10 +7111,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>ACTF 2020 Back File</title>
-        <link>https://demo.stack.jimmycai.com/p/4c47f54/</link>
+        <link>https://66lueflam144.github.io/p/4c47f54/</link>
         <pubDate>Mon, 23 Oct 2023 12:52:06 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/4c47f54/</guid>
+        <guid>https://66lueflam144.github.io/p/4c47f54/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;其实看这个名字的时候就在想是不是和目录遍历有关了。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -7277,10 +7277,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Tbc</title>
-        <link>https://demo.stack.jimmycai.com/p/75c328f/</link>
+        <link>https://66lueflam144.github.io/p/75c328f/</link>
         <pubDate>Thu, 19 Oct 2023 13:23:41 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/75c328f/</guid>
+        <guid>https://66lueflam144.github.io/p/75c328f/</guid>
         <description>&lt;p&gt;笑死我了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -7344,10 +7344,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>文件上传 Get</title>
-        <link>https://demo.stack.jimmycai.com/p/c659435/</link>
+        <link>https://66lueflam144.github.io/p/c659435/</link>
         <pubDate>Tue, 17 Oct 2023 18:26:52 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/c659435/</guid>
+        <guid>https://66lueflam144.github.io/p/c659435/</guid>
         <description>&lt;h1 id=&#34;begin&#34;&gt;begin
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;写了file upload的短分享ppt然后得到自己可以写一个demo的问题，于是开始。&lt;/p&gt;
@@ -7711,10 +7711,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Ping Ping Ping</title>
-        <link>https://demo.stack.jimmycai.com/p/a3176b7/</link>
+        <link>https://66lueflam144.github.io/p/a3176b7/</link>
         <pubDate>Tue, 17 Oct 2023 18:22:57 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/a3176b7/</guid>
+        <guid>https://66lueflam144.github.io/p/a3176b7/</guid>
         <description>&lt;h2 id=&#34;1&#34;&gt;1
 &lt;/h2&gt;&lt;h3 id=&#34;1-1&#34;&gt;（1）
 &lt;/h3&gt;&lt;p&gt;打开靶场，扑面而来一个&lt;/p&gt;
@@ -7949,10 +7949,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>文件包含</title>
-        <link>https://demo.stack.jimmycai.com/p/64b97cd/</link>
+        <link>https://66lueflam144.github.io/p/64b97cd/</link>
         <pubDate>Tue, 17 Oct 2023 13:08:52 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/64b97cd/</guid>
+        <guid>https://66lueflam144.github.io/p/64b97cd/</guid>
         <description>&lt;h1 id=&#34;文件包含漏洞&#34;&gt;文件包含漏洞
 &lt;/h1&gt;&lt;p&gt;PHP version&lt;/p&gt;
 &lt;h2 id=&#34;包含函数&#34;&gt;包含函数
@@ -8318,10 +8318,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Checkin</title>
-        <link>https://demo.stack.jimmycai.com/p/b92f36b/</link>
+        <link>https://66lueflam144.github.io/p/b92f36b/</link>
         <pubDate>Tue, 17 Oct 2023 13:06:03 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/b92f36b/</guid>
+        <guid>https://66lueflam144.github.io/p/b92f36b/</guid>
         <description>&lt;h2 id=&#34;1&#34;&gt;1
 &lt;/h2&gt;&lt;p&gt;常规步骤之后，上传了&lt;code&gt;.htaccess&lt;/code&gt;文件，不过发现被限制了。&lt;/p&gt;
 &lt;p&gt;返回了一个：&lt;/p&gt;
@@ -8438,10 +8438,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>2023 Newstar CTF Begin of HTTP</title>
-        <link>https://demo.stack.jimmycai.com/p/6168dd2/</link>
+        <link>https://66lueflam144.github.io/p/6168dd2/</link>
         <pubDate>Tue, 17 Oct 2023 12:55:32 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/6168dd2/</guid>
+        <guid>https://66lueflam144.github.io/p/6168dd2/</guid>
         <description>&lt;p&gt;OMG&amp;hellip;居然是败给了一个POST&amp;amp;GET&lt;/p&gt;
 &lt;h1 id=&#34;1&#34;&gt;1
 &lt;/h1&gt;&lt;p&gt;感觉和之前做过的一个题目很像，可能出自同一个出题人之手。&lt;/p&gt;
@@ -8788,10 +8788,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>2019 极客大挑战 SecretFile</title>
-        <link>https://demo.stack.jimmycai.com/p/2849be8/</link>
+        <link>https://66lueflam144.github.io/p/2849be8/</link>
         <pubDate>Tue, 17 Oct 2023 12:46:38 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/2849be8/</guid>
+        <guid>https://66lueflam144.github.io/p/2849be8/</guid>
         <description>&lt;p&gt;误入了一下代码审计。。。主要是我还做出来第一步了，所以有很大兴趣继续做下去。&lt;/p&gt;
 &lt;p&gt;用开发者工具可以很容易看到被调成黑色与背景融为一体的&lt;code&gt;you find me&lt;/code&gt;(大概这样)，其实也可以直接看到&lt;code&gt;Archive_room.php&lt;/code&gt;这个文件名。&lt;/p&gt;
 &lt;p&gt;进去以后点点secret然后没有什么收获。&lt;/p&gt;
@@ -9030,10 +9030,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>2019极客大挑战 PHP</title>
-        <link>https://demo.stack.jimmycai.com/p/dea4ca2/</link>
+        <link>https://66lueflam144.github.io/p/dea4ca2/</link>
         <pubDate>Mon, 16 Oct 2023 12:42:43 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/dea4ca2/</guid>
+        <guid>https://66lueflam144.github.io/p/dea4ca2/</guid>
         <description>&lt;p&gt;界面让我想起来之前做过的一个SQL Injection题目，好像也是猫猫在玩毛线。&lt;/p&gt;
 &lt;h1 id=&#34;1&#34;&gt;1
 &lt;/h1&gt;&lt;p&gt;尝试查看响应，直接&lt;code&gt;http://xxx/flag.php&lt;/code&gt;或者&lt;code&gt;http://xxx/index.php&lt;/code&gt;都得不到任何东西。然后再去看看说的话。&lt;/p&gt;
@@ -9367,18 +9367,18 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Archives</title>
-        <link>https://demo.stack.jimmycai.com/archives/</link>
+        <link>https://66lueflam144.github.io/archives/</link>
         <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/archives/</guid>
+        <guid>https://66lueflam144.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Links</title>
-        <link>https://demo.stack.jimmycai.com/links/</link>
+        <link>https://66lueflam144.github.io/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/links/</guid>
+        <guid>https://66lueflam144.github.io/links/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -9410,10 +9410,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Search</title>
-        <link>https://demo.stack.jimmycai.com/search/</link>
+        <link>https://66lueflam144.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/search/</guid>
+        <guid>https://66lueflam144.github.io/search/</guid>
         <description></description>
         </item>
         

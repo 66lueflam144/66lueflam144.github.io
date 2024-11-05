@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>RCE on Real One x86</title>
-        <link>https://demo.stack.jimmycai.com/tags/rce/</link>
+        <link>https://66lueflam144.github.io/tags/rce/</link>
         <description>Recent content in RCE on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 23 Oct 2023 18:20:10 +0800</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/tags/rce/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 23 Oct 2023 18:20:10 +0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/rce/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>R！C！E！</title>
-        <link>https://demo.stack.jimmycai.com/p/1573821/</link>
+        <link>https://66lueflam144.github.io/p/1573821/</link>
         <pubDate>Mon, 23 Oct 2023 18:20:10 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/1573821/</guid>
+        <guid>https://66lueflam144.github.io/p/1573821/</guid>
         <description>&lt;h2 id=&#34;scan&#34;&gt;Scan
 &lt;/h2&gt;&lt;p&gt;看到这种白茫茫一片的就直接上工具。&lt;/p&gt;
 &lt;p&gt;dirsearch、dirmap一起用&lt;/p&gt;
@@ -157,10 +157,10 @@
         </item>
         <item>
         <title>Checkin</title>
-        <link>https://demo.stack.jimmycai.com/p/b92f36b/</link>
+        <link>https://66lueflam144.github.io/p/b92f36b/</link>
         <pubDate>Tue, 17 Oct 2023 13:06:03 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/b92f36b/</guid>
+        <guid>https://66lueflam144.github.io/p/b92f36b/</guid>
         <description>&lt;h2 id=&#34;1&#34;&gt;1
 &lt;/h2&gt;&lt;p&gt;常规步骤之后，上传了&lt;code&gt;.htaccess&lt;/code&gt;文件，不过发现被限制了。&lt;/p&gt;
 &lt;p&gt;返回了一个：&lt;/p&gt;

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>CTF on Real One x86</title>
-        <link>https://demo.stack.jimmycai.com/categories/ctf/</link>
+        <link>https://66lueflam144.github.io/categories/ctf/</link>
         <description>Recent content in CTF on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 06 Nov 2023 12:53:29 +0800</lastBuildDate><atom:link href="https://demo.stack.jimmycai.com/categories/ctf/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 06 Nov 2023 12:53:29 +0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/categories/ctf/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>ACTF 2020 Include</title>
-        <link>https://demo.stack.jimmycai.com/p/85d9197/</link>
+        <link>https://66lueflam144.github.io/p/85d9197/</link>
         <pubDate>Mon, 06 Nov 2023 12:53:29 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/85d9197/</guid>
+        <guid>https://66lueflam144.github.io/p/85d9197/</guid>
         <description>&lt;h1 id=&#34;filexxx&#34;&gt;?file=xxx
 &lt;/h1&gt;&lt;p&gt;用burp suite读取到（其实直接看URL也能看到，本题属于hackbar都不用的）：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -69,10 +69,10 @@
         </item>
         <item>
         <title>Easy Web</title>
-        <link>https://demo.stack.jimmycai.com/p/e69dffe/</link>
+        <link>https://66lueflam144.github.io/p/e69dffe/</link>
         <pubDate>Sun, 29 Oct 2023 18:25:17 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/e69dffe/</guid>
+        <guid>https://66lueflam144.github.io/p/e69dffe/</guid>
         <description>&lt;p&gt;&lt;font size=1&gt;一个比较有趣的题目&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;打开抓包的时候那个&lt;code&gt;cmd=&lt;/code&gt;过于耀眼，所以尝试了&lt;code&gt;cmd=dir&lt;/code&gt;，不过都没有什么，结果倒是多打了一个&lt;code&gt;;&lt;/code&gt;得到forbid的响应。旁边响应还有一个耀眼的&lt;code&gt;base64&lt;/code&gt;。后面那串应该就是Base64编码过的。&lt;/p&gt;
 &lt;h1 id=&#34;base64hex&#34;&gt;base64&amp;amp;hex
@@ -520,10 +520,10 @@
         </item>
         <item>
         <title>Mark_Loves_Cat</title>
-        <link>https://demo.stack.jimmycai.com/p/38e9ef8/</link>
+        <link>https://66lueflam144.github.io/p/38e9ef8/</link>
         <pubDate>Sat, 28 Oct 2023 18:14:37 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/38e9ef8/</guid>
+        <guid>https://66lueflam144.github.io/p/38e9ef8/</guid>
         <description>&lt;p&gt;打开靶场是一个非常正式的网页？到处扒拉一下，也在&lt;code&gt;contact&lt;/code&gt;处进行了intruder测试，没有什么结果。&lt;/p&gt;
 &lt;p&gt;再查看页面代码和网络，也没有什么。所以又启动TOOLs。&lt;/p&gt;
 &lt;p&gt;那句话怎么说来着？&lt;code&gt;dirmap&lt;/code&gt;一扫描起来，就发了狠……反正扫出很多东西。&lt;/p&gt;
@@ -921,10 +921,10 @@
         </item>
         <item>
         <title>Buy Flag</title>
-        <link>https://demo.stack.jimmycai.com/p/71ccb67/</link>
+        <link>https://66lueflam144.github.io/p/71ccb67/</link>
         <pubDate>Fri, 27 Oct 2023 13:02:11 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/71ccb67/</guid>
+        <guid>https://66lueflam144.github.io/p/71ccb67/</guid>
         <description>&lt;p&gt;之前还是一个新手村门口人的时候打开过，那个时候的无助真的有点好笑。&lt;/p&gt;
 &lt;h1 id=&#34;cuit-student&#34;&gt;CUIT Student
 &lt;/h1&gt;&lt;p&gt;一般这种什么都不外露的就先查看页面源代码，所以找到了：&lt;/p&gt;
@@ -1087,10 +1087,10 @@
         </item>
         <item>
         <title>BJDCTF Easy MD5</title>
-        <link>https://demo.stack.jimmycai.com/p/09030b0/</link>
+        <link>https://66lueflam144.github.io/p/09030b0/</link>
         <pubDate>Fri, 27 Oct 2023 13:00:25 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/09030b0/</guid>
+        <guid>https://66lueflam144.github.io/p/09030b0/</guid>
         <description>&lt;p&gt;&lt;font size=1&gt;只是隐隐约约记得MD5是一种加密算法&lt;/font&gt;&lt;/p&gt;
 &lt;h1 id=&#34;sql-injection&#34;&gt;SQL Injection？
 &lt;/h1&gt;&lt;p&gt;输入：&lt;/p&gt;
@@ -1393,10 +1393,10 @@
         </item>
         <item>
         <title>R！C！E！</title>
-        <link>https://demo.stack.jimmycai.com/p/1573821/</link>
+        <link>https://66lueflam144.github.io/p/1573821/</link>
         <pubDate>Mon, 23 Oct 2023 18:20:10 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/1573821/</guid>
+        <guid>https://66lueflam144.github.io/p/1573821/</guid>
         <description>&lt;h2 id=&#34;scan&#34;&gt;Scan
 &lt;/h2&gt;&lt;p&gt;看到这种白茫茫一片的就直接上工具。&lt;/p&gt;
 &lt;p&gt;dirsearch、dirmap一起用&lt;/p&gt;
@@ -1542,10 +1542,10 @@
         </item>
         <item>
         <title>newstar CTF 2023 听说你是个游戏高手</title>
-        <link>https://demo.stack.jimmycai.com/p/dd90fd2/</link>
+        <link>https://66lueflam144.github.io/p/dd90fd2/</link>
         <pubDate>Mon, 23 Oct 2023 13:17:04 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/dd90fd2/</guid>
+        <guid>https://66lueflam144.github.io/p/dd90fd2/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;知道查看js文件，知道可以修改值但是修改错方向导致痛失……&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1811,10 +1811,10 @@
         </item>
         <item>
         <title>ACTF 2020 Back File</title>
-        <link>https://demo.stack.jimmycai.com/p/4c47f54/</link>
+        <link>https://66lueflam144.github.io/p/4c47f54/</link>
         <pubDate>Mon, 23 Oct 2023 12:52:06 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/4c47f54/</guid>
+        <guid>https://66lueflam144.github.io/p/4c47f54/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;其实看这个名字的时候就在想是不是和目录遍历有关了。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1977,10 +1977,10 @@
         </item>
         <item>
         <title>Ping Ping Ping</title>
-        <link>https://demo.stack.jimmycai.com/p/a3176b7/</link>
+        <link>https://66lueflam144.github.io/p/a3176b7/</link>
         <pubDate>Tue, 17 Oct 2023 18:22:57 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/a3176b7/</guid>
+        <guid>https://66lueflam144.github.io/p/a3176b7/</guid>
         <description>&lt;h2 id=&#34;1&#34;&gt;1
 &lt;/h2&gt;&lt;h3 id=&#34;1-1&#34;&gt;（1）
 &lt;/h3&gt;&lt;p&gt;打开靶场，扑面而来一个&lt;/p&gt;
@@ -2215,10 +2215,10 @@
         </item>
         <item>
         <title>Checkin</title>
-        <link>https://demo.stack.jimmycai.com/p/b92f36b/</link>
+        <link>https://66lueflam144.github.io/p/b92f36b/</link>
         <pubDate>Tue, 17 Oct 2023 13:06:03 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/b92f36b/</guid>
+        <guid>https://66lueflam144.github.io/p/b92f36b/</guid>
         <description>&lt;h2 id=&#34;1&#34;&gt;1
 &lt;/h2&gt;&lt;p&gt;常规步骤之后，上传了&lt;code&gt;.htaccess&lt;/code&gt;文件，不过发现被限制了。&lt;/p&gt;
 &lt;p&gt;返回了一个：&lt;/p&gt;
@@ -2335,10 +2335,10 @@
         </item>
         <item>
         <title>2023 Newstar CTF Begin of HTTP</title>
-        <link>https://demo.stack.jimmycai.com/p/6168dd2/</link>
+        <link>https://66lueflam144.github.io/p/6168dd2/</link>
         <pubDate>Tue, 17 Oct 2023 12:55:32 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/6168dd2/</guid>
+        <guid>https://66lueflam144.github.io/p/6168dd2/</guid>
         <description>&lt;p&gt;OMG&amp;hellip;居然是败给了一个POST&amp;amp;GET&lt;/p&gt;
 &lt;h1 id=&#34;1&#34;&gt;1
 &lt;/h1&gt;&lt;p&gt;感觉和之前做过的一个题目很像，可能出自同一个出题人之手。&lt;/p&gt;
@@ -2685,10 +2685,10 @@
         </item>
         <item>
         <title>2019 极客大挑战 SecretFile</title>
-        <link>https://demo.stack.jimmycai.com/p/2849be8/</link>
+        <link>https://66lueflam144.github.io/p/2849be8/</link>
         <pubDate>Tue, 17 Oct 2023 12:46:38 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/2849be8/</guid>
+        <guid>https://66lueflam144.github.io/p/2849be8/</guid>
         <description>&lt;p&gt;误入了一下代码审计。。。主要是我还做出来第一步了，所以有很大兴趣继续做下去。&lt;/p&gt;
 &lt;p&gt;用开发者工具可以很容易看到被调成黑色与背景融为一体的&lt;code&gt;you find me&lt;/code&gt;(大概这样)，其实也可以直接看到&lt;code&gt;Archive_room.php&lt;/code&gt;这个文件名。&lt;/p&gt;
 &lt;p&gt;进去以后点点secret然后没有什么收获。&lt;/p&gt;
@@ -2927,10 +2927,10 @@
         </item>
         <item>
         <title>2019极客大挑战 PHP</title>
-        <link>https://demo.stack.jimmycai.com/p/dea4ca2/</link>
+        <link>https://66lueflam144.github.io/p/dea4ca2/</link>
         <pubDate>Mon, 16 Oct 2023 12:42:43 +0800</pubDate>
         
-        <guid>https://demo.stack.jimmycai.com/p/dea4ca2/</guid>
+        <guid>https://66lueflam144.github.io/p/dea4ca2/</guid>
         <description>&lt;p&gt;界面让我想起来之前做过的一个SQL Injection题目，好像也是猫猫在玩毛线。&lt;/p&gt;
 &lt;h1 id=&#34;1&#34;&gt;1
 &lt;/h1&gt;&lt;p&gt;尝试查看响应，直接&lt;code&gt;http://xxx/flag.php&lt;/code&gt;或者&lt;code&gt;http://xxx/index.php&lt;/code&gt;都得不到任何东西。然后再去看看说的话。&lt;/p&gt;

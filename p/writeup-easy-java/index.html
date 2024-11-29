@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="通过easy java实地了解一下java web以及python automatic">
+<title>WriteUp easy java</title>
+
+<link rel='canonical' href='https://66lueflam144.github.io/p/writeup-easy-java/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="WriteUp easy java">
+<meta property='og:description' content="通过easy java实地了解一下java web以及python automatic">
+<meta property='og:url' content='https://66lueflam144.github.io/p/writeup-easy-java/'>
+<meta property='og:site_name' content='Real One x86'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-29T13:18:48&#43;08:00'/><meta property='article:modified_time' content='2024-11-29T13:18:48&#43;08:00'/><meta property='og:image' content='https://66lueflam144.github.io/p/writeup-easy-java/python.png' />
+<meta name="twitter:title" content="WriteUp easy java">
+<meta name="twitter:description" content="通过easy java实地了解一下java web以及python automatic"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://66lueflam144.github.io/p/writeup-easy-java/python.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12036493284228052079.png" width="300"
+                            height="398" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤠</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Real One x86</a></h1>
+            <h2 class="site-description">La Vida Loca</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://66lueflam144.github.io/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="2 4" stroke-dashoffset="6" d="M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9"><animate attributeName="stroke-dashoffset" dur="0.6s" repeatCount="indefinite" values="6;0"/></path><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 21c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.1s" dur="0.4s" values="32;0"/></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M12 8v7.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="10;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 15.5l3.5 -3.5M12 15.5l-3.5 -3.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.2s" values="6;0"/></path></g></svg>
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><path fill="currentColor" d="m6 14l7-12v8h5l-7 12v-8z" opacity=".16"/><path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="m6 14l7-12v8h5l-7 12v-8z"/></g></svg>
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="28" stroke-dashoffset="28" d="M12 10l4 7h-8Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="28;0"/></path><path d="M12 10l4 7h-8Z" opacity="0"><animate attributeName="d" begin="0.4s" dur="0.8s" keyTimes="0;0.25;1" repeatCount="indefinite" values="M12 10l4 7h-8Z;M12 4l9.25 16h-18.5Z;M12 4l9.25 16h-18.5Z"/><animate attributeName="opacity" begin="0.4s" dur="0.8s" keyTimes="0;0.1;0.75;1" repeatCount="indefinite" values="0;1;1;0"/></path></g></svg>
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-opacity="0" d="M12 3l2.35 5.76l6.21 0.46l-4.76 4.02l1.49 6.04l-5.29 -3.28l-5.29 3.28l1.49 -6.04l-4.76 -4.02l6.21 -0.46Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.15s" values="0;0.3"/></path><path fill="none" stroke="currentColor" stroke-dasharray="36" stroke-dashoffset="36" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="36;0"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg>
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#31-一个例子">3.1 一个例子</a></li>
+    <li><a href="#32-为什么是class文件">3.2 为什么是.class文件</a></li>
+    <li><a href="#33-下载文件示例">3.3 下载文件示例</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#41-请求分析">4.1 请求分析</a></li>
+    <li><a href="#42-请求切换">4.2 请求切换</a></li>
+    <li><a href="#43-修改正确路径">4.3 修改正确路径</a></li>
+    <li><a href="#44-直接访问flag">4.4 直接访问<code>/Flag</code></a></li>
+    <li><a href="#45-再次请求">4.5 再次请求</a></li>
+    <li><a href="#46-get-flag">4.6 get flag</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#最终版">最终版</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/writeup-easy-java/">
+                <img src="/p/writeup-easy-java/python_hu2458326641929225144.png"
+                        srcset="/p/writeup-easy-java/python_hu2458326641929225144.png 800w, /p/writeup-easy-java/python_hu17369690670022858454.png 1600w"
+                        width="800" 
+                        height="537" 
+                        loading="lazy"
+                        alt="Featured image of post WriteUp easy java" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/writeup-easy-java/">WriteUp easy java</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            通过easy java实地了解一下java web以及python automatic
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 29, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    8 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="easy-java">easy java
+</h1><p><code>roar ctf</code></p>
+<h1 id="1intro">1.intro
+</h1><p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/f86b476b-7cb4-4d35-a796-06c3fe732d22"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<p>找了一圈感觉找不到源码。</p>
+<p>我现在在思考是不是我的错觉，但是这张图片又告诉我不是错觉是真的下载了一个文件</p>
+<p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/73126bfb-752d-46fd-bb1a-161230ad7617"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<p><a class="link" href="http://xxx/Download?filename=help.docx"  target="_blank" rel="noopener"
+    ><code>xxx/Download?filename=help.docx</code></a></p>
+<p>说回来，最开始我想着是路径遍历的问题，虽然确实是，但是我想成了<code>/etc</code> 这类经典的。</p>
+<p>动用了<code>../../../</code> 但是喜提<strong>notfound</strong></p>
+<h1 id="2一个会触发javaiofilenotfoundexception的例子">2.一个会触发java.io.FileNotFoundException的例子
+</h1><p><a class="link" href="https://rollbar.com/blog/java-filenotfoundexception/#"  target="_blank" rel="noopener"
+    >How to Fix the FileNotFoundException in Java.io</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">public</span> <span class="kr">class</span> <span class="nx">FileNotFoundExceptionExample</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">public</span> <span class="kr">static</span> <span class="k">void</span> <span class="nx">main</span><span class="p">(</span><span class="nb">String</span> <span class="nx">args</span><span class="p">[])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">BufferedReader</span> <span class="nx">br</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">br</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BufferedReader</span><span class="p">(</span><span class="k">new</span> <span class="nx">FileReader</span><span class="p">(</span><span class="s2">&#34;myfile.txt&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">String</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">((</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">br</span><span class="p">.</span><span class="nx">readLine</span><span class="p">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">System</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">IOException</span> <span class="nx">ioe</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">ioe</span><span class="p">.</span><span class="nx">printStackTrace</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="nx">br</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">br</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">IOException</span> <span class="nx">ioe</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">ioe</span><span class="p">.</span><span class="nx">printStackTrace</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>是否可以执行路径遍历</li>
+</ul>
+<p>   - 看起来可以</p>
+<h1 id="3tomcat-web-inf">3.tomcat web-inf
+</h1><p>i got a doc link</p>
+<p><a class="link" href="https://tomcat.apache.org/tomcat-9.0-doc/appdev/deployment.html"  target="_blank" rel="noopener"
+    >Application Developer&rsquo;s Guide (9.0.97) - Deployment</a></p>
+<p>摘要一下：</p>
+<ul>
+<li>
+<p>**.html, <em>.jsp, etc.</em> - The HTML and JSP pages, along with other files that must be visible to the client browser (such as JavaScript, stylesheet files, and images) for your application.</p>
+</li>
+<li>
+<p><strong>/WEB-INF/web.xml</strong> - The <em>Web Application Deployment Descriptor</em> for your application. This is <em>::an XML file describing the servlets and other component::s</em> that make up your application, along with any initialization parameters and container-managed security constraints that you want the server to enforce for you. This file is discussed in more detail in the following subsection.</p>
+</li>
+<li>
+<p><strong>/WEB-INF/classes/</strong> - This directory <em>::contains any Java class files (and associated resources) required for your application::</em>, including both servlet and non-servlet classes, that are not combined into JAR files. If your classes are organized into Java packages, you must reflect this in the directory hierarchy under <code>/WEB-INF/classes/</code>. ::For example, a Java class named <code>com.mycompany.mypackage.MyServlet</code> would need to be stored in a file named <code>/WEB-INF/classes/com/mycompany/mypackage/MyServlet.class</code>.::</p>
+</li>
+<li>
+<p><strong>/WEB-INF/lib/</strong> - This directory ::contains JAR files that contain Java class files:: (and associated resources) required for your application, such as third party class libraries or JDBC drivers.</p>
+</li>
+</ul>
+<h2 id="31-一个例子">3.1 一个例子
+</h2><p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/270f3246-917f-4792-97f6-6171452c661d"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<p>之前并没有仔细研究过这些，把重点全部放在了如何编写代码上。</p>
+<p>这个是一个使用local tomcat作为服务器的项目demo（其实是一个学习java  web的时候写的我也不知道是个什么的东西）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nx">idea</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">src</span>
+</span></span><span class="line"><span class="cl">    <span class="err">└──</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">        <span class="err">├──</span> <span class="nx">java</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">└──</span> <span class="nx">com</span><span class="p">.</span><span class="nx">test</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>       <span class="err">├──</span> <span class="nx">Filters</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>       <span class="err">├──</span> <span class="nx">Listeners</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>       <span class="err">│</span>   <span class="err">└──</span> <span class="nx">ListenerforServletContext</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>       <span class="err">└──</span> <span class="nx">Servlets</span>
+</span></span><span class="line"><span class="cl">        <span class="err">├──</span> <span class="nx">resources</span>
+</span></span><span class="line"><span class="cl">        <span class="err">└──</span> <span class="nx">webapp</span>
+</span></span><span class="line"><span class="cl"><span class="nx">target</span>
+</span></span><span class="line"><span class="cl">    <span class="err">├──</span> <span class="nx">classes</span>
+</span></span><span class="line"><span class="cl">    <span class="err">│</span>   <span class="err">└──</span> <span class="nx">com</span>
+</span></span><span class="line"><span class="cl">    <span class="err">│</span>       <span class="err">└──</span> <span class="nx">test</span>
+</span></span><span class="line"><span class="cl">    <span class="err">│</span>           <span class="err">├──</span> <span class="nx">Filters</span>
+</span></span><span class="line"><span class="cl">    <span class="err">│</span>           <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Filter1</span>
+</span></span><span class="line"><span class="cl">    <span class="err">│</span>           <span class="err">├──</span> <span class="nx">Listeners</span>
+</span></span><span class="line"><span class="cl">    <span class="err">│</span>           <span class="err">│</span>   <span class="err">└──</span> <span class="nx">ListenerforServletContext</span>
+</span></span><span class="line"><span class="cl">    <span class="err">│</span>           <span class="err">└──</span> <span class="nx">Servlets</span>
+</span></span><span class="line"><span class="cl">    <span class="err">│</span>               <span class="err">└──</span> <span class="nx">DisplayHeader</span>
+</span></span><span class="line"><span class="cl">    <span class="err">├──</span> <span class="nx">generated</span><span class="o">-</span><span class="nx">sources</span>
+</span></span><span class="line"><span class="cl">    <span class="err">└──</span> <span class="nx">ServletDemo2</span>
+</span></span><span class="line"><span class="cl">        <span class="err">├──</span> <span class="nx">META</span><span class="o">-</span><span class="nx">INF</span>
+</span></span><span class="line"><span class="cl">        <span class="err">├──</span> <span class="nx">WEB</span><span class="o">-</span><span class="nx">INF</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">├──</span> <span class="nx">classes</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">│</span>   <span class="err">└──</span> <span class="nx">com</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">│</span>       <span class="err">└──</span> <span class="nx">test</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">│</span>           <span class="err">├──</span> <span class="nx">Filters</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">│</span>           <span class="err">│</span>   <span class="err">└──</span> <span class="nx">Filter1</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">│</span>           <span class="err">├──</span> <span class="nx">Listeners</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">│</span>           <span class="err">│</span>   <span class="err">└──</span> <span class="nx">ListenerforServletContext</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">│</span>           <span class="err">└──</span> <span class="nx">Servlets</span>
+</span></span><span class="line"><span class="cl">        <span class="err">│</span>   <span class="err">└──</span> <span class="nx">web</span><span class="p">.</span><span class="nx">xml</span>
+</span></span><span class="line"><span class="cl">        <span class="err">└──</span> <span class="nx">lib</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pom</span><span class="p">.</span><span class="nx">xml</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>大概是这样，不过这个写得很不符合项目规范。</p>
+<h2 id="32-为什么是class文件">3.2 为什么是.class文件
+</h2><p>存放在target目录下的均为<code>.class</code> 文件，且1：1源文件。</p>
+<p>至于为什么是<code>.class</code> 文件</p>
+<p><code>.java</code> 和<code>.class</code> 之间的关系简单说就是，<strong>::前者编译之后得到后者。::</strong></p>
+<ul>
+<li><code>.java</code> ：java源代码，面向人类</li>
+<li><code>.class</code> ：编译之后得到的字节码，面向JVM</li>
+</ul>
+<p>要是更为深层，这和tomcat的实现有关。</p>
+<h2 id="33-下载文件示例">3.3 下载文件示例
+</h2><ul>
+<li>
+<p>大多数下载请求都是通过GET而不是POST</p>
+</li>
+<li>
+<p><code>doGET</code></p>
+</li>
+<li>
+<p>对比一下实际靶场的error stack，应该还有一个<code>doPost</code> 方法。</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.download</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.annotation.WebServlet</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.http.HttpServlet</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.http.HttpServletRequest</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">javax.servlet.http.HttpServletResponse</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileInputStream</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.OutputStream</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&#34;/download&#34;</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FileDownloadServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 假设这里从请求参数中获取要下载的文件名，实际应用中可能有更复杂的获取方式  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;filename&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 假设文件存放在服务器的某个特定目录下  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">fileDirectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;/path/to/files/&#34;</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">File</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">fileDirectory</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">filename</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="na">exists</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 设置响应头，让浏览器知道这是一个文件下载操作，以及文件名等信息  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">response</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&#34;application/octet-stream&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">response</span><span class="p">.</span><span class="na">setHeader</span><span class="p">(</span><span class="s">&#34;Content-Disposition&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;attachment; filename=\&#34;&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;\&#34;&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 获取文件输入流，用于读取文件内容  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">FileInputStream</span><span class="w"> </span><span class="n">inputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="n">file</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 获取输出流，用于将文件内容发送到客户端（浏览器）  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">OutputStream</span><span class="w"> </span><span class="n">outputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">getOutputStream</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="n">4096</span><span class="o">]</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">bytesRead</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">bytesRead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inputStream</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">))</span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="n">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">outputStream</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">bytesRead</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 关闭流  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">inputStream</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">outputStream</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 如果文件不存在，返回相应的错误信息给客户端  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">response</span><span class="p">.</span><span class="na">getWriter</span><span class="p">().</span><span class="na">write</span><span class="p">(</span><span class="s">&#34;文件不存在：&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">filename</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>doPost</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&#34;/download&#34;</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FileDownloadServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">/</span><span class="p">...</span><span class="na">省略</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doPost</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 同样从请求参数中获取要下载的文件名，实际可根据POST请求特点调整获取方式  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;filename&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 假设文件存放在服务器的某个特定目录下，这里设置该目录路径，可根据实际情况修改  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">fileDirectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;/path/to/files/&#34;</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">File</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">fileDirectory</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">filename</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="na">exists</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 设置响应头，让浏览器知道这是一个文件下载操作，以及文件名等信息  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">response</span><span class="p">.</span><span class="na">setContentType</span><span class="p">(</span><span class="s">&#34;application/octet-stream&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">response</span><span class="p">.</span><span class="na">setHeader</span><span class="p">(</span><span class="s">&#34;Content-Disposition&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;attachment; filename=\&#34;&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;\&#34;&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 获取文件输入流，用于读取文件内容  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">FileInputStream</span><span class="w"> </span><span class="n">inputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="n">file</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 获取输出流，用于将文件内容发送到客户端（浏览器）  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">OutputStream</span><span class="w"> </span><span class="n">outputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="na">getOutputStream</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="n">4096</span><span class="o">]</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">bytesRead</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">bytesRead</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inputStream</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">))</span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="n">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">outputStream</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">bytesRead</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 关闭流  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">inputStream</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">outputStream</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 如果文件不存在，返回相应的错误信息给客户端  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">response</span><span class="p">.</span><span class="na">getWriter</span><span class="p">().</span><span class="na">write</span><span class="p">(</span><span class="s">&#34;文件不存在：&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">filename</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="4easy-java-writeup">4.Easy java writeup
+</h1><h2 id="41-请求分析">4.1 请求分析
+</h2><p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/18b9960c-5abf-4663-9766-eb654590e86d"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<ul>
+<li>GET请求</li>
+</ul>
+<p>   - 为什么使用GET？与使用POST的区别？</p>
+<p>   - 为什么GET请求无法下载反而显示notfound</p>
+<p>     - 和靶场的doPost以及doGet实现有关</p>
+<ul>
+<li>是什么使得下载成功的？</li>
+</ul>
+<p>   - 使用了hackbar的POST</p>
+<h2 id="42-请求切换">4.2 请求切换
+</h2><p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/ab9b6ade-2b0f-43bc-8c9e-9897fe37ffaf"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<p>修改请求的文件是<code>web.xml</code></p>
+<p>虽然502  error</p>
+<p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/4caaf87b-dcf9-49f6-811f-0eeede7e1486"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<p>还有一句<code>Apache Tomcat/8.5.24</code></p>
+<p><strong>获取到的：</strong></p>
+<ol>
+<li>
+<p><code>usr/local</code></p>
+</li>
+<li>
+<p>调用链</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">java.io.FileNotFoundException:  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">##47;usr##47;local##47;tomcat##47;webapps##47;ROOT##47;web.xml (No such file or directory)  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">java.io.FileInputStream.open(Native Method)  
+</span></span><span class="line"><span class="cl">java.io.FileInputStream.open(FileInputStream.java:195)  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)  
+</span></span><span class="line"><span class="cl">java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:93)  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">com.wm.ctf.DownloadController.doPost(DownloadController.java:24)  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">javax.servlet.http.HttpServlet.service(HttpServlet.java:661)  
+</span></span><span class="line"><span class="cl">javax.servlet.http.HttpServlet.service(HttpServlet.java:742)  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>这算是什么级别的信息泄露？</li>
+</ul>
+<p>   - 错误处理不当？</p>
+<p>      - 如果是，如何正确处理？</p>
+<p>        - 或许是不要输出原生java的报错</p>
+<h2 id="43-修改正确路径">4.3 修改正确路径
+</h2><p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/0d50827c-4ec3-4be1-abd5-5034311c1f5a"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<p>相应的响应内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">HTTP/1.1 200   
+</span></span><span class="line"><span class="cl">Server: openresty  
+</span></span><span class="line"><span class="cl">Date: Wed, 27 Nov 2024 02:15:12 GMT  
+</span></span><span class="line"><span class="cl">Content-Type: application/xml  
+</span></span><span class="line"><span class="cl">Connection: close  
+</span></span><span class="line"><span class="cl">Vary: Accept-Encoding  
+</span></span><span class="line"><span class="cl">Content-Disposition: attachment;filename=WEB-INF/web.xml  
+</span></span><span class="line"><span class="cl">Cache-Control: no-cache  
+</span></span><span class="line"><span class="cl">Content-Length: 1562  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>  
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;web-app</span> <span class="na">xmlns=</span><span class="s">&#34;http://xmlns.jcp.org/xml/ns/javaee&#34;</span>  
+</span></span><span class="line"><span class="cl">         <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>  
+</span></span><span class="line"><span class="cl">         <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&#34;</span>  
+</span></span><span class="line"><span class="cl">         <span class="na">version=</span><span class="s">&#34;4.0&#34;</span><span class="nt">&gt;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;welcome-file-list&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;welcome-file&gt;</span>Index<span class="nt">&lt;/welcome-file&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/welcome-file-list&gt;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>IndexController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-class&gt;</span>com.wm.ctf.IndexController<span class="nt">&lt;/servlet-class&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servlet-mapping&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>IndexController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;url-pattern&gt;</span>/Index<span class="nt">&lt;/url-pattern&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet-mapping&gt;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>LoginController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-class&gt;</span>com.wm.ctf.LoginController<span class="nt">&lt;/servlet-class&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servlet-mapping&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>LoginController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;url-pattern&gt;</span>/Login<span class="nt">&lt;/url-pattern&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet-mapping&gt;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>DownloadController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-class&gt;</span>com.wm.ctf.DownloadController<span class="nt">&lt;/servlet-class&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servlet-mapping&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>DownloadController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;url-pattern&gt;</span>/Download<span class="nt">&lt;/url-pattern&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet-mapping&gt;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>FlagController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-class&gt;</span>com.wm.ctf.FlagController<span class="nt">&lt;/servlet-class&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servlet-mapping&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>FlagController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;url-pattern&gt;</span>/Flag<span class="nt">&lt;/url-pattern&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet-mapping&gt;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/web-app&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>一种常见的servlet和mapping的bind</p>
+<h2 id="44-直接访问flag">4.4 直接访问<code>/Flag</code>
+</h2><p>抱着试一试的心</p>
+<p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/fdc0496b-b1ea-46ed-a772-d2f17b5c4aa6"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<p>此路不同就走另外的路。</p>
+<p>不过我没有想到的是走了获取字节码的路。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="nt">&lt;servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>FlagController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-class&gt;</span>com.wm.ctf.FlagController<span class="nt">&lt;/servlet-class&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;servlet-mapping&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;servlet-name&gt;</span>FlagController<span class="nt">&lt;/servlet-name&gt;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;url-pattern&gt;</span>/Flag<span class="nt">&lt;/url-pattern&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/servlet-mapping&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="45-再次请求">4.5 再次请求
+</h2><p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/52fa0c81-b118-483e-ae40-d17e530285dd"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<p>请求得到结果</p>
+<p>看到Come On</p>
+<p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/ec0e246f-758b-4796-9e0b-d9b670482f12"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h2 id="46-get-flag">4.6 get flag
+</h2><p>两个等号</p>
+<p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/4a064951-15ac-46c4-8ad4-ce7b66bcff31"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<ul>
+<li>base64编码都是以<code>==</code> 结尾吗？</li>
+</ul>
+<p>   在 Base64 编码过程中，数据被按<em>每 6 位一组</em>进行分组，然后映射到对应的 Base64 字符表中的字符。</p>
+<p>   当被编码的数据长度<strong>不是 3 的倍数</strong>时，会进行填充操作：</p>
+<p>   1. 如果原数据长度除以 3 余 1，编码结果会在末尾添加 2 个 “=”。</p>
+<p>   2. 如果原数据长度除以 3 余 2，编码结果会在末尾添加 1 个 “=”。</p>
+<p>   3. 如果原数据长度是 3 的倍数，则不需要添加 “=”。</p>
+<p>一个非常有趣的ctf</p>
+<p><img src="https://res.craft.do/user/full/3cf94341-028f-a488-10df-d065aa1370fc/doc/d3036717-b075-fe5b-4aff-239f3b13366f/8bbcf1cc-547d-409b-9a05-e87eeea5a81a"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h1 id="试图用python完成自动化">试图用python完成自动化
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_user_agent</span><span class="p">():</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">user_agents</span> <span class="o">=</span> <span class="p">[</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/59.0&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/16.1709&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">user_agents</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_headers</span><span class="p">():</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">get_user_agent</span><span class="p">(),</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Accept-Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en-US,en;q=0.5&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Accept-Encoding&#34;</span><span class="p">:</span> <span class="s2">&#34;gzip, deflate, br&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Connection&#34;</span><span class="p">:</span> <span class="s2">&#34;keep-alive&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">headers</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">send_get_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">headers</span> <span class="o">=</span> <span class="n">get_headers</span><span class="p">()</span>  <span class="c1"># 获取伪装的请求头  </span>
+</span></span><span class="line"><span class="cl">        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;GET 请求成功!&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;响应内容：&#34;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">5500</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;GET 请求失败，状态码：</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;请求错误：</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">send_post_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">headers</span> <span class="o">=</span> <span class="n">get_headers</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;POST 请求成功!&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;响应内容：&#34;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">500</span><span class="p">])</span>    
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;POST 请求失败，状态码：</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;请求错误：</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;--------It gets starting------&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://501e1e92-a571-4fae-b8ae-6ce7c2722ed7.node5.buuoj.cn:81/&#34;</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://501e1e92-a571-4fae-b8ae-6ce7c2722ed7.node5.buuoj.cn:81/Download?filename=help.docx&#34;</span>  
+</span></span><span class="line"><span class="cl">    <span class="c1"># params = {&#39;username&#39;: &#39;1&#39;, &#39;password&#39;: 1}  </span>
+</span></span><span class="line"><span class="cl">    <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">send_get_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;-------wait ending--------&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">send_post_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">--------</span><span class="n">It</span><span class="w"> </span><span class="n">gets</span><span class="w"> </span><span class="n">starting</span><span class="o">------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">GET</span><span class="w"> </span><span class="n">请求成功</span><span class="o">!</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">响应内容</span><span class="err">：</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">FileNotFoundException</span><span class="p">:{</span><span class="n">help</span><span class="p">.</span><span class="na">docx</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">POST</span><span class="w"> </span><span class="n">请求成功</span><span class="o">!</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">响应内容</span><span class="err">：</span><span class="w"> </span><span class="n">PK</span><span class="err"></span><span class="w"> </span><span class="err"></span><span class="w">   </span><span class="o">!</span><span class="w"> </span><span class="n">ߤ</span><span class="err">�</span><span class="n">lZ</span><span class="err"></span><span class="w">   </span><span class="err"></span><span class="w">  </span><span class="err"></span><span class="o">[</span><span class="n">Content_Types</span><span class="o">]</span><span class="p">.</span><span class="na">xml</span><span class="w"> </span><span class="err">�</span><span class="p">(</span><span class="err">�</span><span class="w"> </span><span class="err"></span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后我也知道当时下载了help.docx不是幻觉了，是通过post下载了。</p>
+<p>现在的问题是，</p>
+<ul>
+<li>如何判断对方是java</li>
+</ul>
+<p>   - <code>java.io.FileNotFoundException:{help.docx}</code></p>
+<ul>
+<li>如何判断是tomcat</li>
+</ul>
+<p>   - 通过POST得到help.docx之后，随便输一个文件，比如flag.docx，回显会有服务器版本，在上面的writeup部分</p>
+<p>   - 另外一个就是，Java web主流的是spring，要么是maven，要么是tomcat。</p>
+<p>      - maven复制<code>src</code> ，顶多是将<code>resource</code> 放到外面</p>
+<p>      - tomcat的部分就和上面的<a class="link" href="https://desktop.craft.do:6776/editor/d/3cf94341-028f-a488-10df-d065aa1370fc/d3036717-b075-fe5b-4aff-239f3b13366f/x/816404FD-8F2E-47CF-8DD9-B72577938A3F"  target="_blank" rel="noopener"
+    >tomcat部分</a> 一样</p>
+<h2 id="最终版">最终版
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>  
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_user_agent</span><span class="p">():</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">user_agents</span> <span class="o">=</span> <span class="p">[</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/59.0&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/16.1709&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">user_agents</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_headers</span><span class="p">():</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="n">get_user_agent</span><span class="p">(),</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Accept-Language&#34;</span><span class="p">:</span> <span class="s2">&#34;en-US,en;q=0.5&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Accept-Encoding&#34;</span><span class="p">:</span> <span class="s2">&#34;gzip, deflate, br&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Connection&#34;</span><span class="p">:</span> <span class="s2">&#34;keep-alive&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">headers</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">send_post_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">headers</span> <span class="o">=</span> <span class="n">get_headers</span><span class="p">()</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="s2">&#34;flag&#34;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>  
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Found flag!&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Response content:&#34;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">55000</span><span class="p">])</span>  
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;POST request successful, but no flag found.&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;POST request failed, status code: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Request error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="n">catalog</span> <span class="o">=</span> <span class="s2">&#34;WEB-INF/classes/com/wm/ctf/&#34;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;IndexController.class&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;LoginController.class&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;DownloadController.class&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;FlagController.class&#34;</span>  
+</span></span><span class="line"><span class="cl">           <span class="p">]</span>  
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;http://501e1e92-a571-4fae-b8ae-6ce7c2722ed7.node5.buuoj.cn:81/Download?filename=</span><span class="si">{</span><span class="n">catalog</span><span class="si">}</span><span class="s2">&#34;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">posts</span><span class="p">():</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">clas</span> <span class="ow">in</span> <span class="n">classes</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Now is </span><span class="si">{</span><span class="n">clas</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">url_</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="n">clas</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">send_post_request</span><span class="p">(</span><span class="n">url_</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">if</span>  <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">posts</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就是最后要手动去base64解码一下</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "How about these days" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2024 Real One x86
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

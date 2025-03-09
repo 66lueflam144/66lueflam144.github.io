@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Listener on Real One x86</title>
-        <link>https://66lueflam144.github.io/tags/listener/</link>
+        <link>http://localhost:1313/tags/listener/</link>
         <description>Recent content in Listener on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 10 May 2024 11:33:55 +0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/listener/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 10 May 2024 11:33:55 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/listener/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Servlet &amp; Listener &amp; Filter from JAVA</title>
-        <link>https://66lueflam144.github.io/p/3a26b5b/</link>
+        <link>http://localhost:1313/p/3a26b5b/</link>
         <pubDate>Fri, 10 May 2024 11:33:55 +0800</pubDate>
         
-        <guid>https://66lueflam144.github.io/p/3a26b5b/</guid>
+        <guid>http://localhost:1313/p/3a26b5b/</guid>
         <description>&lt;p&gt;对java的重要三组件再次看了一遍。&lt;/p&gt;
 &lt;p&gt;ps： &lt;code&gt;hugo new posts//post_2/S_L_F.md&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;java三剑客tomcat&#34;&gt;Java三剑客&amp;amp;Tomcat
@@ -51,7 +51,7 @@
 &lt;ul&gt;
 &lt;li&gt;destroy销毁：在web工程停止的时候调用，Servlet的销毁&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled.png&#34;
 	
 	
 	
@@ -87,7 +87,7 @@
 &lt;li&gt;数据响应&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;    - 请求处理完成后，通过**转发（Forward）&lt;strong&gt;或者&lt;/strong&gt;重定向（Redirect）**到某个页面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%201.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled%201.png&#34;
 	
 	
 	
@@ -99,7 +99,7 @@
 &gt;&lt;/p&gt;
  &lt;br&gt;
 ## Servlet容器（Tomcat为例）
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%202.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled%202.png&#34;
 	
 	
 	
@@ -125,7 +125,7 @@
 &lt;p&gt;Servlet：包含Context容器（1 or more），一个Context对应一个Web工程，同时Context直接管理Servlet在容器中的包装类Wrapper，so &lt;em&gt;&lt;strong&gt;Context直接影响Servlet的工作方式。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%203.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled%203.png&#34;
 	
 	
 	
@@ -460,7 +460,7 @@
 &lt;p&gt;详细点is，请求到达Servlet之前进行过滤、响应从Servlet发出后进行过滤。&lt;/p&gt;
    &lt;br&gt;
 &lt;p&gt;Filter本身并不申请请求对象和响应对象，只提供过滤功能。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%204.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled%204.png&#34;
 	
 	
 	

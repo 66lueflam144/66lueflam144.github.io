@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>JAVA on Real One x86</title>
-        <link>https://66lueflam144.github.io/tags/java/</link>
+        <link>http://localhost:1313/tags/java/</link>
         <description>Recent content in JAVA on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 05 Oct 2024 21:40:34 +0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 05 Oct 2024 21:40:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Ysoserial_CommonColllections 01</title>
-        <link>https://66lueflam144.github.io/p/ysoserial_commoncolllections-01/</link>
+        <link>http://localhost:1313/p/ysoserial_commoncolllections-01/</link>
         <pubDate>Sat, 05 Oct 2024 21:40:34 +0800</pubDate>
         
-        <guid>https://66lueflam144.github.io/p/ysoserial_commoncolllections-01/</guid>
+        <guid>http://localhost:1313/p/ysoserial_commoncolllections-01/</guid>
         <description>&lt;h1 id=&#34;commonscollections1&#34;&gt;CommonsCollections1
 &lt;/h1&gt;&lt;h2 id=&#34;测试使用&#34;&gt;测试使用
 &lt;/h2&gt;&lt;p&gt;写了最简单基础的反序列化代码&lt;/p&gt;
@@ -60,7 +60,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;java -jar ysoserial-all.jar CommonsCollections1 gnome-calculator &amp;gt; summer.bin&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_8/imgs/killer.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_8/imgs/killer.png&#34;
 	
 	
 	
@@ -531,10 +531,10 @@
         </item>
         <item>
         <title>Servlet &amp; Listener &amp; Filter from JAVA</title>
-        <link>https://66lueflam144.github.io/p/3a26b5b/</link>
+        <link>http://localhost:1313/p/3a26b5b/</link>
         <pubDate>Fri, 10 May 2024 11:33:55 +0800</pubDate>
         
-        <guid>https://66lueflam144.github.io/p/3a26b5b/</guid>
+        <guid>http://localhost:1313/p/3a26b5b/</guid>
         <description>&lt;p&gt;对java的重要三组件再次看了一遍。&lt;/p&gt;
 &lt;p&gt;ps： &lt;code&gt;hugo new posts//post_2/S_L_F.md&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;java三剑客tomcat&#34;&gt;Java三剑客&amp;amp;Tomcat
@@ -574,7 +574,7 @@
 &lt;ul&gt;
 &lt;li&gt;destroy销毁：在web工程停止的时候调用，Servlet的销毁&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled.png&#34;
 	
 	
 	
@@ -610,7 +610,7 @@
 &lt;li&gt;数据响应&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;    - 请求处理完成后，通过**转发（Forward）&lt;strong&gt;或者&lt;/strong&gt;重定向（Redirect）**到某个页面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%201.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled%201.png&#34;
 	
 	
 	
@@ -622,7 +622,7 @@
 &gt;&lt;/p&gt;
  &lt;br&gt;
 ## Servlet容器（Tomcat为例）
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%202.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled%202.png&#34;
 	
 	
 	
@@ -648,7 +648,7 @@
 &lt;p&gt;Servlet：包含Context容器（1 or more），一个Context对应一个Web工程，同时Context直接管理Servlet在容器中的包装类Wrapper，so &lt;em&gt;&lt;strong&gt;Context直接影响Servlet的工作方式。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%203.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled%203.png&#34;
 	
 	
 	
@@ -983,7 +983,7 @@
 &lt;p&gt;详细点is，请求到达Servlet之前进行过滤、响应从Servlet发出后进行过滤。&lt;/p&gt;
    &lt;br&gt;
 &lt;p&gt;Filter本身并不申请请求对象和响应对象，只提供过滤功能。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_3/S_L_Fpics/Untitled%204.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_3/S_L_Fpics/Untitled%204.png&#34;
 	
 	
 	
@@ -2060,17 +2060,17 @@
         </item>
         <item>
         <title>Halo 0.4.3 审计ing</title>
-        <link>https://66lueflam144.github.io/p/5ff6fd0/</link>
+        <link>http://localhost:1313/p/5ff6fd0/</link>
         <pubDate>Sun, 31 Mar 2024 20:29:51 +0800</pubDate>
         
-        <guid>https://66lueflam144.github.io/p/5ff6fd0/</guid>
-        <description>&lt;img src="https://66lueflam144.github.io/vulnerable.png" alt="Featured image of post Halo 0.4.3 审计ing" /&gt;&lt;h1 id=&#34;halo&#34;&gt;HALO
+        <guid>http://localhost:1313/p/5ff6fd0/</guid>
+        <description>&lt;img src="http://localhost:1313/vulnerable.png" alt="Featured image of post Halo 0.4.3 审计ing" /&gt;&lt;h1 id=&#34;halo&#34;&gt;HALO
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;一个java博客系统，但funny problems everywhere&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;看着怪像wordpress的。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;打开pom.xml，到处都是警告
-&lt;img src=&#34;https://66lueflam144.github.io/post_2/vulnerable.png&#34;
+&lt;img src=&#34;http://localhost:1313/post_2/vulnerable.png&#34;
 	
 	
 	
@@ -2315,10 +2315,10 @@
         </item>
         <item>
         <title>Java Path</title>
-        <link>https://66lueflam144.github.io/p/7cba448/</link>
+        <link>http://localhost:1313/p/7cba448/</link>
         <pubDate>Fri, 03 Nov 2023 13:26:58 +0800</pubDate>
         
-        <guid>https://66lueflam144.github.io/p/7cba448/</guid>
+        <guid>http://localhost:1313/p/7cba448/</guid>
         <description>&lt;p&gt;最近在随机学学，然后感觉这个挺有趣的就学着写写。&lt;/p&gt;
 &lt;h1 id=&#34;servlet&#34;&gt;Servlet
 &lt;/h1&gt;&lt;blockquote&gt;
@@ -2349,7 +2349,7 @@
 &lt;h2 id=&#34;idea&#34;&gt;IDEA
 &lt;/h2&gt;&lt;p&gt;用的是&lt;/p&gt;
 &lt;p&gt;用IDEA的Maven archetype来创建。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_pre_ctf/imgs/Mavenstart.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_pre_ctf/imgs/Mavenstart.png&#34;
 	
 	
 	
@@ -2519,7 +2519,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;就会看到&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_pre_ctf/imgs/tomcat.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_pre_ctf/imgs/tomcat.png&#34;
 	
 	
 	

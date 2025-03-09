@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tools on Real One x86</title>
-        <link>https://66lueflam144.github.io/tags/tools/</link>
+        <link>http://localhost:1313/tags/tools/</link>
         <description>Recent content in Tools on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 28 Oct 2023 18:14:37 +0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 28 Oct 2023 18:14:37 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/tools/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Mark_Loves_Cat</title>
-        <link>https://66lueflam144.github.io/p/38e9ef8/</link>
+        <link>http://localhost:1313/p/38e9ef8/</link>
         <pubDate>Sat, 28 Oct 2023 18:14:37 +0800</pubDate>
         
-        <guid>https://66lueflam144.github.io/p/38e9ef8/</guid>
+        <guid>http://localhost:1313/p/38e9ef8/</guid>
         <description>&lt;p&gt;打开靶场是一个非常正式的网页？到处扒拉一下，也在&lt;code&gt;contact&lt;/code&gt;处进行了intruder测试，没有什么结果。&lt;/p&gt;
 &lt;p&gt;再查看页面代码和网络，也没有什么。所以又启动TOOLs。&lt;/p&gt;
 &lt;p&gt;那句话怎么说来着？&lt;code&gt;dirmap&lt;/code&gt;一扫描起来，就发了狠……反正扫出很多东西。&lt;/p&gt;
@@ -409,10 +409,10 @@
         </item>
         <item>
         <title>BJDCTF Easy MD5</title>
-        <link>https://66lueflam144.github.io/p/09030b0/</link>
+        <link>http://localhost:1313/p/09030b0/</link>
         <pubDate>Fri, 27 Oct 2023 13:00:25 +0800</pubDate>
         
-        <guid>https://66lueflam144.github.io/p/09030b0/</guid>
+        <guid>http://localhost:1313/p/09030b0/</guid>
         <description>&lt;p&gt;&lt;font size=1&gt;只是隐隐约约记得MD5是一种加密算法&lt;/font&gt;&lt;/p&gt;
 &lt;h1 id=&#34;sql-injection&#34;&gt;SQL Injection？
 &lt;/h1&gt;&lt;p&gt;输入：&lt;/p&gt;
@@ -715,10 +715,10 @@
         </item>
         <item>
         <title>R！C！E！</title>
-        <link>https://66lueflam144.github.io/p/1573821/</link>
+        <link>http://localhost:1313/p/1573821/</link>
         <pubDate>Mon, 23 Oct 2023 18:20:10 +0800</pubDate>
         
-        <guid>https://66lueflam144.github.io/p/1573821/</guid>
+        <guid>http://localhost:1313/p/1573821/</guid>
         <description>&lt;h2 id=&#34;scan&#34;&gt;Scan
 &lt;/h2&gt;&lt;p&gt;看到这种白茫茫一片的就直接上工具。&lt;/p&gt;
 &lt;p&gt;dirsearch、dirmap一起用&lt;/p&gt;

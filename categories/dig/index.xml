@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>DIG on Real One x86</title>
-        <link>http://localhost:1313/categories/dig/</link>
+        <link>https://66lueflam144.github.io/categories/dig/</link>
         <description>Recent content in DIG on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 05 Nov 2024 13:22:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/dig/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 05 Nov 2024 13:22:24 +0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/categories/dig/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Pdf_tricks</title>
-        <link>http://localhost:1313/p/pdf_tricks/</link>
+        <link>https://66lueflam144.github.io/p/pdf_tricks/</link>
         <pubDate>Tue, 05 Nov 2024 13:22:24 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/pdf_tricks/</guid>
-        <description>&lt;img src="http://localhost:1313/p/pdf_tricks/pdf1.jpg" alt="Featured image of post Pdf_tricks" /&gt;&lt;p&gt;!&amp;ndash;more&amp;ndash;&amp;gt;&lt;/p&gt;
+        <guid>https://66lueflam144.github.io/p/pdf_tricks/</guid>
+        <description>&lt;img src="https://66lueflam144.github.io/p/pdf_tricks/pdf1.jpg" alt="Featured image of post Pdf_tricks" /&gt;&lt;p&gt;!&amp;ndash;more&amp;ndash;&amp;gt;&lt;/p&gt;
 &lt;h2 id=&#34;什么是pdf&#34;&gt;什么是PDF
 &lt;/h2&gt;&lt;h3 id=&#34;定义&#34;&gt;定义
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%96%87%E6%A1%A3%E6%A0%BC%E5%BC%8F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -35,10 +35,10 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;结构&#34;&gt;结构
 &lt;/h3&gt;&lt;p&gt;引用&lt;a class=&#34;link&#34; href=&#34;[10.19363/J.cnki.cn10-1380/tn.2023.09.02]%28http://dx.doi.org/10.19363/J.cnki.cn10-1380/tn.2023.09.02%29&#34; &gt;《面向恶意 PDF 文档分类的对抗样本生成方法研究》&lt;/a&gt;中的一个物理与逻辑结构的对照图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/pdf_tricks/pdf_structure.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/p/pdf_tricks/pdf_structure.jpg&#34;
 	width=&#34;568&#34;
 	height=&#34;767&#34;
-	srcset=&#34;http://localhost:1313/p/pdf_tricks/pdf_structure_hu3941668683848100335.jpg 480w, http://localhost:1313/p/pdf_tricks/pdf_structure_hu6552683502216812466.jpg 1024w&#34;
+	srcset=&#34;https://66lueflam144.github.io/p/pdf_tricks/pdf_structure_hu3941668683848100335.jpg 480w, https://66lueflam144.github.io/p/pdf_tricks/pdf_structure_hu6552683502216812466.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;pdf structure&#34;
@@ -458,10 +458,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;可以看到是将JavaScript写入了文档的结构树中。&lt;/p&gt;
 &lt;p&gt;当用浏览器打开该PDF文件的时候：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/pdf_tricks/pdf1.jpg&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/p/pdf_tricks/pdf1.jpg&#34;
 	width=&#34;463&#34;
 	height=&#34;138&#34;
-	srcset=&#34;http://localhost:1313/p/pdf_tricks/pdf1_hu5332532660492742992.jpg 480w, http://localhost:1313/p/pdf_tricks/pdf1_hu1299634782032890000.jpg 1024w&#34;
+	srcset=&#34;https://66lueflam144.github.io/p/pdf_tricks/pdf1_hu5332532660492742992.jpg 480w, https://66lueflam144.github.io/p/pdf_tricks/pdf1_hu1299634782032890000.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;imga 2&#34;
@@ -476,10 +476,10 @@
         </item>
         <item>
         <title>网络是怎样连接的2.0</title>
-        <link>http://localhost:1313/p/b576aef/</link>
+        <link>https://66lueflam144.github.io/p/b576aef/</link>
         <pubDate>Wed, 29 May 2024 20:22:51 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/b576aef/</guid>
+        <guid>https://66lueflam144.github.io/p/b576aef/</guid>
         <description>&lt;h1 id=&#34;一个故事&#34;&gt;一个故事
 &lt;/h1&gt;&lt;p&gt;简单来说就是如何从&lt;strong&gt;伊邪那美和伊邪那歧&lt;/strong&gt;发展到&lt;strong&gt;奥林匹克山上一家&lt;/strong&gt;的。&lt;/p&gt;
 &lt;br&gt;
@@ -627,7 +627,7 @@ HAPPY ENDING!!!
 &lt;p&gt;MAC地址长度为48bit，用十六进制表示&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;头部
-&lt;img src=&#34;http://localhost:1313/post_6/pics/MAChead.png&#34;
+&lt;img src=&#34;https://66lueflam144.github.io/post_6/pics/MAChead.png&#34;
 	
 	
 	
@@ -698,7 +698,7 @@ HAPPY ENDING!!!
 &lt;br&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;路由表&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_6/pics/table2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_6/pics/table2.png&#34;
 	
 	
 	
@@ -730,10 +730,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Weevely_wish</title>
-        <link>http://localhost:1313/p/03215d8/</link>
+        <link>https://66lueflam144.github.io/p/03215d8/</link>
         <pubDate>Fri, 10 May 2024 18:53:11 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/03215d8/</guid>
+        <guid>https://66lueflam144.github.io/p/03215d8/</guid>
         <description>&lt;h1 id=&#34;0&#34;&gt;0
 &lt;/h1&gt;&lt;p&gt;通过weevely生成了一个php后门文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -985,7 +985,7 @@ HAPPY ENDING!!!
 &lt;/div&gt;&lt;p&gt;文本串行的每个字符可以通过&lt;strong&gt;与给定的密钥&lt;/strong&gt;进行 &lt;strong&gt;按位异或运算&lt;/strong&gt;来加密。
 如果要解密，只需要将加密后的结果与密钥再次 进行按位异或运算即可。&lt;/p&gt;
 &lt;p&gt;举例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/xor.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/xor.png&#34;
 	
 	
 	
@@ -1044,7 +1044,7 @@ HAPPY ENDING!!!
 &lt;li&gt;&lt;code&gt;$b&lt;/code&gt;执行&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;weevelt-code&#34;&gt;Weevelt code
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/code.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/code.png&#34;
 	
 	
 	
@@ -1064,7 +1064,7 @@ HAPPY ENDING!!!
 &lt;br&gt;
 &lt;p&gt;通读是不可能的，所以使用报错找到调用链——修改了生成的后门文件进行连接操作
 …………&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/error.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/error.png&#34;
 	
 	
 	
@@ -1079,7 +1079,7 @@ HAPPY ENDING!!!
 &lt;hr&gt;
 &lt;h2 id=&#34;加密obfpostpy&#34;&gt;加密obfpost.py
 &lt;/h2&gt;&lt;h3 id=&#34;__init__self-url-password&#34;&gt;&lt;code&gt;__init__(self, url, password)&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/obpost1.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/obpost1.png&#34;
 	
 	
 	
@@ -1149,7 +1149,7 @@ HAPPY ENDING!!!
 &lt;/div&gt;&lt;p&gt;可以发现前三个都对应上了。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;send&#34;&gt;&lt;code&gt;send()&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/ap.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/ap.png&#34;
 	
 	
 	
@@ -1157,7 +1157,7 @@ HAPPY ENDING!!!
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/send2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/send2.png&#34;
 	
 	
 	
@@ -1179,7 +1179,7 @@ HAPPY ENDING!!!
 &lt;br&gt;
 &lt;br&gt;
 于是按照第二张图的思路：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/fin.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/fin.png&#34;
 	
 	
 	
@@ -1232,7 +1232,7 @@ HAPPY ENDING!!!
 &lt;h1 id=&#34;流量分析&#34;&gt;流量分析
 &lt;/h1&gt;&lt;h2 id=&#34;攻击者发给受害者&#34;&gt;攻击者发给受害者
 &lt;/h2&gt;&lt;p&gt;一个编写好的目录遍历命令：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/s-a.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/s-a.png&#34;
 	
 	
 	
@@ -1274,7 +1274,7 @@ HAPPY ENDING!!!
 &lt;/div&gt;&lt;p&gt;ps：这个是&lt;code&gt;file_ls&lt;/code&gt;功能的代码，不是自己写的。&lt;/p&gt;
 &lt;h2 id=&#34;受害者发给攻击者&#34;&gt;受害者发给攻击者
 &lt;/h2&gt;&lt;p&gt;于是这是返回过来的信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/a-s.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/a-s.png&#34;
 	
 	
 	
@@ -1285,7 +1285,7 @@ HAPPY ENDING!!!
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;解码之后得到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/result2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/result2.png&#34;
 	
 	
 	
@@ -1315,7 +1315,7 @@ HAPPY ENDING!!!
 &lt;/ol&gt;
 &lt;h2 id=&#34;流量分析-1&#34;&gt;流量分析
 &lt;/h2&gt;&lt;p&gt;这是抓取的流量中，antisword发送的代码的部分内容&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/anti.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/anti.png&#34;
 	
 	
 	
@@ -1331,7 +1331,7 @@ HAPPY ENDING!!!
 &lt;br&gt;
 返回的流量分析：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/antire2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/antire2.png&#34;
 	
 	
 	
@@ -1347,7 +1347,7 @@ HAPPY ENDING!!!
 &lt;p&gt;比起weevely的异或、base64、 gzip，简洁很多&lt;/p&gt;
 &lt;br&gt;
 解码后：
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/antire1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/antire1.png&#34;
 	
 	
 	
@@ -1411,17 +1411,17 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>Halo 0.4.3 审计ing</title>
-        <link>http://localhost:1313/p/5ff6fd0/</link>
+        <link>https://66lueflam144.github.io/p/5ff6fd0/</link>
         <pubDate>Sun, 31 Mar 2024 20:29:51 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/5ff6fd0/</guid>
-        <description>&lt;img src="http://localhost:1313/vulnerable.png" alt="Featured image of post Halo 0.4.3 审计ing" /&gt;&lt;h1 id=&#34;halo&#34;&gt;HALO
+        <guid>https://66lueflam144.github.io/p/5ff6fd0/</guid>
+        <description>&lt;img src="https://66lueflam144.github.io/vulnerable.png" alt="Featured image of post Halo 0.4.3 审计ing" /&gt;&lt;h1 id=&#34;halo&#34;&gt;HALO
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;一个java博客系统，但funny problems everywhere&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;看着怪像wordpress的。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;打开pom.xml，到处都是警告
-&lt;img src=&#34;http://localhost:1313/post_2/vulnerable.png&#34;
+&lt;img src=&#34;https://66lueflam144.github.io/post_2/vulnerable.png&#34;
 	
 	
 	
@@ -1666,10 +1666,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>文件上传 Get</title>
-        <link>http://localhost:1313/p/c659435/</link>
+        <link>https://66lueflam144.github.io/p/c659435/</link>
         <pubDate>Tue, 17 Oct 2023 18:26:52 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/c659435/</guid>
+        <guid>https://66lueflam144.github.io/p/c659435/</guid>
         <description>&lt;h1 id=&#34;begin&#34;&gt;begin
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;写了file upload的短分享ppt然后得到自己可以写一个demo的问题，于是开始。&lt;/p&gt;
@@ -2033,10 +2033,10 @@ HAPPY ENDING!!!
         </item>
         <item>
         <title>文件包含</title>
-        <link>http://localhost:1313/p/64b97cd/</link>
+        <link>https://66lueflam144.github.io/p/64b97cd/</link>
         <pubDate>Tue, 17 Oct 2023 13:08:52 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/64b97cd/</guid>
+        <guid>https://66lueflam144.github.io/p/64b97cd/</guid>
         <description>&lt;h1 id=&#34;文件包含漏洞&#34;&gt;文件包含漏洞
 &lt;/h1&gt;&lt;p&gt;PHP version&lt;/p&gt;
 &lt;h2 id=&#34;包含函数&#34;&gt;包含函数

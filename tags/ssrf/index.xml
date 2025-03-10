@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>SSRF on Real One x86</title>
-        <link>http://localhost:1313/tags/ssrf/</link>
+        <link>https://66lueflam144.github.io/tags/ssrf/</link>
         <description>Recent content in SSRF on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 17 Oct 2023 12:46:38 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/ssrf/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 17 Oct 2023 12:46:38 +0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/ssrf/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>2019 极客大挑战 SecretFile</title>
-        <link>http://localhost:1313/p/2849be8/</link>
+        <link>https://66lueflam144.github.io/p/2849be8/</link>
         <pubDate>Tue, 17 Oct 2023 12:46:38 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/2849be8/</guid>
+        <guid>https://66lueflam144.github.io/p/2849be8/</guid>
         <description>&lt;p&gt;误入了一下代码审计。。。主要是我还做出来第一步了，所以有很大兴趣继续做下去。&lt;/p&gt;
 &lt;p&gt;用开发者工具可以很容易看到被调成黑色与背景融为一体的&lt;code&gt;you find me&lt;/code&gt;(大概这样)，其实也可以直接看到&lt;code&gt;Archive_room.php&lt;/code&gt;这个文件名。&lt;/p&gt;
 &lt;p&gt;进去以后点点secret然后没有什么收获。&lt;/p&gt;

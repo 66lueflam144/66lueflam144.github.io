@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>阅读与分析 on Real One x86</title>
-        <link>http://localhost:1313/tags/%E9%98%85%E8%AF%BB%E4%B8%8E%E5%88%86%E6%9E%90/</link>
+        <link>https://66lueflam144.github.io/tags/%E9%98%85%E8%AF%BB%E4%B8%8E%E5%88%86%E6%9E%90/</link>
         <description>Recent content in 阅读与分析 on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 10 May 2024 18:53:11 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%98%85%E8%AF%BB%E4%B8%8E%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 10 May 2024 18:53:11 +0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/%E9%98%85%E8%AF%BB%E4%B8%8E%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Weevely_wish</title>
-        <link>http://localhost:1313/p/03215d8/</link>
+        <link>https://66lueflam144.github.io/p/03215d8/</link>
         <pubDate>Fri, 10 May 2024 18:53:11 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/03215d8/</guid>
+        <guid>https://66lueflam144.github.io/p/03215d8/</guid>
         <description>&lt;h1 id=&#34;0&#34;&gt;0
 &lt;/h1&gt;&lt;p&gt;通过weevely生成了一个php后门文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -263,7 +263,7 @@
 &lt;/div&gt;&lt;p&gt;文本串行的每个字符可以通过&lt;strong&gt;与给定的密钥&lt;/strong&gt;进行 &lt;strong&gt;按位异或运算&lt;/strong&gt;来加密。
 如果要解密，只需要将加密后的结果与密钥再次 进行按位异或运算即可。&lt;/p&gt;
 &lt;p&gt;举例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/xor.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/xor.png&#34;
 	
 	
 	
@@ -322,7 +322,7 @@
 &lt;li&gt;&lt;code&gt;$b&lt;/code&gt;执行&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;weevelt-code&#34;&gt;Weevelt code
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/code.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/code.png&#34;
 	
 	
 	
@@ -342,7 +342,7 @@
 &lt;br&gt;
 &lt;p&gt;通读是不可能的，所以使用报错找到调用链——修改了生成的后门文件进行连接操作
 …………&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/error.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/error.png&#34;
 	
 	
 	
@@ -357,7 +357,7 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;加密obfpostpy&#34;&gt;加密obfpost.py
 &lt;/h2&gt;&lt;h3 id=&#34;__init__self-url-password&#34;&gt;&lt;code&gt;__init__(self, url, password)&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/obpost1.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/obpost1.png&#34;
 	
 	
 	
@@ -427,7 +427,7 @@
 &lt;/div&gt;&lt;p&gt;可以发现前三个都对应上了。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;send&#34;&gt;&lt;code&gt;send()&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/ap.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/ap.png&#34;
 	
 	
 	
@@ -435,7 +435,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/send2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/send2.png&#34;
 	
 	
 	
@@ -457,7 +457,7 @@
 &lt;br&gt;
 &lt;br&gt;
 于是按照第二张图的思路：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/fin.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/fin.png&#34;
 	
 	
 	
@@ -510,7 +510,7 @@
 &lt;h1 id=&#34;流量分析&#34;&gt;流量分析
 &lt;/h1&gt;&lt;h2 id=&#34;攻击者发给受害者&#34;&gt;攻击者发给受害者
 &lt;/h2&gt;&lt;p&gt;一个编写好的目录遍历命令：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/s-a.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/s-a.png&#34;
 	
 	
 	
@@ -552,7 +552,7 @@
 &lt;/div&gt;&lt;p&gt;ps：这个是&lt;code&gt;file_ls&lt;/code&gt;功能的代码，不是自己写的。&lt;/p&gt;
 &lt;h2 id=&#34;受害者发给攻击者&#34;&gt;受害者发给攻击者
 &lt;/h2&gt;&lt;p&gt;于是这是返回过来的信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/a-s.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/a-s.png&#34;
 	
 	
 	
@@ -563,7 +563,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;解码之后得到：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/result2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/result2.png&#34;
 	
 	
 	
@@ -593,7 +593,7 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;流量分析-1&#34;&gt;流量分析
 &lt;/h2&gt;&lt;p&gt;这是抓取的流量中，antisword发送的代码的部分内容&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/anti.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/anti.png&#34;
 	
 	
 	
@@ -609,7 +609,7 @@
 &lt;br&gt;
 返回的流量分析：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/antire2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/antire2.png&#34;
 	
 	
 	
@@ -625,7 +625,7 @@
 &lt;p&gt;比起weevely的异或、base64、 gzip，简洁很多&lt;/p&gt;
 &lt;br&gt;
 解码后：
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_4/pics/antire1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://66lueflam144.github.io/post_4/pics/antire1.png&#34;
 	
 	
 	

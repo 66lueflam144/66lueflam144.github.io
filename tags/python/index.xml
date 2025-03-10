@@ -2,27 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>PYTHON on Real One x86</title>
-        <link>http://localhost:1313/tags/python/</link>
+        <link>https://66lueflam144.github.io/tags/python/</link>
         <description>Recent content in PYTHON on Real One x86</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 08 Mar 2025 18:47:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 08 Mar 2025 18:47:30 +0800</lastBuildDate><atom:link href="https://66lueflam144.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>DVWA sql盲注with python</title>
-        <link>http://localhost:1313/p/dvwa-sql%E7%9B%B2%E6%B3%A8with-python/</link>
+        <link>https://66lueflam144.github.io/p/dvwa-sql%E7%9B%B2%E6%B3%A8with-python/</link>
         <pubDate>Sat, 08 Mar 2025 18:47:30 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/dvwa-sql%E7%9B%B2%E6%B3%A8with-python/</guid>
-        <description>&lt;img src="http://localhost:1313/drink.png" alt="Featured image of post DVWA sql盲注with python" /&gt;&lt;p&gt;以DVWA靶场的盲注为例子。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post_sql/drink.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;img&#34;
-	
-	
-&gt;&lt;/p&gt;
+        <guid>https://66lueflam144.github.io/p/dvwa-sql%E7%9B%B2%E6%B3%A8with-python/</guid>
+        <description>&lt;img src="https://66lueflam144.github.io/p/dvwa-sql%E7%9B%B2%E6%B3%A8with-python/drink_png.png" alt="Featured image of post DVWA sql盲注with python" /&gt;&lt;p&gt;以DVWA靶场的盲注为例子。&lt;/p&gt;
 &lt;h2 id=&#34;分析&#34;&gt;分析
 &lt;/h2&gt;&lt;p&gt;对网页的响应进行分析&lt;/p&gt;
 &lt;ol&gt;
